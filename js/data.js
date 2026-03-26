@@ -8,26 +8,34 @@ const BRANDS = {
     logoImageBlack: 'images/mobil_black.png',
     logoImageWhite: 'images/mobil_white.png'
   },
-  castrol: {
-    id: 'castrol',
-    name: 'Castrol',
+
+
+  firestone: {
+    id: 'firestone',
+    name: 'Firestone',
+    type: 'tires',
+    logo: 'F',
+    logoImage: 'images/firestone_red_logo_name.png',
+    logoImageBlack: null,
+    logoImageWhite: 'images/firestone_white_name.png'
+  },
+  rydanz: {
+    id: 'rydanz',
+    name: 'Rydanz',
+    type: 'tires',
+    logo: 'R',
+    logoImage: 'images/rydanz_black_normal.png',
+    logoImageBlack: 'images/rydanz_black_normal.png',
+    logoImageWhite: 'images/rydanz_white_normal.png'
+  },
+  vp_racing: {
+    id: 'vp_racing',
+    name: 'VP Racing',
     type: 'oil',
-    logo: 'C',
-    logoImage: null
-  },
-  michelin: {
-    id: 'michelin',
-    name: 'Michelin',
-    type: 'tires',
-    logo: 'M',
-    logoImage: null
-  },
-  bridgestone: {
-    id: 'bridgestone',
-    name: 'Bridgestone',
-    type: 'tires',
-    logo: 'B',
-    logoImage: null
+    logo: 'V',
+    logoImage: 'images/vp_racing_logo.png',
+    logoImageBlack: 'images/vp_racing_logo.png',
+    logoImageWhite: 'images/vp_racing_logo.png'
   }
 };
 
@@ -526,151 +534,106 @@ const CATALOGS = {
     categories: [],
     products: []
   },
-  castrol: {
-    brand: BRANDS.castrol,
+  vp_racing: {
+    brand: BRANDS.vp_racing,
     categories: [
       "Full Sintéticos - Gasolina",
-      "Semi Sintéticos - Gasolina",
+      "Motocicleta",
       "Servicio Pesado - Diésel",
-      "Transmisiones"
+      "Aceites de Transmisión"
     ],
     products: [
       {
-        id: 'castrol-1',
-        name: "Castrol Edge 5W-30",
-        type: "Lubricante sintético avanzado",
-        description: "Tecnología Titanium FST™ que duplica la resistencia de la película de aceite, proporcionando mayor protección bajo condiciones de alto esfuerzo.",
+        id: 'vp_racing-1',
+        name: "VP Racing Hard Runtime 10W-40",
+        type: "Lubricante sintético de alto rendimiento",
+        description: "Aceite de motor sintético diseñado para motores de alto rendimiento y competencia. Proporciona máxima protección en condiciones extremas.",
         category: "Full Sintéticos - Gasolina",
-        line: "Castrol Edge",
-        applications: ["Vehículos de alto rendimiento", "Motores turboalimentados"],
-        benefits: ["Máxima resistencia a la rotura de película", "Mayor eficiencia de combustible"],
-        approvals: ["BMW Longlife-04", "MB 229.31", "VW 504 00"],
-        specifications: { viscosity: "5W-30", api: ["SN"], acea: ["C3"] },
+        line: "Hard Runtime",
+        applications: ["Motores de alto rendimiento", "Vehículos de competencia", "Motores turboalimentados"],
+        benefits: ["Máxima protección en condiciones extremas", "Excelente resistencia térmica", "Bajo consumo de aceite"],
+        approvals: [],
+        specifications: { viscosity: "10W-40", api: ["SN"], acea: ["A3/B4"] },
         presentations: ["1L", "4L", "60L"]
       },
       {
-        id: 'castrol-2',
-        name: "Castrol Magnatec 5W-40",
-        type: "Lubricante con tecnología分子",
-        description: "Formulación única con moléculas protectoras que se adhieren al motor desde el arranque, reduciendo el desgaste.",
-        category: "Semi Sintéticos - Gasolina",
-        line: "Castrol Magnatec",
-        applications: ["Vehículos familiares", "Conducción urbana"],
-        benefits: ["Protección desde el primer momento", "Reduce el desgaste durante el arranque"],
-        approvals: ["MB 229.3", "VW 502 00"],
-        specifications: { viscosity: "5W-40", api: ["SN"], acea: ["A3/B4"] },
+        id: 'vp_racing-2',
+        name: "VP Racing Protect 5W-30",
+        type: "Lubricante sintético avanzado",
+        description: "Aceite de última generación con tecnología de protección total. Ideal para vehículos modernos con sistemas de control de emisiones.",
+        category: "Full Sintéticos - Gasolina",
+        line: "Protect",
+        applications: ["Vehículos modernos", "Motores con turbo", "Sistemas DPF"],
+        benefits: ["Compatibilidad con DPF", "Ahorro de combustible", "Larga vida útil del motor"],
+        approvals: [],
+        specifications: { viscosity: "5W-30", api: ["SN"], acea: ["C2"] },
         presentations: ["1L", "4L", "5L"]
       },
       {
-        id: 'castrol-3',
-        name: "Castrol Vecton 15W-40",
+        id: 'vp_racing-3',
+        name: "VP Racing 4T Ester 10W-40",
+        type: "Lubricante para motocicletas de 4 tiempos",
+        description: "Formula Premium con ésteres para máxima protección de motores de motocicletas de alta cilindrada.",
+        category: "Motocicleta",
+        line: "4T Ester",
+        applications: ["Motocicletas deportivas", "Motocicletas de competencia", "Scooters de alta cilindrada"],
+        benefits: ["Protección superior del embrague húmedo", "Excelente disipación del calor", "Máxima potencia"],
+        approvals: [],
+        specifications: { viscosity: "10W-40", api: ["SN"], jaso: ["MA2"] },
+        presentations: ["1L", "4L"]
+      },
+      {
+        id: 'vp_racing-4',
+        name: "VP Racing Diesel Heavy Duty 15W-40",
         type: "Lubricante para motores diésel",
-        description: "Diseñado para motores diésel de servicio pesado, proporcionando hasta un 45% más de resistencia a la degradación.",
+        description: "Aceite de alto rendimiento para motores diésel de servicio pesado. Diseñado para extrema presión y temperaturas elevadas.",
         category: "Servicio Pesado - Diésel",
-        line: "Castrol Vecton",
-        applications: ["Camiones de carga", "Máquinaria pesada", "Flotas"],
-        benefits: ["Largos intervalos de cambio", "Excelente protección contra lodos"],
-        approvals: ["MB 228.3", "Cummins CES 20077", "Volvo VDS-3"],
-        specifications: { viscosity: "15W-40", api: ["CI-4", "CI-4 PLUS"], acea: ["E7"] },
+        line: "Diesel Heavy Duty",
+        applications: ["Camiones pesados", "Máquinaria pesada", "Generadores industriales"],
+        benefits: ["Excelente protección contra el desgaste", "Largos intervalos de cambio", "Baja formación de depósitos"],
+        approvals: [],
+        specifications: { viscosity: "15W-40", api: ["CI-4", "CH-4"] },
         presentations: ["5L", "20L", "60L", "200L"]
       },
       {
-        id: 'castrol-4',
-        name: "Castrol ATF Dexron III",
-        type: "Fluido para transmisión automática",
-        description: "Fluido de alto rendimiento para transmisiones automáticas que cumple con las especificaciones Dexron III.",
-        category: "Transmisiones",
-        line: "Castrol ATF",
-        applications: ["Transmisiones automáticas GM", "Ford Mercon"],
-        benefits: ["Excelente fluidez a bajas temperaturas", "Resistencia a la oxidación"],
-        approvals: ["GM Dexron III", "Ford Mercon"],
-        specifications: { viscosity: "Dexron III", api: [], acea: [] },
-        presentations: ["1L", "4L"]
+        id: 'vp_racing-5',
+        name: "VP Racing Gear Oil 80W-90",
+        type: "Aceite de transmisión y diferenciales",
+        description: "Aceite de engranajes de alta presión para transmisiones manuales y diferenciales.",
+        category: "Aceites de Transmisión",
+        line: "Gear Oil",
+        applications: ["Transmisiones manuales", "Diferenciales", "Cajas de transferencia"],
+        benefits: ["Excelente resistencia a la presión", "Protección contra el desgaste", "Funcionamiento silencioso"],
+        approvals: [],
+        specifications: { viscosity: "80W-90", api: ["GL-5"] },
+        presentations: ["1L", "4L", "20L"]
+      },
+      {
+        id: 'vp_racing-6',
+        name: "VP Racing Brake Fluid DOT 4",
+        type: "Líquido de frenos",
+        description: "Líquido de frenos de alto rendimiento con punto de ebullición elevado para máxima seguridad.",
+        category: "Líquidos Técnicos",
+        line: "Brake Fluid",
+        applications: ["Sistemas de frenos de disco", "Sistemas ABS", "Vehículos de alta rendimiento"],
+        benefits: ["Punto de ebullición elevado", "Protección contra la corrosión", "Compatibilidad con sellos"],
+        approvals: [],
+        specifications: { viscosity: "DOT 4", api: [], acea: [] },
+        presentations: ["0.5L", "1L"]
       }
     ]
   },
-  michelin: {
-    brand: BRANDS.michelin,
-    categories: ["Pasajero", "SUV", "Camioneta", "Vehículo Comercial"],
-    products: [
-      {
-        id: 'michelin-1',
-        name: "Michelin Primacy 4",
-        type: "Neumático de turismo",
-        description: "Excelente rendimiento en frenado en mojado y larga vida útil. Tecnología EverGrip para mejor evacuación de agua.",
-        category: "Pasajero",
-        line: "Michelin Primacy",
-        applications: ["Sedanos", "Compactos"],
-        benefits: ["Frenado excelente en mojado", "Larga duración", "Confort de marcha"],
-        approvals: [],
-        specifications: { size: "205/55 R16", season: "Verano", speedRating: "V", loadIndex: "91" },
-        presentations: []
-      },
-      {
-        id: 'michelin-2',
-        name: "Michelin Pilot Sport 4S",
-        type: "Neumático de alto rendimiento",
-        description: "Diseñado para vehículos de alto rendimiento. Tecnología Bi-Compound para máximo agarre en seco y mojado.",
-        category: "Pasajero",
-        line: "Michelin Pilot Sport",
-        applications: ["Deportivos", "Alto rendimiento"],
-        benefits: ["Máximo agarre", "Precisión de dirección", "Estabilidad a alta velocidad"],
-        approvals: [],
-        specifications: { size: "225/40 R18", season: "Verano", speedRating: "Y", loadIndex: "92" },
-        presentations: []
-      },
-      {
-        id: 'michelin-3',
-        name: "Michelin CrossClimate 2",
-        type: "Neumático all-season",
-        description: "El líder en rendimiento en nieve con certificación 3PMSF. Seguridad todo el año sin compromisos.",
-        category: "SUV",
-        line: "Michelin CrossClimate",
-        applications: ["SUV", "Crossover", "Todo terreno"],
-        benefits: ["Rendimiento en nieve", "Frenado en mojado", "Larga vida útil"],
-        approvals: ["3PMSF"],
-        specifications: { size: "215/65 R17", season: "All-Season", speedRating: "H", loadIndex: "99" },
-        presentations: []
-      },
-      {
-        id: 'michelin-4',
-        name: "Michelin Defender 2",
-        type: "Neumático para camionetas",
-        description: "El neumático para camionetas con mayor vida útil. Tecnología Excelerate para mejor eficiencia de combustible.",
-        category: "Camioneta",
-        line: "Michelin Defender",
-        applications: ["Pickups", "SUVs grandes"],
-        benefits: ["Máxima duración", "Ahorro de combustible", "Confort superior"],
-        approvals: [],
-        specifications: { size: "245/70 R16", season: "All-Season", speedRating: "T", loadIndex: "111" },
-        presentations: []
-      },
-      {
-        id: 'michelin-5',
-        name: "Michelin X Line Energy T",
-        type: "Neumático comercial",
-        description: "Neumático de bajo consumo para vehículos comerciales. Reduce el consumo de combustible hasta un 15%.",
-        category: "Vehículo Comercial",
-        line: "Michelin X Line",
-        applications: ["Furgonetas", "Camiones ligeros"],
-        benefits: ["Bajo consumo", "Larga vida", "Reducción de emisiones"],
-        approvals: [],
-        specifications: { size: "235/65 R16", season: "All-Season", speedRating: "R", loadIndex: "115" },
-        presentations: []
-      }
-    ]
-  },
-  bridgestone: {
-    brand: BRANDS.bridgestone,
+  firestone: {
+    brand: BRANDS.firestone,
     categories: ["Pasajero", "SUV", "Camioneta", "Deportivo"],
     products: [
       {
-        id: 'bridgestone-1',
-        name: "Bridgestone Turanza T005",
+        id: 'firestone-1',
+        name: "Firestone Turanza T005",
         type: "Neumático de turismo premium",
         description: "Excelente rendimiento en mojado con tecnología NanoPro-Tech. Diseño de hombro erguido para mayor estabilidad.",
         category: "Pasajero",
-        line: "Bridgestone Turanza",
+        line: "Firestone Turanza",
         applications: ["Sedanos premium", "Familiares"],
         benefits: ["Frenado excepcional en mojado", "Confort y silencio", "Eficiencia de combustible"],
         approvals: [],
@@ -678,12 +641,12 @@ const CATALOGS = {
         presentations: []
       },
       {
-        id: 'bridgestone-2',
-        name: "Bridgestone Potenza RE003",
+        id: 'firestone-2',
+        name: "Firestone Potenza RE003",
         type: "Neumático deportivo",
         description: "Diseño asimétrico para máximo rendimiento en seco. Tecnología de compuestos reactivos para mejor agarre en curvas.",
         category: "Deportivo",
-        line: "Bridgestone Potenza",
+        line: "Firestone Potenza",
         applications: ["Deportivos", "Hot hatchbacks"],
         benefits: ["Agarre superior en curvas", "Respuesta precisa", "Deportivo en circuito"],
         approvals: [],
@@ -691,12 +654,12 @@ const CATALOGS = {
         presentations: []
       },
       {
-        id: 'bridgestone-3',
-        name: "Bridgestone WeatherControl A005",
+        id: 'firestone-3',
+        name: "Firestone WeatherControl A005",
         type: "Neumático all-season",
         description: "Neumático todo clima con certificación invernal. Rendimiento constante en cualquier condición.",
         category: "SUV",
-        line: "Bridgestone WeatherControl",
+        line: "Firestone WeatherControl",
         applications: ["SUVs", "Crossovers"],
         benefits: ["Certificación invernal 3PMSF", "Rendimiento todo el año"],
         approvals: ["3PMSF"],
@@ -704,12 +667,12 @@ const CATALOGS = {
         presentations: []
       },
       {
-        id: 'bridgestone-4',
-        name: "Bridgestone Dueler A/T 001",
+        id: 'firestone-4',
+        name: "Firestone Dueler A/T 001",
         type: "Neumático todo terreno",
         description: "Neumático para uso mixto asfalto/off-road. Bloques de hombro robustos para tracción en terrenos difíciles.",
         category: "Camioneta",
-        line: "Bridgestone Dueler",
+        line: "Firestone Dueler",
         applications: ["4x4", "Pickups off-road"],
         benefits: ["Tracción en off-road", "Durabilidad", "Confort en autopista"],
         approvals: [],
@@ -717,12 +680,12 @@ const CATALOGS = {
         presentations: []
       },
       {
-        id: 'bridgestone-5',
-        name: "Bridgestone Ecopia H/L 422 Plus",
+        id: 'firestone-5',
+        name: "Firestone Ecopia H/L 422 Plus",
         type: "Neumático eco-friendly",
         description: "Neumático de bajo consumo con tecnología ologic. Reduce resistencia al rodamiento sin sacrificar seguridad.",
         category: "SUV",
-        line: "Bridgestone Ecopia",
+        line: "Firestone Ecopia",
         applications: ["SUVs híbridos", "Eléctricos"],
         benefits: ["Hasta 15% menos consumo", "Larga vida", "Bajo nivel de ruido"],
         approvals: [],
@@ -730,16 +693,100 @@ const CATALOGS = {
         presentations: []
       },
       {
-        id: 'bridgestone-6',
-        name: "Bridgestone Blizzak LM005",
+        id: 'firestone-6',
+        name: "Firestone Blizzak LM005",
         type: "Neumático de invierno",
         description: "El neumático de invierno de referencia. Tecnología 3D sipe para máximo agarre en nieve y hielo.",
         category: "Pasajero",
-        line: "Bridgestone Blizzak",
+        line: "Firestone Blizzak",
         applications: ["Vehículos en zonas nevadas"],
         benefits: ["Máximo agarre en nieve", "Excelente frenado en hielo"],
         approvals: ["3PMSF", "M+S"],
         specifications: { size: "195/65 R15", season: "Invierno", speedRating: "T", loadIndex: "91" },
+        presentations: []
+      }
+    ]
+  },
+  rydanz: {
+    brand: BRANDS.rydanz,
+    categories: ["Pasajero", "SUV", "Camioneta", "Deportivo"],
+    products: [
+      {
+        id: 'rydanz-1',
+        name: "Rydanz Sport RX1",
+        type: "Neumático de alto rendimiento",
+        description: "Neumático deportivo de última generación con compuesto de sílice para máximo agarre en seco y mojado.",
+        category: "Deportivo",
+        line: "Sport RX",
+        applications: ["Vehículos deportivos", "Altas velocidades", "Conducción dinámica"],
+        benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Baja resistencia al rodamiento"],
+        approvals: [],
+        specifications: { size: "225/45 R17", season: "Verano", speedRating: "W", loadIndex: "94" },
+        presentations: []
+      },
+      {
+        id: 'rydanz-2',
+        name: "Rydanz Comfort A/T",
+        type: "Neumático todo terreno",
+        description: "Neumático para uso mixto con excelente tracción en superficies variadas y comfort de marcha.",
+        category: "Camioneta",
+        line: "Comfort A/T",
+        applications: ["SUVs", "Pickups", "Uso mixto ciudad/carretera"],
+        benefits: ["Tracción versátil", "Durabilidad", "Confort de marcha"],
+        approvals: [],
+        specifications: { size: "265/70 R16", season: "All-Season", speedRating: "S", loadIndex: "112" },
+        presentations: []
+      },
+      {
+        id: 'rydanz-3',
+        name: "Rydanz Touring TS5",
+        type: "Neumático de turismo",
+        description: "Neumático diseñado para proporcionar confort y seguridad en el uso diario.",
+        category: "Pasajero",
+        line: "Touring TS",
+        applications: ["Sedanos", "Compactos", "Uso familiar"],
+        benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
+        approvals: [],
+        specifications: { size: "205/55 R16", season: "All-Season", speedRating: "H", loadIndex: "91" },
+        presentations: []
+      },
+      {
+        id: 'rydanz-4',
+        name: "Rydanz SUV Ultra",
+        type: "Neumático para SUV",
+        description: "Neumático premium para SUV con excelente rendimiento en todas las condiciones.",
+        category: "SUV",
+        line: "SUV Ultra",
+        applications: ["SUVs medianos", "Crossovers", "Vehículos familiares"],
+        benefits: ["Estabilidad a alta velocidad", "Frenado en mojado", "Confort superior"],
+        approvals: [],
+        specifications: { size: "235/60 R18", season: "All-Season", speedRating: "V", loadIndex: "103" },
+        presentations: []
+      },
+      {
+        id: 'rydanz-5',
+        name: "Rydanz Winter WD1",
+        type: "Neumático de invierno",
+        description: "Neumático específico para condiciones de invierno con máximo agarre en nieve y hielo.",
+        category: "Pasajero",
+        line: "Winter WD",
+        applications: ["Zonas con nieve", "Climas fríos", "Vehículos en invierno"],
+        benefits: ["Certificación invernal 3PMSF", "Agarre en nieve", "Frenado en hielo"],
+        approvals: ["3PMSF", "M+S"],
+        specifications: { size: "195/65 R15", season: "Invierno", speedRating: "T", loadIndex: "91" },
+        presentations: []
+      },
+      {
+        id: 'rydanz-6',
+        name: "Rydanz Eco Drive",
+        type: "Neumático económico",
+        description: "Neumático de excelente relación calidad-precio con buena eficiencia de combustible.",
+        category: "Pasajero",
+        line: "Eco Drive",
+        applications: ["Vehículos económicos", "Flotas", "Uso urbano"],
+        benefits: ["Ahorro de combustible", "Larga duración", "Precio accesible"],
+        approvals: [],
+        specifications: { size: "185/65 R15", season: "Verano", speedRating: "H", loadIndex: "88" },
         presentations: []
       }
     ]
