@@ -22,13 +22,13 @@
   const FILTER_CONFIG = {
     oil: [
       { key: 'category', label: 'Categoría', type: 'single' },
+      { key: 'presentations', label: 'Presentaciones', type: 'multi', path: 'presentations' },
+      { key: 'line', label: 'Línea', type: 'single', path: 'line' },
       { key: 'viscosity', label: 'Viscosidad SAE', type: 'multi', path: 'specifications.viscosity' },
       { key: 'api', label: 'API', type: 'multi', path: 'specifications.api' },
       { key: 'acea', label: 'ACEA', type: 'multi', path: 'specifications.acea' },
       { key: 'ilsac', label: 'ILSAC', type: 'multi', path: 'specifications.ilsac' },
-      { key: 'jaso', label: 'JASO', type: 'multi', path: 'specifications.jaso' },
-      { key: 'line', label: 'Línea', type: 'single', path: 'line' },
-      { key: 'presentations', label: 'Presentaciones', type: 'multi', path: 'presentations' }
+      { key: 'jaso', label: 'JASO', type: 'multi', path: 'specifications.jaso' }
     ],
     tires: [
       { key: 'category', label: 'Categoría', type: 'single' },
@@ -224,9 +224,11 @@
 
     productsGridEl.innerHTML = filteredProducts.map((product, index) => {
       const specsList = getProductSpecsList(product, brand.type);
+      const productImage = product.mobilImage ? `<img src="${product.mobilImage}" alt="${escapeHtml(product.name)}" class="product-card-image" onerror="this.style.display='none'">` : '';
       
       return `
         <article class="product-card" data-id="${product.id}" style="animation-delay: ${Math.min(index * 0.05, 0.4)}s">
+          ${productImage}
           <span class="product-category">${escapeHtml(product.category || 'General')}</span>
           <h3 class="product-name">${escapeHtml(product.name)}</h3>
           <p class="product-type">${escapeHtml(product.type || '')}</p>
@@ -316,8 +318,10 @@
     if (!product) return;
 
     const specsHtml = renderModalSpecs(product, brand.type);
+    const productImage = product.mobilImage ? `<img src="${product.mobilImage}" alt="${escapeHtml(product.name)}" class="modal-product-image" onerror="this.style.display='none'">` : '';
 
     modalBodyEl.innerHTML = `
+      ${productImage}
       <span class="modal-category">${escapeHtml(product.category || 'General')}</span>
       <h2 class="modal-title">${escapeHtml(product.name)}</h2>
       <p class="modal-type">${escapeHtml(product.type || '')}</p>
