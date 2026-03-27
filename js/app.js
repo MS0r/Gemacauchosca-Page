@@ -24,18 +24,18 @@
       { key: 'category', label: 'Categoría', type: 'single' },
       { key: 'presentations', label: 'Presentaciones', type: 'multi', path: 'presentations' },
       { key: 'line', label: 'Línea', type: 'single', path: 'line' },
-      { key: 'viscosity', label: 'Viscosidad SAE', type: 'multi', path: 'specifications.viscosity' },
-      { key: 'api', label: 'API', type: 'multi', path: 'specifications.api' },
-      { key: 'acea', label: 'ACEA', type: 'multi', path: 'specifications.acea' },
-      { key: 'ilsac', label: 'ILSAC', type: 'multi', path: 'specifications.ilsac' },
-      { key: 'jaso', label: 'JASO', type: 'multi', path: 'specifications.jaso' }
+      { key: 'viscosity', label: 'Viscosidad SAE', type: 'multi', path: 'specifications.viscosity', advanced: true },
+      { key: 'api', label: 'API', type: 'multi', path: 'specifications.api', advanced: true },
+      { key: 'acea', label: 'ACEA', type: 'multi', path: 'specifications.acea', advanced: true },
+      { key: 'ilsac', label: 'ILSAC', type: 'multi', path: 'specifications.ilsac', advanced: true },
+      { key: 'jaso', label: 'JASO', type: 'multi', path: 'specifications.jaso', advanced: true }
     ],
     tires: [
       { key: 'category', label: 'Categoría', type: 'single' },
       { key: 'size', label: 'Medida', type: 'single', path: 'specifications.size' },
       { key: 'season', label: 'Temporada', type: 'single', path: 'specifications.season' },
-      { key: 'speedRating', label: 'Índice de Velocidad', type: 'single', path: 'specifications.speedRating' },
-      { key: 'loadIndex', label: 'Índice de Carga', type: 'single', path: 'specifications.loadIndex' }
+      { key: 'speedRating', label: 'Índice de Velocidad', type: 'single', path: 'specifications.speedRating', advanced: true },
+      { key: 'loadIndex', label: 'Índice de Carga', type: 'single', path: 'specifications.loadIndex', advanced: true }
     ]
   };
 
@@ -144,8 +144,11 @@
   }
 
   function buildFilterHtml(filterConfig, filterValues, counts) {
+    const basicFilters = filterConfig.filter(f => !f.advanced);
+    const advancedFilters = filterConfig.filter(f => f.advanced);
     let html = '';
-    filterConfig.forEach(config => {
+
+    basicFilters.forEach(config => {
       const values = filterValues[config.key];
       if (!values || values.length === 0) return;
 
@@ -170,6 +173,55 @@
         </div>
       `;
     });
+
+    if (advancedFilters.length > 0) {
+      const advancedCounts = advancedFilters.reduce((acc, config) => {
+        const values = filterValues[config.key];
+        if (values) acc[config.key] = values.length;
+        return acc;
+      }, {});
+      const totalOptions = Object.values(advancedCounts).reduce((a, b) => a + b, 0);
+
+      html += `
+        <div class="filter-section advanced-filters-section">
+          <details class="advanced-filters-dropdown">
+            <summary class="advanced-filters-header">
+              <h3 class="filters-title">Filtros Avanzados</h3>
+              <span class="advanced-filters-count">${totalOptions} opciones</span>
+              <svg class="advanced-filters-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <div class="advanced-filters-content">
+              ${advancedFilters.map(config => {
+                const values = filterValues[config.key];
+                if (!values || values.length === 0) return '';
+                const sectionCounts = counts[config.key] || {};
+                return `
+                  <div class="filter-section">
+                    <h4 class="filters-subtitle">${config.label}</h4>
+                    <div class="filter-options" data-filter="${config.key}">
+                      ${values.map(value => `
+                        <div class="filter-item ${activeFilters[config.key]?.has(value) ? 'active' : ''}" data-value="${escapeHtml(value)}">
+                          <div class="category-checkbox">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                              <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                          </div>
+                          <span class="filter-label">${escapeHtml(value)}</span>
+                          <span class="filter-count">${sectionCounts[value] || 0}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </details>
+        </div>
+      `;
+    }
+
     return html;
   }
 
@@ -520,6 +572,9 @@
         if (filterDrawer.classList.contains('active')) {
           closeFilterDrawer();
         }
+        document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+          dropdown.removeAttribute('open');
+        });
       }
     });
   }
