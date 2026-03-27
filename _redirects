@@ -1,4 +1,3 @@
-/catalog/* /catalog.html 200
-/index /index.html 200
-/about /about.html 200
-/404 /404.html 404
+/catalog/* /catalog.html 302
+/index /index.html 302
+/about /about.html 302
