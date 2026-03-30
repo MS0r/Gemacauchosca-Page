@@ -1,18 +1,18 @@
-(function() {
+(function () {
   const urlParams = new URLSearchParams(window.location.search);
   const brandId = urlParams.get('brand');
-  
+
   if (!brandId) {
     window.location.href = 'index.html';
     return;
   }
-  
+
   const brand = getBrand(brandId);
   if (!brand) {
     window.location.href = 'index.html';
     return;
   }
-  
+
   const catalog = getCatalog(brandId);
   if (!catalog) {
     window.location.href = 'index.html';
@@ -22,20 +22,13 @@
   const FILTER_CONFIG = {
     oil: [
       { key: 'category', label: 'Categoría', type: 'single' },
-      { key: 'presentations', label: 'Presentaciones', type: 'multi', path: 'presentations' },
       { key: 'line', label: 'Línea', type: 'single', path: 'line' },
-      { key: 'viscosity', label: 'Viscosidad SAE', type: 'multi', path: 'specifications.viscosity', advanced: true },
-      { key: 'api', label: 'API', type: 'multi', path: 'specifications.api', advanced: true },
-      { key: 'acea', label: 'ACEA', type: 'multi', path: 'specifications.acea', advanced: true },
-      { key: 'ilsac', label: 'ILSAC', type: 'multi', path: 'specifications.ilsac', advanced: true },
-      { key: 'jaso', label: 'JASO', type: 'multi', path: 'specifications.jaso', advanced: true }
+      { key: 'presentations', label: 'Presentaciones', type: 'multi', path: 'presentations' },
+      { key: 'viscosity', label: 'Viscosidad SAE', type: 'single', path: 'specifications.viscosity' },
     ],
     tires: [
-      { key: 'category', label: 'Categoría', type: 'single' },
+      { key: 'car', label: 'Carro', type: 'single', path: 'specifications.car' },
       { key: 'size', label: 'Medida', type: 'single', path: 'specifications.size' },
-      { key: 'season', label: 'Temporada', type: 'single', path: 'specifications.season' },
-      { key: 'speedRating', label: 'Índice de Velocidad', type: 'single', path: 'specifications.speedRating', advanced: true },
-      { key: 'loadIndex', label: 'Índice de Carga', type: 'single', path: 'specifications.loadIndex', advanced: true }
     ]
   };
 
@@ -60,6 +53,61 @@
   const filterDrawerBackdrop = document.getElementById('filterDrawerBackdrop');
   const filterApplyBtn = document.getElementById('filterApplyBtn');
 
+  function loadFiltersFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterConfig = FILTER_CONFIG[brand.type] || [];
+
+    activeFilters = {};
+
+    filterConfig.forEach(config => {
+      const values = urlParams.getAll(config.key);
+      if (values.length > 0) {
+        activeFilters[config.key] = new Set(values);
+      }
+    });
+
+    return activeFilters;
+  }
+
+  function syncFiltersToUrl() {
+    const urlParams = new URLSearchParams();
+
+    urlParams.set('brand', brandId);
+
+    Object.keys(activeFilters).forEach(key => {
+      const values = activeFilters[key];
+      if (values && values.size > 0) {
+        values.forEach(value => {
+          urlParams.append(key, value);
+        });
+      }
+    });
+
+    const newUrl = window.location.pathname + '?' + urlParams.toString();
+    window.history.pushState({ filters: activeFilters }, '', newUrl);
+  }
+
+  function applyFiltersFromUrl() {
+    loadFiltersFromUrl();
+    updateFilterBadge();
+    applyFilters();
+    renderProducts();
+    updateFilterUI();
+  }
+
+  function updateFilterUI() {
+    document.querySelectorAll('.filter-item').forEach(item => {
+      const filterKey = item.parentElement.dataset.filter;
+      const value = item.dataset.value;
+
+      if (activeFilters[filterKey] && activeFilters[filterKey].has(value)) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
   function init() {
     if (catalog.brand.logoImage) {
       let logo = catalog.brand.logoImageWhite || catalog.brand.logoImageBlack || catalog.brand.logoImage;
@@ -67,7 +115,10 @@
     } else {
       brandTitleEl.textContent = catalog.brand.name;
     }
+    loadFiltersFromUrl();
     renderFilters();
+    updateFilterUI();
+    applyFilters();
     renderProducts();
     bindEvents();
   }
@@ -99,6 +150,8 @@
           });
         } else if (value && typeof value === 'string' && value.trim()) {
           values.add(value.trim());
+        } else if (typeof value === 'boolean') {
+          values.add(value ? 'Sí' : 'No');
         }
       });
 
@@ -112,6 +165,7 @@
       filterValues[config.key] = sortedValues;
     });
 
+    console.log('Extracted Filter Values:', filterValues);
     return filterValues;
   }
 
@@ -136,6 +190,9 @@
         });
       } else if (value && typeof value === 'string' && value.trim()) {
         const val = value.trim();
+        counts[val] = (counts[val] || 0) + 1;
+      } else if (typeof value === 'boolean') {
+        const val = value ? 'Sí' : 'No';
         counts[val] = (counts[val] || 0) + 1;
       }
     });
@@ -194,10 +251,10 @@
             </summary>
             <div class="advanced-filters-content">
               ${advancedFilters.map(config => {
-                const values = filterValues[config.key];
-                if (!values || values.length === 0) return '';
-                const sectionCounts = counts[config.key] || {};
-                return `
+        const values = filterValues[config.key];
+        if (!values || values.length === 0) return '';
+        const sectionCounts = counts[config.key] || {};
+        return `
                   <div class="filter-section">
                     <h4 class="filters-subtitle">${config.label}</h4>
                     <div class="filter-options" data-filter="${config.key}">
@@ -215,7 +272,7 @@
                     </div>
                   </div>
                 `;
-              }).join('')}
+      }).join('')}
             </div>
           </details>
         </div>
@@ -226,7 +283,7 @@
   }
 
   function renderFilters() {
-    const filterConfig = FILTER_CONFIG[brand.type] || FILTER_CONFIG.oil;
+    const filterConfig = FILTER_CONFIG[brand.type] || [];
     const filterValues = extractFilterValues(catalog.products, filterConfig);
 
     const allCounts = {};
@@ -235,7 +292,7 @@
     });
 
     const filtersHtml = buildFilterHtml(filterConfig, filterValues, allCounts);
-    
+
     filtersContainerEl.innerHTML = filtersHtml;
 
     filterDrawerContent.innerHTML = filtersHtml;
@@ -276,8 +333,8 @@
 
     productsGridEl.innerHTML = filteredProducts.map((product, index) => {
       const specsList = getProductSpecsList(product, brand.type);
-      const productImage = product.mobilImage ? `<img src="${product.mobilImage}" alt="${escapeHtml(product.name)}" class="product-card-image" onerror="this.style.display='none'">` : '';
-      
+      const productImage = product.image ? `<img src="${product.image}" alt="${escapeHtml(product.name)}" class="product-card-image" onerror="this.style.display='none'">` : '';
+
       return `
         <article class="product-card" data-id="${product.id}" style="animation-delay: ${Math.min(index * 0.05, 0.4)}s">
           ${productImage}
@@ -313,17 +370,17 @@
   }
 
   function applyFilters() {
-    const filterConfig = FILTER_CONFIG[brand.type] || FILTER_CONFIG.oil;
+    const filterConfig = FILTER_CONFIG[brand.type] || [];
 
     filteredProducts = catalog.products.filter(product => {
       if (searchQuery) {
         const searchLower = searchQuery.toLowerCase();
-        const matchesSearch = 
+        const matchesSearch =
           product.name.toLowerCase().includes(searchLower) ||
           (product.description && product.description.toLowerCase().includes(searchLower)) ||
           (product.type && product.type.toLowerCase().includes(searchLower)) ||
           (product.line && product.line.toLowerCase().includes(searchLower));
-        
+
         if (!matchesSearch) return false;
       }
 
@@ -370,7 +427,7 @@
     if (!product) return;
 
     const specsHtml = renderModalSpecs(product, brand.type);
-    const productImage = product.mobilImage ? `<img src="${product.mobilImage}" alt="${escapeHtml(product.name)}" class="modal-product-image" onerror="this.style.display='none'">` : '';
+    const productImage = product.image ? `<img src="${product.image}" alt="${escapeHtml(product.name)}" class="modal-product-image" onerror="this.style.display='none'">` : '';
 
     modalBodyEl.innerHTML = `
       ${productImage}
@@ -528,6 +585,7 @@
       item.classList.add('active');
     }
 
+    syncFiltersToUrl();
     updateFilterBadge();
     renderProducts();
   }
@@ -576,6 +634,10 @@
           dropdown.removeAttribute('open');
         });
       }
+    });
+
+    window.addEventListener('popstate', (e) => {
+      applyFiltersFromUrl();
     });
   }
 
