@@ -1727,6 +1727,96 @@ button {
   background: var(--color-primary-light);
 }
 
+/* Tire Search Tabs */
+.search-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.search-tab svg {
+  flex-shrink: 0;
+}
+
+.search-tab:hover {
+  border-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+.search-tab.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.search-tab.active svg {
+  stroke: var(--color-white);
+}
+
+/* Size Suggestions Dropdown */
+.search-filters {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.size-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+
+.size-suggestions.active {
+  display: block;
+}
+
+.size-suggestion-item {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.size-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.size-suggestion-item:hover {
+  background: var(--color-bg-alt);
+}
+
+.size-suggestion-item strong {
+  color: var(--color-primary);
+}
+
 @media (max-width: 1100px) {
   .mobile-filter-btn {
     display: flex;

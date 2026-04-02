@@ -6,7 +6,6 @@
     window.location.href = 'index.html';
     return;
   }
-
   const brand = getBrand(brandId);
   if (!brand) {
     window.location.href = 'index.html';
@@ -27,34 +26,35 @@
       { key: 'viscosity', label: 'Viscosidad SAE', type: 'single', path: 'specifications.viscosity' },
     ],
     tires: [
-      { key: 'car', label: 'Carro', type: 'single', path: 'specifications.car' },
-      { key: 'size', label: 'Medida', type: 'single', path: 'specifications.size' },
+      { key: 'car', label: 'Carro', type: 'multi', path: 'specifications.cars' },
+      { key: 'size', label: 'Medida', type: 'multi', path: 'specifications.sizes' },
     ]
   };
 
   let activeFilters = {};
   let searchQuery = '';
   let filteredProducts = [...catalog.products];
+  let searchMode = 'car';
 
   const brandTitleEl = document.getElementById('brandTitle');
   const searchInput = document.getElementById('searchInput');
-  const filtersContainerEl = document.getElementById('categoryFilters');
-  const resultsCountEl = document.getElementById('resultsCount');
+  const filtersContainerEl = document.getElementById('categoryFilters') || null;
   const productsGridEl = document.getElementById('productsGrid');
   const noResultsEl = document.getElementById('noResults');
   const modalEl = document.getElementById('productModal');
   const modalBodyEl = document.getElementById('modalBody');
   const modalCloseEl = document.getElementById('modalClose');
-  const mobileFilterBtn = document.getElementById('mobileFilterBtn');
-  const filterBadge = document.getElementById('filterBadge');
-  const filterDrawer = document.getElementById('filterDrawer');
-  const filterDrawerContent = document.getElementById('filterDrawerContent');
-  const filterDrawerClose = document.getElementById('filterDrawerClose');
-  const filterDrawerBackdrop = document.getElementById('filterDrawerBackdrop');
-  const filterApplyBtn = document.getElementById('filterApplyBtn');
+  const mobileFilterBtn = document.getElementById('mobileFilterBtn') || null;
+  const filterBadge = document.getElementById('filterBadge') || null;
+  const filterDrawer = document.getElementById('filterDrawer') || null;
+  const filterDrawerContent = document.getElementById('filterDrawerContent') || null;
+  const filterDrawerClose = document.getElementById('filterDrawerClose') || null;
+  const filterDrawerBackdrop = document.getElementById('filterDrawerBackdrop') || null;
+  const filterApplyBtn = document.getElementById('filterApplyBtn') || null;
+  const tireFiltersEl = document.getElementById('tireFilters') || null;
+  const sizeSuggestionsEl = document.getElementById('sizeSuggestions') || null;
 
   function loadFiltersFromUrl() {
-    const urlParams = new URLSearchParams(window.location.search);
     const filterConfig = FILTER_CONFIG[brand.type] || [];
 
     activeFilters = {};
@@ -66,30 +66,53 @@
       }
     });
 
+    if (brand.type === 'tires') {
+      const mode = urlParams.get('mode');
+      if (mode === 'car' || mode === 'tire') {
+        searchMode = mode;
+      }
+      const q = urlParams.get('q');
+      if (q) {
+        searchQuery = q;
+        searchInput.value = q;
+      }
+    }
+
     return activeFilters;
   }
 
   function syncFiltersToUrl() {
-    const urlParams = new URLSearchParams();
+    const urlParamsAux = new URLSearchParams();
 
-    urlParams.set('brand', brandId);
+    urlParamsAux.set('brand', brandId);
 
     Object.keys(activeFilters).forEach(key => {
       const values = activeFilters[key];
       if (values && values.size > 0) {
         values.forEach(value => {
-          urlParams.append(key, value);
+          urlParamsAux.append(key, value);
         });
       }
     });
 
-    const newUrl = window.location.pathname + '?' + urlParams.toString();
-    window.history.pushState({ filters: activeFilters }, '', newUrl);
+    if (brand.type === 'tires') {
+      urlParamsAux.set('mode', searchMode);
+      if (searchQuery) {
+        urlParamsAux.set('q', searchQuery);
+      }
+    }
+
+    const newUrl = window.location.pathname + '?' + urlParamsAux.toString();
+    window.history.pushState({ filters: activeFilters, mode: searchMode, q: searchQuery }, '', newUrl);
   }
 
   function applyFiltersFromUrl() {
     loadFiltersFromUrl();
     updateFilterBadge();
+    if (brand.type === 'tires') {
+      updateTabsUI();
+      updateSearchPlaceholder();
+    }
     applyFilters();
     renderProducts();
     updateFilterUI();
@@ -118,6 +141,9 @@
     loadFiltersFromUrl();
     renderFilters();
     updateFilterUI();
+    if (brand.type === 'tires') {
+      initTireSearch();
+    }
     applyFilters();
     renderProducts();
     bindEvents();
@@ -231,58 +257,60 @@
       `;
     });
 
-    if (advancedFilters.length > 0) {
-      const advancedCounts = advancedFilters.reduce((acc, config) => {
-        const values = filterValues[config.key];
-        if (values) acc[config.key] = values.length;
-        return acc;
-      }, {});
-      const totalOptions = Object.values(advancedCounts).reduce((a, b) => a + b, 0);
+    // if (advancedFilters.length > 0) {
+    //   const advancedCounts = advancedFilters.reduce((acc, config) => {
+    //     const values = filterValues[config.key];
+    //     if (values) acc[config.key] = values.length;
+    //     return acc;
+    //   }, {});
+    //   const totalOptions = Object.values(advancedCounts).reduce((a, b) => a + b, 0);
 
-      html += `
-        <div class="filter-section advanced-filters-section">
-          <details class="advanced-filters-dropdown">
-            <summary class="advanced-filters-header">
-              <h3 class="filters-title">Filtros Avanzados</h3>
-              <span class="advanced-filters-count">${totalOptions} opciones</span>
-              <svg class="advanced-filters-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"/>
-              </svg>
-            </summary>
-            <div class="advanced-filters-content">
-              ${advancedFilters.map(config => {
-        const values = filterValues[config.key];
-        if (!values || values.length === 0) return '';
-        const sectionCounts = counts[config.key] || {};
-        return `
-                  <div class="filter-section">
-                    <h4 class="filters-subtitle">${config.label}</h4>
-                    <div class="filter-options" data-filter="${config.key}">
-                      ${values.map(value => `
-                        <div class="filter-item ${activeFilters[config.key]?.has(value) ? 'active' : ''}" data-value="${escapeHtml(value)}">
-                          <div class="category-checkbox">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
-                              <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                          </div>
-                          <span class="filter-label">${escapeHtml(value)}</span>
-                          <span class="filter-count">${sectionCounts[value] || 0}</span>
-                        </div>
-                      `).join('')}
-                    </div>
-                  </div>
-                `;
-      }).join('')}
-            </div>
-          </details>
-        </div>
-      `;
-    }
+    //   html += `
+    //     <div class="filter-section advanced-filters-section">
+    //       <details class="advanced-filters-dropdown">
+    //         <summary class="advanced-filters-header">
+    //           <h3 class="filters-title">Filtros Avanzados</h3>
+    //           <span class="advanced-filters-count">${totalOptions} opciones</span>
+    //           <svg class="advanced-filters-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    //             <polyline points="6 9 12 15 18 9"/>
+    //           </svg>
+    //         </summary>
+    //         <div class="advanced-filters-content">
+    //           ${advancedFilters.map(config => {
+    //     const values = filterValues[config.key];
+    //     if (!values || values.length === 0) return '';
+    //     const sectionCounts = counts[config.key] || {};
+    //     return `
+    //               <div class="filter-section">
+    //                 <h4 class="filters-subtitle">${config.label}</h4>
+    //                 <div class="filter-options" data-filter="${config.key}">
+    //                   ${values.map(value => `
+    //                     <div class="filter-item ${activeFilters[config.key]?.has(value) ? 'active' : ''}" data-value="${escapeHtml(value)}">
+    //                       <div class="category-checkbox">
+    //                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+    //                           <polyline points="20 6 9 17 4 12"/>
+    //                         </svg>
+    //                       </div>
+    //                       <span class="filter-label">${escapeHtml(value)}</span>
+    //                       <span class="filter-count">${sectionCounts[value] || 0}</span>
+    //                     </div>
+    //                   `).join('')}
+    //                 </div>
+    //               </div>
+    //             `;
+    //   }).join('')}
+    //         </div>
+    //       </details>
+    //     </div>
+    //   `;
+    // }
 
     return html;
   }
 
   function renderFilters() {
+    if (!filtersContainerEl) return;
+
     const filterConfig = FILTER_CONFIG[brand.type] || [];
     const filterValues = extractFilterValues(catalog.products, filterConfig);
 
@@ -291,11 +319,14 @@
       allCounts[config.key] = countFilterValues(catalog.products, filterConfig, config.key);
     });
 
+
     const filtersHtml = buildFilterHtml(filterConfig, filterValues, allCounts);
 
     filtersContainerEl.innerHTML = filtersHtml;
 
-    filterDrawerContent.innerHTML = filtersHtml;
+    if (filterDrawerContent) {
+      filterDrawerContent.innerHTML = filtersHtml;
+    }
   }
 
   function updateFilterBadge() {
@@ -315,10 +346,10 @@
     applyFilters();
 
     const resultsCountEl = document.getElementById('resultsCount');
-    if (!resultsCountEl) {
+    if (!resultsCountEl && filtersContainerEl) {
       const countEl = filtersContainerEl.querySelector('.results-count span');
       if (countEl) countEl.textContent = filteredProducts.length;
-    } else {
+    } else if (resultsCountEl) {
       resultsCountEl.textContent = filteredProducts.length;
     }
 
@@ -354,26 +385,29 @@
   }
 
   function getProductSpecsList(product, type) {
-    if (type === 'oil') {
-      const specs = [];
-      if (product.specifications?.viscosity) specs.push(product.specifications.viscosity);
-      if (product.specifications?.api?.length) specs.push(...product.specifications.api.slice(0, 2));
-      if (product.specifications?.acea?.length) specs.push(...product.specifications.acea.slice(0, 1));
-      return specs;
-    } else {
-      const specs = [];
-      if (product.specifications?.size) specs.push(product.specifications.size);
-      if (product.specifications?.season) specs.push(product.specifications.season);
-      if (product.specifications?.speedRating) specs.push(product.specifications.speedRating);
-      return specs;
+    if (!product.specifications) return [];
+    const specs = [];
+    const specKeys = type === 'oil' ? ['viscosity', 'api', 'acea'] : ['sizes', 'season', 'speedRating'];
+    for (const key of specKeys) {
+      const value = product.specifications[key];
+      if (value) {
+        if (Array.isArray(value)) {
+          specs.push(value.splice(0, 2).join(', '));
+        } else {
+          specs.push(value);
+        }
+      }
     }
+    return specs
   }
 
   function applyFilters() {
     const filterConfig = FILTER_CONFIG[brand.type] || [];
 
     filteredProducts = catalog.products.filter(product => {
-      if (searchQuery) {
+      if (brand.type === 'tires') {
+        if (!tireSearchFilter(product, searchQuery)) return false;
+      } else if (searchQuery) {
         const searchLower = searchQuery.toLowerCase();
         const matchesSearch =
           product.name.toLowerCase().includes(searchLower) ||
@@ -483,30 +517,14 @@
   function renderModalSpecs(product, type) {
     if (type === 'oil') {
       const specsData = [];
-
-      if (product.specifications?.viscosity) {
-        specsData.push({ label: 'Viscosidad SAE', value: product.specifications.viscosity });
-      }
-      if (product.specifications?.api?.length) {
-        specsData.push({ label: 'API', value: product.specifications.api.join(', ') });
-      }
-      if (product.specifications?.acea?.length) {
-        specsData.push({ label: 'ACEA', value: product.specifications.acea.join(', ') });
-      }
-      if (product.specifications?.ilsac?.length) {
-        specsData.push({ label: 'ILSAC', value: product.specifications.ilsac.join(', ') });
-      }
-      if (product.specifications?.jaso?.length) {
-        specsData.push({ label: 'JASO', value: product.specifications.jaso.join(', ') });
-      }
-      if (product.specifications?.nmma?.length) {
-        specsData.push({ label: 'NMMA', value: product.specifications.nmma.join(', ') });
-      }
-      if (product.specifications?.oem?.length) {
-        specsData.push({ label: 'OEM', value: product.specifications.oem.join(', ') });
-      }
-      if (product.specifications?.compatibility?.length) {
-        specsData.push({ label: 'Compatibilidad', value: product.specifications.compatibility.join(', ') });
+      if (product.specifications) {
+        for (const [key, value] of Object.entries(product.specifications)) {
+          if (value && typeof value === 'string') {
+            specsData.push({ label: ESP_ATTRIBUTES_OIL[key], value });
+          } else if (Array.isArray(value) && value.length > 0) {
+            specsData.push({ label: ESP_ATTRIBUTES_OIL[key], value: value.join(', ') });
+          }
+        }
       }
 
       if (!specsData.length) return '';
@@ -526,18 +544,14 @@
       `;
     } else {
       const specsData = [];
-
-      if (product.specifications?.size) {
-        specsData.push({ label: 'Medida', value: product.specifications.size });
-      }
-      if (product.specifications?.season) {
-        specsData.push({ label: 'Temporada', value: product.specifications.season });
-      }
-      if (product.specifications?.speedRating) {
-        specsData.push({ label: 'Índice de Velocidad', value: product.specifications.speedRating });
-      }
-      if (product.specifications?.loadIndex) {
-        specsData.push({ label: 'Índice de Carga', value: product.specifications.loadIndex });
+      if (product.specifications) {
+        for (const [key, value] of Object.entries(product.specifications)) {
+          if (value && typeof value === 'string') {
+            specsData.push({ label: ESP_ATTRIBUTES_TIRE[key], value });
+          } else if (Array.isArray(value) && value.length > 0) {
+            specsData.push({ label: ESP_ATTRIBUTES_TIRE[key], value: value.join(', ') });
+          }
+        }
       }
 
       if (!specsData.length) return '';
@@ -603,21 +617,48 @@
   function bindEvents() {
     searchInput.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim();
+      if (brand.type === 'tires' && searchMode === 'tire') {
+        renderSizeSuggestions(searchQuery);
+      }
+      applyFilters();
       renderProducts();
+      syncFiltersToUrl();
     });
 
-    filtersContainerEl.addEventListener('click', (e) => {
-      handleFilterClick(e, filtersContainerEl);
-    });
+    if (brand.type === 'tires') {
+      searchInput.addEventListener('focus', () => {
+        if (searchMode === 'tire' && searchQuery) {
+          renderSizeSuggestions(searchQuery);
+        }
+      });
 
-    filterDrawerContent.addEventListener('click', (e) => {
-      handleFilterClick(e, filterDrawerContent);
-    });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.search-filters')) {
+          closeSizeSuggestions();
+        }
+      });
 
-    mobileFilterBtn.addEventListener('click', openFilterDrawer);
-    filterDrawerClose.addEventListener('click', closeFilterDrawer);
-    filterDrawerBackdrop.addEventListener('click', closeFilterDrawer);
-    filterApplyBtn.addEventListener('click', closeFilterDrawer);
+      if (sizeSuggestionsEl) {
+        sizeSuggestionsEl.addEventListener('click', handleSuggestionClick);
+      }
+    }
+
+    if (filtersContainerEl) {
+      filtersContainerEl.addEventListener('click', (e) => {
+        handleFilterClick(e, filtersContainerEl);
+      });
+    }
+
+    if (filterDrawerContent) {
+      filterDrawerContent.addEventListener('click', (e) => {
+        handleFilterClick(e, filterDrawerContent);
+      });
+    }
+
+    if (mobileFilterBtn) mobileFilterBtn.addEventListener('click', openFilterDrawer);
+    if (filterDrawerClose) filterDrawerClose.addEventListener('click', closeFilterDrawer);
+    if (filterDrawerBackdrop) filterDrawerBackdrop.addEventListener('click', closeFilterDrawer);
+    if (filterApplyBtn) filterApplyBtn.addEventListener('click', closeFilterDrawer);
 
     modalCloseEl.addEventListener('click', closeModal);
     modalEl.querySelector('.modal-backdrop').addEventListener('click', closeModal);
@@ -646,6 +687,121 @@
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  }
+
+  // Tire Search Functions
+  function initTireSearch() {
+    const searchTabs = document.querySelectorAll('.search-tab');
+    if (tireFiltersEl) {
+      tireFiltersEl.style.display = 'block';
+    }
+    updateSearchPlaceholder();
+    updateTabsUI();
+
+    searchTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const mode = tab.dataset.tab;
+        switchSearchMode(mode);
+      });
+    });
+  }
+
+  function switchSearchMode(mode) {
+    searchMode = mode;
+    updateTabsUI();
+    updateSearchPlaceholder();
+    syncFiltersToUrl();
+  }
+
+  function updateTabsUI() {
+    document.querySelectorAll('.search-tab').forEach(tab => {
+      if (tab.dataset.tab === searchMode) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  }
+
+  function updateSearchPlaceholder() {
+    if (searchMode === 'car') {
+      searchInput.placeholder = 'Buscar por auto (ej. Toyota Corolla)...';
+    } else {
+      searchInput.placeholder = 'Buscar por medida (ej. 205/55 R17)...';
+    }
+  }
+
+  function tireSearchFilter(product, query) {
+    if (!query) return true;
+
+    const searchLower = query.toLowerCase();
+
+    if (searchMode === 'car') {
+      const cars = product.specifications?.cars || [];
+      return cars.some(car => car.toLowerCase().includes(searchLower));
+    } else {
+      const sizes = product.specifications?.sizes;
+      if (!sizes) return false;
+      const sizeArray = Array.isArray(sizes) ? sizes : [sizes];
+      return sizeArray.some(size => size.toLowerCase().includes(searchLower));
+    }
+  }
+
+  function renderSizeSuggestions(query) {
+    if (!query || searchMode !== 'tire') {
+      if (sizeSuggestionsEl) {
+        sizeSuggestionsEl.classList.remove('active');
+        sizeSuggestionsEl.innerHTML = '';
+      }
+      return;
+    }
+
+    const sizesSet = new Set();
+    catalog.products.forEach(product => {
+      const sizes = product.specifications?.sizes;
+      if (!sizes) return;
+      const sizeArray = Array.isArray(sizes) ? sizes : [sizes];
+      sizeArray.forEach(size => sizesSet.add(size));
+    });
+
+    const matchingSizes = [...sizesSet].filter(size =>
+      size.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 8);
+
+    if (matchingSizes.length === 0) {
+      if (sizeSuggestionsEl) {
+        sizeSuggestionsEl.classList.remove('active');
+        sizeSuggestionsEl.innerHTML = '';
+      }
+      return;
+    }
+
+    if (sizeSuggestionsEl) {
+      sizeSuggestionsEl.innerHTML = matchingSizes.map(size => {
+        const highlighted = size.replace(new RegExp(`(${query})`, 'gi'), '<strong>$1</strong>');
+        return `<div class="size-suggestion-item" data-size="${escapeHtml(size)}">${highlighted}</div>`;
+      }).join('');
+      sizeSuggestionsEl.classList.add('active');
+    }
+  }
+
+  function handleSuggestionClick(e) {
+    const item = e.target.closest('.size-suggestion-item');
+    if (!item) return;
+
+    const size = item.dataset.size;
+    searchInput.value = size;
+    searchQuery = size;
+    renderSizeSuggestions('');
+    applyFilters();
+    renderProducts();
+    syncFiltersToUrl();
+  }
+
+  function closeSizeSuggestions() {
+    if (sizeSuggestionsEl) {
+      sizeSuggestionsEl.classList.remove('active');
+    }
   }
 
   if (document.readyState === 'loading') {

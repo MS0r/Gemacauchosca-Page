@@ -34,6 +34,13 @@ const BRANDS = {
     logoImage: 'images/vp_racing_logo.png',
     logoImageBlack: 'images/vp_racing_logo.png',
     logoImageWhite: 'images/vp_racing_logo.png'
+  },
+  alix: {
+    id: 'alix',
+    name: 'Alix',
+    type: 'tires',
+    logo: 'A',
+    logoImage: 'images/alix_red_logo.png',
   }
 };
 
@@ -47,7 +54,7 @@ const PRESEN = {
   LITRO: 'Litro'
 }
 
-const LINES = {
+const OIL_LINES = {
   GAS: 'Gasolina',
   MOTO: 'Moto 2T/4T/2T Fuera de borda',
   DIE: 'Diésel',
@@ -57,12 +64,62 @@ const LINES = {
   ESP: 'Especiales',
 }
 
-const CAT = {
+const OIL_CAT = {
   SINT: 'Sintéticos',
   SEMI: 'Semi Sintéticos',
   MIN: 'Mineral',
   GRA: 'Grasa Complejo de Litio',
   ETI: 'Etilenglicol'
+}
+
+const TIRE_LINES = {
+  PAS_RADIAL: 'Pasajero Radial',
+  CAM_RADIAL: 'Camioneta Radial',
+  CAM_CONV: 'Camioneta Convencional',
+  AGRI: 'Agrícolas',
+  MOTO: 'Motocicleta',
+}
+
+const FIRE_TIRE_CAT = {
+  FIRE: "Firehawk",
+  AFF: "Affinity",
+  SEI: "Seiberling",
+  MUL: "Multihawk",
+  DES: "Destination",
+  ATX: "ATX",
+  SAT: "Super All Traction",
+  SHO: "Shogun",
+  CHA: "Champion",
+}
+
+const ALIX_TIRE_CAT = {
+  VEZ: "Vezetta",
+  VEZ_PLUS: "Vezetta Plus",
+  VEL: "Veloce",
+  IMP: "Impact",
+  ST: "ST",
+  CT: "CT",
+}
+
+const ESP_ATTRIBUTES_OIL = {
+  viscosity: 'Viscosidad SAE',
+  api: 'API',
+  acea: 'ACEA',
+  ilsac: 'ILSAC',
+  jaso: 'JASO',
+  iso: 'ISO',
+  nmma: 'NMMA',
+  oem: 'Aprobaciones OEM',
+  compatibility: 'Compatibilidad',
+  other: 'Otras especificaciones'
+}
+
+const ESP_ATTRIBUTES_TIRE = {
+  size: 'Medida',
+  car: 'Modelos de auto compatibles',
+  season: 'Temporada',
+  speedRating: 'Índice de velocidad',
+  loadIndex: 'Índice de carga'
 }
 
 const rawProducts = [
@@ -72,8 +129,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_3000_xe_5w_30.png",
     type: "Lubricante sintético para vehículos a gasolina y diésel con filtro de partículas diésel (DPF)",
     description: "Aceite de motor sintético de alto desempeño con bajo contenido de cenizas para motores de vehículos gasolina o diesel prolongando la vida útil del motor y protegiendo los sistemas de reducción de emisiones.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Motores a gasolina y diésel livianos de últimas tecnologías",
       "Vehículos livianos y SUV",
@@ -115,8 +172,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_3000_x4_5w_40.webp",
     type: "Lubricante sintético para vehículos gasolina y diésel sin trampa de partículas (DPF)",
     description: "Aceite de motor totalmente sintético que ayuda a prolongar la vida útil del motor de vehículos de cualquier tipo y edad, mediante una mayor protección en un amplio rango de temperaturas.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: ["Casi todas las tecnologías de motores.", "Gasolina y diésel.", "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas.", "Manejo en carretera a velocidad de crucero y conducción en ciudad con arranques y paros continuos.", "Condiciones de operación normales a frecuentemente severas.", "Motores de alto desempeño."
     ],
     benefits: [
@@ -155,8 +212,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_2000_5w_20.png",
     type: "Lubricante semisintético para vehículos a gasolina y gas",
     description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-    category: CAT.SEMI,
-    line: LINES.GAS,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.GAS,
     applications: [
       "Motores a gasolina y gas",
       "Vehículos livianos y SUV",
@@ -189,8 +246,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_2000_10w_30.webp",
     type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
     description: "Aceite semi-sintético mejorado de alta calidad para motores que cumplen con las más recientes especificaciones de la industria para los aceites de motores.",
-    category: CAT.SEMI,
-    line: LINES.GAS,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.GAS,
     applications: [
       "Las más recientes tecnologías de motores de gasolina",
       "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
@@ -226,8 +283,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_1000_20w_50.webp",
     type: "Lubricante multigrado para motores a gasolina",
     description: "Aceites minerales de primera calidad que cumple con exigentes requerimientos de la industria para lubricantes de motores. Diseñados para proporcionar un alto nivel de desempeño y protección en variadas condiciones de funcionamiento.",
-    category: CAT.MIN,
-    line: LINES.GAS,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.GAS,
     applications: [
       "Casi todas las tecnologías de motores de gasolina",
       "Vehículos de pasajeros y SUV",
@@ -259,8 +316,8 @@ const rawProducts = [
     image: "images/mobil/mobil_special_alto_kilometraje_25w_50.webp",
     type: "Lubricante para motores con alto kilometraje",
     description: "Brinda una gruesa película de aceite que ayuda a proteger los motores a gasolina que operan bajo condiciones severas, como altas temperaturas y en tráfico de ciudad donde el parar y arrancar es frecuente.",
-    category: CAT.MIN,
-    line: LINES.GAS,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.GAS,
     applications: ["Motores con más de 150.000 kilómetros"],
     benefits: [
       "Reduce el consumo de aceite",
@@ -319,8 +376,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_4t_20w_50.webp",
     type: "Lubricante semisintético para motocicletas de 4 Tiempos",
     description: "Combina aceites minerales de calidad altamente refinados y un avanzado sistema de aditivos para proporcionar una buena limpieza del motor, buena protección contra el desgaste y protección contra la corrosión.",
-    category: CAT.MIN,
-    line: LINES.MOTO,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.MOTO,
     applications: ["Uso general en muchos tipos de motocicletas y motores de cuatro tiempos"],
     benefits: [
       "Ayuda a prolongar la vida útil del motor",
@@ -348,8 +405,8 @@ const rawProducts = [
   //   image: "images/mobil/mobil_delvac_legend_1640.jpg",
   //   type: "Aceites de alto rendimiento para motores diésel",
   //   description: "Aceite monogrado de alto rendimiento para motores diésel formulados a partir de aceites base de avanzada tecnología y un equilibrado sistema de aditivos. Están recomendados por ExxonMobil para ser utilizados en motores interenfriados y turboalimentados que funcionan en condiciones severas tanto en carretera como fuera de ella, así como en una amplia gama de aplicaciones en las que se recomienda un lubricante monogrado.",
-  //   category: CAT.SEMI,
-  //   line: LINES.DIE,
+  //   category: OIL_CAT.SEMI,
+  //   line: OIL_LINES.DIE,
   //   applications: [
   //     "Equipos accionados por motores diésel aspirados naturalmente y turbocargados",
   //     "Transporte de servicio ligero y pesado por carretera",
@@ -381,8 +438,8 @@ const rawProducts = [
     image: "images/mobil/mobil_delvac_modern_15w_40.webp",
     type: "Aceite de alto desempeño para motores diésel de servicio pesado",
     description: "aceite de tecnología sintética para motores diésel que ayuda a prolongar la vida útil del motor, lo cual le permite operar su negocio con confianza. Este producto cumple o excede los requisitos de los fabricantes de equipos originales (OEM) y ofrece un alto desempeño en aplicaciones tanto dentro como fuera de la carretera.",
-    category: CAT.MIN,
-    line: LINES.DIE,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.DIE,
     applications: [
       "Motores diésel de servicio pesado modernos Euro V/VI (DPF, SCR, CRT, DOC, EGR)",
       "Motores diésel con diseños más viejos y convencionales de aspiración natural",
@@ -454,8 +511,8 @@ const rawProducts = [
     image: "images/mobil/mobil_grease_xhp_222.png",
     type: "Grasa de Complejo de Litio",
     description: "Mobilgrease XHP 222 es una grasa de complejo de litio de servicio extendido diseñada para una amplia variedad de aplicaciones y condiciones de operación severas.",
-    category: CAT.GRA,
-    line: LINES.GRA,
+    category: OIL_CAT.GRA,
+    line: OIL_LINES.GRA,
     applications: [
       "Sector industrial, automotriz, de construcción y marino",
       "Alta temperatura, contaminación por agua, carga de choque",
@@ -487,8 +544,8 @@ const rawProducts = [
     image: "images/mobil/mobilube_hd_plus_80w_90.webp",
     type: "Lubricante para engranajes automotrices",
     description: "Está diseñado para transmisiones, ejes y mandos finales comerciales donde se esperan presiones extremas y cargas de impacto, y está recomendado por ExxonMobil para aplicaciones que requieren un servicio API GL-5. Está formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos. Este lubricante es un lubricante de servicio pesado para engranajes que permite prolongar los intervalos entre cambios de aceite, predominantemente en ejes Mercedes Benz.",
-    category: CAT.MIN,
-    line: LINES.TRAN,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.TRAN,
     applications: [
       "Transmisiones manuales, ejes y mandos finales automotrices de servicio pesado que requieren un desempeño de nivel API GL-5",
       "Autos y camiones ligeros de carretera; vehículos comerciales de servicio pesado",
@@ -523,8 +580,8 @@ const rawProducts = [
     image: "images/mobil/mobil_hydraulic_aw_68.png",
     type: "Aceite hidráulico antidesgaste",
     description: "Aceite hidráulico antidesgaste de buena calidad destinado a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas.",
-    category: CAT.MIN,
-    line: LINES.IND,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.IND,
     applications: [
       "Sistemas con bombas de engranajes, de paletas, radiales y axiales de pistón",
       "Situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables"
@@ -554,8 +611,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_2000_5w_30.png",
     type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
     description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-    category: CAT.SEMI,
-    line: LINES.GAS,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.GAS,
     applications: [
       "Motores a gasolina y gas",
       "Motores turboalimentados de inyección directa de gasolina",
@@ -591,8 +648,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_moto_scoter_mx_10w_40.webp",
     type: "Lubricante sintético para motos 4T",
     description: "Aceite para motos scooter de 4 tiempos que protege el motor de diversas condiciones de conducción, minimizando las vibraciones y dando protección a las altas temperaturas.",
-    category: CAT.SEMI,
-    line: LINES.MOTO,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.MOTO,
     applications: [
       "Motores scooter de 4 tiempos con transmisión automática",
       "Motores de scooter de alta potencia",
@@ -619,8 +676,8 @@ const rawProducts = [
     image: "images/mobil/mobil_delvac_modern_15w_40_full_protection.png",
     type: "Aceite de alto desempeño para motores diésel de servicio pesado",
     description: "Aceite con tecnología sintética para motores diésel de última generación y de bajas emisiones que cumple o excede los requerimientos de los fabricantes de equipo original.",
-    category: CAT.MIN,
-    line: LINES.DIE,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.DIE,
     applications: [
       "Alto rendimiento dentro y fuera de las carreteras y en aplicaciones marinas",
       "Sistemas de control de emisiones de vehículos Euro V/VI",
@@ -662,8 +719,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_ow_20.webp",
     type: "Lubricante totalmente sintético de avanzada economía de combustible para motores",
     description: "Avanzado aceite totalmente sintético diseñado para brindar una excepcional protección al motor y una mejorada economía de combustible.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Todos los tipos de vehículos de pasajeros, SUV, furgonetas y camiones ligeros con motores a gasolina",
       "Aplicaciones SAE 5W-20 y 0W-20",
@@ -688,8 +745,8 @@ const rawProducts = [
     image: "images/mobil/mobil_sae_85w_140.png",
     type: "Lubricantes de servicio pesado para engranajes automotrices",
     description: "Lubricante de alto rendimiento para servicio pesado en engranajes formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos.",
-    category: CAT.MIN,
-    line: LINES.TRAN,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.TRAN,
     applications: [
       "Ejes y transmisiones finales para servicio pesado",
       "Aplicaciones automotrices que requieren API GL-5",
@@ -716,7 +773,7 @@ const rawProducts = [
   //   image: "images/mobil/mobil_super_2000_x1_10w_40.webp",
   //   type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
   //   description: "Lubricante de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-  //   category: CAT.SEMI,
+  //   category: OIL_CAT.SEMI,
   //   line: "Mobil Super 2000",
   //   applications: [
   //     "Motores a gasolina y gas",
@@ -749,8 +806,8 @@ const rawProducts = [
     image: "images/mobil/mobil_special_hd_50.webp",
     type: "Aceite de motor monogrado de alto rendimiento.",
     description: "Formulados a partir de bases lubricantes minerales de alta calidad y de un sistema de aditivos para brindar el desempeño requerido por los motores de combustión interna en donde es requerido un nivel de calidad API SF o API CC. Contienen un efectivo balance de detergentes y dispersantes para reducir la formación de lodos y depósitos, retener la alcalinidad (TBN) y reducir el desgaste.",
-    category: CAT.MIN,
-    line: LINES.GAS,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.GAS,
     applications: [
       "Motores de gasolina de Vehículos de pasajeros, Vehículos comerciales",
       "Motores de gasolina de maquinaria agrícola",
@@ -773,8 +830,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_4t_mx_10w_40.webp",
     type: "Lubricante semisintético para motos 4T",
     description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
-    category: CAT.SEMI,
-    line: LINES.MOTO,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.MOTO,
     applications: [
       "Motocicletas de 4 tiempos que requieren aceite SAE 10W-40", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
     ],
@@ -797,8 +854,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_4t_mx_15w_50.webp",
     type: "Lubricante semisintético para motos 4T",
     description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
-    category: CAT.SEMI,
-    line: LINES.MOTO,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.MOTO,
     applications: [
       "Motocicletas de 4 tiempos que requieren aceite SAE 10W-50", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
     ],
@@ -821,8 +878,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_moto_2t.webp",
     type: "Lubricante mineral para motos 2T",
     description: "Mobil Super Moto 2T combina aceites minerales de alta calidad con un robusto sistema de aditivos que proporciona una buena limpieza y desempeño superior al motor. Mobil Super Moto 2T está pre-diluido para asegurar una rápida mezcla con el combustible. Utilice la proporción de mezcla recomendada por el fabricante. Atienda siempre las recomendaciones del manual del usuario.",
-    category: CAT.MIN,
-    line: LINES.MOTO,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.MOTO,
     applications: [
       "Adecuado para otros equipos con motores de dos tiempos a gasolina", "Compatible con sistemas de lubricación automática", "Compatible con sistemas de mezcla de aceite con el combustible"
     ],
@@ -845,8 +902,8 @@ const rawProducts = [
     image: "images/mobil/mobil_extra_2t.webp",
     type: "Lubricante sintético para motos 2T",
     description: "Mobil Extra 2T combina una mezcla de aceites básicos minerales y sintetizados de alta calidad con un sistema de aditivos avanzado para proporcionar una excelente limpieza del motor y un escape de gases libre de humo. Viene diluido para facilitar su mezcla al agregarlo al combustible.",
-    category: CAT.SEMI,
-    line: LINES.MOTO,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.MOTO,
     applications: [
 
     ],
@@ -869,8 +926,8 @@ const rawProducts = [
     image: "images/mobil/mobil_outboard_plus_2t.png",
     type: "Lubricante para motores fuera de borda 2 Tiempos",
     description: "Mobil Outboard Plus es un aceite de alto desempeño para motores de dos tiempos que está diseñado para muchos motores de dos tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda. Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente. Mobil Outboard Plus está prediluido para facilitar la mezcla cuando se añade al combustible.",
-    category: CAT.MIN,
-    line: LINES.MOTO,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.MOTO,
     applications: [
       "Recomendado para inyección directa y sistemas premezclados gasolina/lubricante",
       "Adecuado para motores de dos tiempos enfriados por aire de trabajo liviano a moderado",
@@ -963,8 +1020,8 @@ const rawProducts = [
     image: "images/mobil/mobil_delvac_1350.webp",
     type: "Lubricante para motores diésel de servicio pesado turbocargados",
     description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
-    category: CAT.MIN,
-    line: LINES.DIE,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.DIE,
     applications: [
       "Motores diésel que utilizan diseños más viejos y convencionales de aspiración natural",
       "Camiones de servicio pesado en carretera y aplicaciones fuera de carretera, incluyendo transporte, minería, construcción, agrícolas y marinas"
@@ -985,8 +1042,8 @@ const rawProducts = [
     image: "images/mobil/mobil_delvac_extended_life_50_50.png",
     type: "Lubricante para motores diésel de servicio pesado turbocargados",
     description: "El refrigerante/anticongelante de vida prolongada y prediluido Mobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es un refrigerante a base de etilenglicol exento de fosfatos, silicatos, nitritos y boratos, listo para usar, que ha sido diseñado para proporcionar una excepcional protección contra la cavitación y la corrosión de todos los metales del sistema de enfriamiento.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze está formulado con inhibidores orgánicos de la corrosión para proporcionar una protección total del sistema de enfriamiento de hasta 1.600.000 kilómetros de uso en carretera (8 años o 20.000 horas de uso fuera de la carretera). Puesto que los inhibidores de corrosión orgánicos no se agotan con facilidad, Mobil Delvac™ Extended Life 50/50 Prediluted Coolant/Antifreeze elimina la necesidad de utilizar aditivos suplementarios para refrigerantes (SCA) que sí se requieren al usar refrigerantes convencionales.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es una mezcla 50/50 de Mobil Delvac Extended Life Coolant/Antifreeze y agua desionizada.",
-    category: CAT.ETI,
-    line: LINES.ESP,
+    category: OIL_CAT.ETI,
+    line: OIL_LINES.ESP,
     applications: [
       "Todo tipo de motores de servicio pesado diesel, de gasolina y de gas natural.",
       "Aplicaciones de motores estacionarios, independientemente del tipo de combustible utilizado.",
@@ -1016,8 +1073,8 @@ const rawProducts = [
     image: "images/mobil/mobil_atf_d_m.webp",
     type: "Fluido para transmisión automática",
     description: "Proporciona excelente estabilidad contra la oxidación y la fricción, propiedades antidesgaste, y la fluidez a bajas temperaturas deseada para la mayoría de las transmisiones automáticas.",
-    category: CAT.MIN,
-    line: LINES.TRAN,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.TRAN,
     applications: [
       "Recomendado para aplicaciones que requieren: General Motors DEXRON® IIIH Ford MERCON® Allison Transmission C-4",
       "No recomendado para: GM DEXRON® VI, Ford MERCON® V, MERCON LV®, MERCON SP® y Type F ATF",
@@ -1051,8 +1108,8 @@ const rawProducts = [
     image: "images/mobil/mobil_super_2000_10w_40.png",
     type: "Lubricante Mobil para vehículos de pasajeros",
     description: "Aceite mejorado semisintético de calidad premium para motores que cumplen con las más recientes especificaciones de los aceites para motores de la industria. Está diseñado para proporcionar un excelente nivel de protección y desempeño bajo las condiciones más exigentes.",
-    category: CAT.SEMI,
-    line: LINES.GAS,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.GAS,
     applications: [
       "Las más recientes tecnologías de motores de gasolina",
       "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
@@ -1080,8 +1137,8 @@ const rawProducts = [
     image: "images/mobil/mobil_outboard_plus_4t_10w_40.webp",
     type: "Aceite de desempeño superior para motores fuera de borda de cuatro tiempos",
     description: "Aceite de alto desempeño para motores de cuatro tiempos que está diseñado para muchos motores de cuatro tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda.Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente.",
-    category: CAT.MIN,
-    line: LINES.MOTO,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.MOTO,
     applications: [
       "Utilizado en motores modernos de alto rendimiento, refrigerados por agua y de cuatro tiempos.",
       "Uso en motores de cuatro tiempos donde se recomiendan los aceites NMMA FC-W."
@@ -1103,8 +1160,8 @@ const rawProducts = [
     image: "images/mobil/mobil_delvac_legend_25w_50.png",
     type: "Aceite de alto rendimiento para motores diésel",
     description: "Aceite para motores diésel de alto rendimiento y alta viscosidad que proporciona una comprobada protección en motores diésel que operan en aplicaciones de servicio severo. Mobil Delvac 25W-50 High Mileage es recomendado para utilizarse en una amplia gama de aplicaciones de servicio pesado y en los ambientes operativos que se encuentran en las industrias de acarreo en camiones, minera, de la construcción, de explotación de canteras y agrícola.",
-    category: CAT.MIN,
-    line: LINES.DIE,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.DIE,
     applications: [
       "Equipos de fabricantes europeos, japoneses y estadounidenses propulsados por motores diésel de aspiración natural o turboalimentados",
       "Transporte de servicio ligero y pesado por carretera",
@@ -1134,8 +1191,8 @@ const rawProducts = [
     image: "images/mobil/mobil_atf_d_m_dexron_VI.jpg",
     type: "Fluido para transmisión automática",
     description: "Es una formulación de alto desempeño a base de una mezcla de productos sintéticos que cumple con los rigurosos requisitos de la especificación DEXRON-VI de General Motors y proporciona protección de la garantía para vehículos de General Motors del año 2006 en adelante. También proporciona un desempeño mejorado en vehículos de General Motors más viejos, cuando DEXRON es especificado.",
-    category: CAT.SEMI,
-    line: LINES.TRAN,
+    category: OIL_CAT.SEMI,
+    line: OIL_LINES.TRAN,
     applications: [
       "Brinda protección de la garantía para vehículos GM 2006 y más nuevos."
     ],
@@ -1166,8 +1223,8 @@ const rawProducts = [
     image: "images/mobil/mobilfluid_424.jpg",
     type: "Lubricante multipropósito para tractores",
     description: "Lubricante multiuso y de extra alto rendimiento para tractores diseñado para cumplir o exceder los requisitos de los fluidos hidráulicos y de transmisión.  La tecnología avanzada de Mobilfluid 424 está diseñada para optimizar el desempeño de los tractores agrícolas y comerciales que operan en una amplia gama de entornos y condiciones.  Mobilfluid 424 combina aceites base selectos y un paquete de aditivos de avanzada tecnología para proporcionar las variadas propiedades de desempeño de los lubricantes que se requieren en los trenes de transmisión de potencia de equipos agrícolas y de construcción en aplicaciones de servicio severo.  Es particularmente adecuado para reducir el chirrido y traqueteo de los frenos húmedos y de las tomas de fuerza.",
-    category: CAT.MIN,
-    line: LINES.TRAN,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.TRAN,
     applications: [
       "Transmisiones, diferenciales, mandos finales, sistemas hidráulicos, sistemas de dirección asistida, frenos húmedos, tomas de fuerza y accionamientos hidrostáticos de servicio pesado",
       "Industrias fuera de carretera que incluyen: agricultura, construcción y canteras",
@@ -1203,8 +1260,8 @@ const rawProducts = [
     image: "images/mobil/mobil_nuto_h_68.png",
     type: "Aceite hidráulico",
     description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: CAT.MIN,
-    line: LINES.IND,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.IND,
     applications: [
       "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
       "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
@@ -1244,8 +1301,8 @@ const rawProducts = [
     image: "images/mobil/mobil_nuto_h_68.png",
     type: "Aceite hidráulico",
     description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: CAT.MIN,
-    line: LINES.IND,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.IND,
     applications: [
       "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
       "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
@@ -1284,8 +1341,8 @@ const rawProducts = [
     image: "images/mobil/mobil_nuto_h_68.png",
     type: "Aceite hidráulico",
     description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: CAT.MIN,
-    line: LINES.IND,
+    category: OIL_CAT.MIN,
+    line: OIL_LINES.IND,
     applications: [
       "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
       "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
@@ -1325,8 +1382,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_0w_16.avif",
     type: "Aceite avanzado totalmente sintético para motores.",
     description: "Mantenga a su motor funcionando con la máxima eficiencia a la vez que mejora la economía de combustible. Diseñado para los motores avanzados e híbridos de hoy en día, el aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 ayuda a mejorar la economía de combustible* y a prolongar la vida útil del motor en vehículos de cualquier antigüedad. Mobil 1 0W-20 Advanced Fuel Economy utiliza Fórmula de Triple Acción, distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios a su vehículo. Los componentes especiales en el aceite sintético reducen la fricción y ayudan a prevenir la formación de depósitos y la acumulación de lodo para mantener las piezas críticas del motor limpias y protegidas hasta 16,000 km (10,000 millas) entre cambios de aceite.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Mobil 1 0W-16 está recomendado por ExxonMobil para aplicaciones SAE 0W-16 en motores a gasolina e híbridos diseñados para funcionar con aceite para motores de viscosidad SAE 0W-16.",
       "Mobil 1 0W-16 no se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante. Revise siempre el manual del propietario para determinar el grado de viscosidad del aceite recomendado por el fabricante, la clasificación de servicio API y cualquier aprobación del fabricante.",
@@ -1354,8 +1411,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_5w_20.webp",
     type: "Aceite avanzado totalmente sintético para motores.",
     description: "Avanzado aceite completamente sintético para motores diseñado para brindar una excelente protección al motor con el fin de que éste siga funcionando como nuevo y para proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite.* Mobil 1 5W-20 cumple o excede los estándares más exigentes de la industria y supera a nuestros aceites de mezcla convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto desempeño.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Está recomendado por ExxonMobil para todo tipo de vehículo moderno con motor de gasolina, incluyendo motores de alto rendimiento turboalimentados y sobrealimentados con multiválvulas y con inyección de combustible usados en automóviles de pasajeros, vehículos deportivos utilitarios (SUV), y furgonetas y camiones ligeros.",
       "Aceite de motor de alto rendimiento para todo tipo de automóviles para los que se recomienda esta viscosidad",
@@ -1382,8 +1439,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_5w_30.jpg",
     type: "Aceite avanzado totalmente sintético para motores",
     description: "El avanzado aceite sintético para motores Mobil 1 utiliza la emblemática Fórmula de Triple Acción de Mobil 1 para ofrecer un excelente rendimiento, protección y limpieza del motor a vehículos de todas las edades. Los componentes especiales en el aceite sintético prolongan la vida del motor al reducir la fricción que causa la acumulación de depósitos y lodos, lo cual mantiene a las piezas críticas del motor limpias y protegidas hasta 10.000 millas entre cambios de aceite.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
       "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
@@ -1407,8 +1464,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_10w_30.png",
     type: "Aceite avanzado totalmente sintético para motores",
     description: "Aceite para motores totalmente sintético diseñado para ayudar a proporcionar una excelente protección del motor con el fin de mantenerlo funcionando como nuevo y proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite*. Mobil 1 10W-30 cumple o excede los estándares más exigentes de la industria y brinda un desempeño superior al de nuestras mezclas de aceites convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto rendimiento",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
       "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
@@ -1432,8 +1489,8 @@ const rawProducts = [
     image: "images/mobil/mobil_1_fs_0w_40.webp",
     type: "Aceite avanzado para motores totalmente sintético",
     description: "El avanzado aceite para motores totalmente sintético Mobil™ 1 FS 0W-40 está diseñado para las más modernas tecnologías de motores de gasolina y diésel (sin filtros de partículas) y ofrece un excelente desempeño integral. Proporciona un poder de limpieza y una protección contra el desgaste excepcionales. Mobil™ 1 FS 0W-40 mantiene el motor funcionando como nuevo bajo todas las condiciones de conducción.",
-    category: CAT.SINT,
-    line: LINES.GAS,
+    category: OIL_CAT.SINT,
+    line: OIL_LINES.GAS,
     applications: [
       "Las últimas tecnologías de motores, incluso turbo­cargadores, inyección directa, diésel (sin filtros para partículas) e híbridos.",
       "Motores de alto desempeño.",
@@ -1465,7 +1522,7 @@ const CATALOGS = {
   vp_racing: {
     brand: BRANDS.vp_racing,
     categories: [
-      CAT.SINT,
+      OIL_CAT.SINT,
       "Motocicleta",
       "Servicio Pesado - Diésel",
       "Aceites de Transmisión"
@@ -2093,82 +2150,307 @@ const CATALOGS = {
     products: [
       {
         id: 'firestone-1',
-        name: "Firestone Turanza T005",
-        type: "Neumático de turismo premium",
-        description: "Excelente rendimiento en mojado con tecnología NanoPro-Tech. Diseño de hombro erguido para mayor estabilidad.",
-        category: "Pasajero",
-        line: "Firestone Turanza",
-        applications: ["Sedanos premium", "Familiares"],
-        benefits: ["Frenado excepcional en mojado", "Confort y silencio", "Eficiencia de combustible"],
-        approvals: [],
-        specifications: { size: "205/55 R17", season: "Verano", speedRating: "W", loadIndex: "95" },
-        presentations: []
+        name: "Affinity",
+        type: "Neumático deportivo",
+        description: "El neumático Firestone Affinity Touring brinda un buen nivel de comodidad y estabilidad en carretera. Su diseño ofrece una gran tracción manteniendo una conducción suave y silenciosa.",
+        category: FIRE_TIRE_CAT.AFF,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Gran agarre en pavimento seco y mojado.", "Conducción suave y silenciosa.", "Alta resistencia al desgaste."],
+        specifications: { sizes: ["P195/75R14", "P235/70R15"], cars: ["Toyota GR86", "Subaru BRZ", "Honda Civic Type R", "Hyundai Veloster", "Ford Focus ST"] },
       },
       {
         id: 'firestone-2',
-        name: "Firestone Potenza RE003",
-        type: "Neumático deportivo",
-        description: "Diseño asimétrico para máximo rendimiento en seco. Tecnología de compuestos reactivos para mejor agarre en curvas.",
-        category: "Deportivo",
-        line: "Firestone Potenza",
-        applications: ["Deportivos", "Hot hatchbacks"],
-        benefits: ["Agarre superior en curvas", "Respuesta precisa", "Deportivo en circuito"],
-        approvals: [],
-        specifications: { size: "215/40 R18", season: "Verano", speedRating: "W", loadIndex: "89" },
-        presentations: []
+        name: "Firehawk 900",
+        type: "Neumático de turismo premium",
+        description: "Diseñado para brindar un excelente agarre y durabilidad; además ofrece un gran desempeño sobre superficies secas y mojadas.",
+        category: FIRE_TIRE_CAT.FIRE,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Respuesta y frenado confiable.", "Conducción suave y silenciosa.", "Gran agarre en pavimento seco y mojado."],
+        specifications: {
+          sizes: [
+            "195/60R13",
+            "185/60R14",
+            "195/60R14",
+            "235/60R14",
+            "195/60R15",
+            "195/65R15"
+          ],
+          cars: ["Toyota Corolla", "Honda Civic", "Hyundai Elantra", "Nissan Sentra", "Kia Forte"],
+        }
       },
       {
         id: 'firestone-3',
-        name: "Firestone WeatherControl A005",
-        type: "Neumático all-season",
-        description: "Neumático todo clima con certificación invernal. Rendimiento constante en cualquier condición.",
-        category: "SUV",
-        line: "Firestone WeatherControl",
-        applications: ["SUVs", "Crossovers"],
-        benefits: ["Certificación invernal 3PMSF", "Rendimiento todo el año"],
-        approvals: ["3PMSF"],
-        specifications: { size: "225/60 R18", season: "All-Weather", speedRating: "H", loadIndex: "104" },
-        presentations: []
+        name: "Firehawk V950",
+        type: "Neumático deportivo",
+        description: "Diseñado para satisfacer las necesidades de conductores que buscan características más deportivas. Su diseño unidireccional de canales amplios optimiza el desalojo de agua y reduce sustancialmente el riesgo de hidroplaneo.",
+        category: FIRE_TIRE_CAT.FIRE,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Gran agarre en pavimento seco y mojado.", "Conducción precisa y gran maniobrabilidad.", "Gran agarre en curvas."],
+        specifications: {
+          sizes: ["185/60R14", "185/65R14", "195/60R15", "195/65R15"],
+          cars: ["Honda Civic", "Toyota Corolla", "Mazda 3", "Volkswagen Golf", "Hyundai Elantra"],
+        },
       },
       {
         id: 'firestone-4',
-        name: "Firestone Dueler A/T 001",
-        type: "Neumático todo terreno",
-        description: "Neumático para uso mixto asfalto/off-road. Bloques de hombro robustos para tracción en terrenos difíciles.",
-        category: "Camioneta",
-        line: "Firestone Dueler",
-        applications: ["4x4", "Pickups off-road"],
-        benefits: ["Tracción en off-road", "Durabilidad", "Confort en autopista"],
-        approvals: [],
-        specifications: { size: "265/65 R17", season: "All-Season", speedRating: "S", loadIndex: "120" },
-        presentations: []
+        name: "Firehawk V970",
+        type: "Neumático de alto rendimiento",
+        description: "Este diseño combina buena apariencia, maniobrabilidad, confort y bajos niveles de ruido, además de proveer excelente tracción sobre superficies secas o mojadas.",
+        category: FIRE_TIRE_CAT.FIRE,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Conducción silenciosa y cómoda.", "Desempeño confiable en pavimento seco y mojado.", "Alta resistencia al desgaste."],
+        specifications: {
+          sizes: ["205/55R16", "215/60R17"],
+          cars: ["Ford Focus", "Volkswagen Jetta", "Honda Accord", "Toyota Camry", "Mazda 6"],
+        },
       },
       {
         id: 'firestone-5',
-        name: "Firestone Ecopia H/L 422 Plus",
-        type: "Neumático eco-friendly",
-        description: "Neumático de bajo consumo con tecnología ologic. Reduce resistencia al rodamiento sin sacrificar seguridad.",
-        category: "SUV",
-        line: "Firestone Ecopia",
-        applications: ["SUVs híbridos", "Eléctricos"],
-        benefits: ["Hasta 15% menos consumo", "Larga vida", "Bajo nivel de ruido"],
-        approvals: [],
-        specifications: { size: "235/60 R18", season: "All-Season", speedRating: "H", loadIndex: "103" },
-        presentations: []
+        name: "Multihawk",
+        type: "Neumático de uso mixto",
+        description: "El neumático Firestone Multihawk es ideal para uso en carreteras pavimentadas. Ofrece una conducción precisa en superficies secas y un frenado eficiente. Optimiza la evacuación del agua y reduce el riesgo de hidroplaneo en condiciones de lluvia.",
+        category: FIRE_TIRE_CAT.MUL,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Mayor drenaje de agua y mejor manejo en superficies mojadas.", "Mejor control y frenado.", "Gran rendimiento en ciudad y autopista."],
+        specifications: {
+          sizes: ["165/65R13", "165/70R13", "175/70R13", "175/65R14", "185/65R14"],
+          cars: ["Chevrolet Spark", "Renault Clio", "Kia Picanto", "Toyota Yaris", "Hyundai i10"],
+        },
       },
       {
         id: 'firestone-6',
-        name: "Firestone Blizzak LM005",
-        type: "Neumático de invierno",
-        description: "El neumático de invierno de referencia. Tecnología 3D sipe para máximo agarre en nieve y hielo.",
-        category: "Pasajero",
-        line: "Firestone Blizzak",
-        applications: ["Vehículos en zonas nevadas"],
-        benefits: ["Máximo agarre en nieve", "Excelente frenado en hielo"],
-        approvals: ["3PMSF", "M+S"],
-        specifications: { size: "195/65 R15", season: "Invierno", speedRating: "T", loadIndex: "91" },
-        presentations: []
-      }
+        name: "Seiberling 500",
+        type: "Neumático económico de larga duración",
+        description: "Este neumático ofrece una vida útil extensa y una estructura duradera, además de proporcionar el agarre y la estabilidad que busca en superficies secas y mojadas.",
+        category: FIRE_TIRE_CAT.SEI,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Conducción suave y silenciosa.", "Excelente tracción en superficies secas y húmedas.", "Resistente al desgaste."],
+        specifications: {
+          sizes: ["175/70R13", "185/65R14", "195/75R14"],
+          cars: ["Chevrolet Aveo", "Renault Logan", "Toyota Yaris", "Hyundai Accent", "Kia Rio"],
+        },
+      },
+      {
+        id: 'firestone-7',
+        name: "ATX Radial 23°",
+        type: "Neumático off-road",
+        description: "Neumático diseñado para uso fuera de carretera. Alta resistencia y excelente tracción en los terrenos más severos.",
+        category: FIRE_TIRE_CAT.ATX,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tacos en ángulo de 23° que proporciona elevada fuerza de tracción y excelente autolimpieza.", "Alta resistencia al desgaste.", "Gran desempeño en los trabajos más exigentes."],
+        specifications: {
+          sizes: ["31X10.50R15LT"],
+          cars: ["Ford F-150", "Chevrolet Silverado", "Toyota Hilux", "Nissan Frontier", "RAM 1500"],
+        },
+      },
+      {
+        id: 'firestone-8',
+        name: "Destination A/T",
+        type: "Neumático todo terreno",
+        description: "Este neumático otorga una excelente capacidad de tracción dentro y fuera de carretera. Su desempeño todo terreno se complementa con un rodaje confortable y silencioso.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Excelente tracción y gran resistencia a las agresiones del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
+        specifications: {
+          sizes: ["P235/75R15", "31X10.50R15LT", "LT245/75R16", "P255/70R16", "P265/75R16"],
+          cars: ["Toyota 4Runner", "Ford Explorer", "Jeep Wrangler", "Chevrolet Tahoe", "Nissan Pathfinder"],
+        },
+      },
+      {
+        id: 'firestone-9',
+        name: "Destination A/T2",
+        type: "Neumático todo terreno avanzado",
+        description: "El neumático Destination A/T 2 tiene excelente tracción en todo momento y gran resistencia en cualquier camino. Incorpora la tecnología de Ranuras 3D que ayuda a disminuir el desgaste irregular durante la vida útil del caucho.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Hombros agresivos para mejorar el agarre fuera de carretera.", "Ranuras más amplias que evacuan el agua y aumentan la tracción en superficies mojadas.", "Eyector de piedras que ayuda a reducir perforaciones y daños en la banda de rodamiento."],
+        specifications: {
+          sizes: ["P235/75R15", "P265/75R16", "P235/65R17", "P245/65R17", "P265/65R17", "P265/70R17", "P285/70R17"],
+          cars: ["RAM 1500", "Ford F-150", "Chevrolet Silverado", "Toyota Tundra", "GMC Sierra"],
+        },
+      },
+      {
+        id: 'firestone-10',
+        name: "Destination LE",
+        type: "Neumático highway para SUV",
+        description: "El neumático Destination LE ofrece beneficios a vehículos utilitarios deportivos, vans y pick-ups de trabajo livianos. Esta tecnología aumenta el confort, el rendimiento y disminuye el desgaste irregular.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Excelente tracción y gran resistencia a las agresiones del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
+        specifications: {
+          sizes: ["P235/75R15", "P265/70R16", "P245/65R17"],
+          cars: ["Ford Explorer", "Toyota RAV4", "Honda Pilot", "Chevrolet Equinox", "Nissan Murano"],
+        },
+      },
+      {
+        id: 'firestone-11',
+        name: "Destination V A/T",
+        type: "Neumático todo terreno versátil",
+        description: "Este diseño combina confort y seguridad con un excelente comportamiento en carretera y un desempeño sobresaliente en terrenos más exigentes.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Diseñado para una conducción confortable.", "Desempeño versátil en todo terreno."],
+        specifications: {
+          sizes: ["P215/75R15", "P265/75R16", "P245/65R17", "P245/70R17", "P265/70R17", "P285/70R17", "P265/60R18"],
+          cars: ["Toyota Land Cruiser", "Mitsubishi Montero", "Ford Expedition", "Chevrolet Suburban", "Nissan Armada"],
+        },
+      },
+      {
+        id: 'firestone-12',
+        name: "Destination V H/T 684II",
+        type: "Neumático highway para camioneta",
+        description: "Cuenta con un diseño de banda de rodadura moderno que ofrece una excelente estabilidad en el manejo y un viaje por carretera más silencioso, suave y cómodo para camionetas y vehículos 4x4.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
+        specifications: {
+          sizes: ["265/65R17"],
+          cars: ["Chevrolet Tahoe", "Ford Expedition", "Toyota Sequoia", "Nissan Armada", "GMC Yukon"],
+        },
+      },
+      {
+        id: 'firestone-13',
+        name: "Destination V H/T 687",
+        type: "Neumático highway para SUV",
+        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodaje confortable y silencioso.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
+        specifications: {
+          sizes: ["205/70R15", "215/65R16", "235/60R16"],
+          cars: ["Honda CR-V", "Toyota RAV4", "Hyundai Tucson", "Kia Sportage", "Nissan X-Trail"],
+        },
+      },
+      {
+        id: 'firestone-14',
+        name: "Destination V H/T 689",
+        type: "Neumático highway premium para camioneta",
+        description: "Máximo agarre en todo tipo de situaciones y rendimiento perfectamente equilibrado en autopista que garantiza una conducción con bajas emisiones de ruido y confortable.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
+        specifications: {
+          sizes: ["P255/70R16"],
+          cars: ["Dodge Ram", "Ford F-150", "Chevrolet Silverado", "GMC Sierra", "Toyota Tundra"],
+        },
+      },
+      {
+        id: 'firestone-15',
+        name: "Destination V H/T 840",
+        type: "Neumático highway para uso mixto",
+        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodaje confortable y silencioso.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
+        specifications: {
+          sizes: ["205R16C", "265/70R16", "P265/70R17"],
+          cars: ["Mitsubishi L300", "Toyota Hiace", "Ford Transit", "Chevrolet Express", "Nissan Urvan"],
+        },
+      },
+      {
+        id: 'firestone-16',
+        name: "Destination V TP",
+        type: "Neumático para camión ligero y van",
+        description: "Neumático para todas las posiciones, de gran tracción, con diseño de banda de rodamiento que mejora la resistencia al desgaste. Es el caucho adecuado para camiones Ligeros y Vans con aplicación dentro de carretera.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Excelente tracción en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste irregular.", "Rendimiento superior."],
+        specifications: {
+          sizes: ["LT215/85R16", "7.50R16LT"],
+          cars: ["Ford Transit", "Nissan Urvan", "Toyota Hiace", "Mercedes-Benz Sprinter", "Chevrolet Express"],
+        },
+      },
+      {
+        id: 'firestone-17',
+        name: "Destination X/T",
+        type: "Neumático extremo off-road",
+        description: "Su diseño agresivo y estructura robusta permitirá a los más aventureros disfrutar todos los caminos. La tecnología aplicada en el diseño de su banda de rodamiento proporciona una conducción segura en cualquier terreno.",
+        category: FIRE_TIRE_CAT.DES,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
+        specifications: {
+          sizes: ["31X10.5R15LT", "LT265/75R16", "LT265/65R17", "LT265/70R17", "LT285/70R17", "LT265/65R18", "LT275/65R18"],
+          cars: ["Jeep Wrangler", "Ford Bronco", "Toyota 4Runner", "RAM 1500", "Chevrolet Colorado ZR2"],
+        },
+      },
+      {
+        id: 'firestone-18',
+        name: "Firehawk RMT",
+        type: "Neumático rugged terrain",
+        description: "El neumático Firehawk RMT está diseñado para proporcionar máxima tracción en superficies fuera de carretera y un gran desempeño en vías pavimentadas. Está orientado a SUV's, Pick Up's y vehículos de carga ligera.",
+        category: FIRE_TIRE_CAT.FIRE,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Máxima tracción fuera de carretera y gran desempeño en vías urbanas.", "Gran resistencia a las agresiones del camino.", "Baja generación de ruido."],
+        specifications: {
+          sizes: ["7.50R16LT"],
+          cars: ["Ford F-150", "Toyota Hilux", "Nissan Frontier", "Mitsubishi L200", "RAM 1500"],
+        },
+      },
+      {
+        id: 'firestone-19',
+        name: "Super All Traction",
+        type: "Neumático convencional todo terreno",
+        description: "Neumático convencional para camiones ligeros, ideal para ejes de tracción en servicios dentro y fuera de carretera. Ofrece excelente tracción en terrenos fangosos y pavimentados, alta resistencia al desgaste y mayor durabilidad.",
+        category: FIRE_TIRE_CAT.SAT,
+        line: TIRE_LINES.CAM_CONV,
+        benefits: ["Excelente tracción y autolimpieza.", "Alta resistencia al desgaste para una mayor vida útil.", "Alta capacidad de resistencia a cortes."],
+        specifications: {
+          sizes: ["LT215/85D15", "7.50-16LT"],
+          cars: ["Ford F-150", "Chevrolet C/K", "Dodge Ram", "Toyota Land Cruiser 70", "Nissan Patrol"],
+        },
+      },
+      {
+        id: 'firestone-20',
+        name: "Shogun",
+        type: "Neumático convencional direccional",
+        description: "Neumático convencional con excelente comportamiento direccional y gran agarre en pavimento seco o mojado. Ideal para camiones y autobuses ligeros, preferiblemente en ejes de dirección y libres.",
+        category: FIRE_TIRE_CAT.SHO,
+        line: TIRE_LINES.CAM_CONV,
+        benefits: ["Alta resistencia al desgaste irregular.", "Alta durabilidad y resistencia.", "Tracción confiable en superficies mojadas y secas."],
+        specifications: {
+          sizes: ["7.50-16LT"],
+          cars: ["Autobuses ligeros", "Camiones de reparto", "Vans de trabajo", "Ford Transit", "Toyota Coaster"],
+        },
+      },
+      {
+        id: 'firestone-21',
+        name: "Champion Guide Grip 3Rib H.D. F2",
+        type: "Neumático agrícola eje delantero",
+        description: "Neumático diseñado específicamente para el eje delantero, con un ancho de tres costillas, ideal para diversas condiciones agrícolas. Uso con cámara.",
+        category: FIRE_TIRE_CAT.CHA,
+        line: TIRE_LINES.AGRI,
+        benefits: ["Tecnología autolimpiante para una mejor dirección.", "Su banda de rodamiento se adapta a la necesidad del terreno.", "Alta resistencia a cortes e impactos."],
+        specifications: {
+          sizes: ["11.00-16"],
+          cars: ["Tractores agrícolas eje delantero", "John Deere", "Massey Ferguson", "New Holland", "Case IH"],
+        },
+      },
+      {
+        id: 'firestone-22',
+        name: "Champion Guide Grip H.D. F2",
+        type: "Neumático agrícola para lodo profundo",
+        description: "Neumático para uso en eje delantero con diseño de una costilla gruesa para condiciones agrícolas de lodo profundo. Uso con cámara.",
+        category: FIRE_TIRE_CAT.CHA,
+        line: TIRE_LINES.AGRI,
+        benefits: ["Banda de rodamiento de una costilla gruesa.", "Específicamente diseñado para condiciones de lodo profundo en campos de caña y arroz.", "Alta resistencia a cortes e impactos."],
+        specifications: {
+          sizes: ["7.50-16"],
+          cars: ["Tractores de caña de azúcar", "Tractores arroceros", "John Deere", "Kubota", "Massey Ferguson"],
+        },
+      },
+      {
+        id: 'firestone-23',
+        name: "Champion Spade Grip R-2",
+        type: "Neumático agrícola de tracción",
+        description: "Diseñado para condiciones de suelo húmedo. Banda de rodamiento extra profunda de 45° para una mejor tracción en el lodo. Excelente opción para aplicaciones en cultivos de arroz y caña de azúcar. Uso con cámara.",
+        category: FIRE_TIRE_CAT.CHA,
+        line: TIRE_LINES.AGRI,
+        benefits: ["Barras curvas en la banda de rodamiento para una mayor tracción.", "Reforzados para evitar el desgaste y mejorar el rendimiento.", "Alta resistencia a cortes e impactos."],
+        specifications: {
+          sizes: ["14.9-24", "23.1-26", "14.9-28", "18.4-30", "23.1-30", "18.4-34", "23.1-34"],
+          cars: ["Tractores arroceros", "Tractores cañeros", "John Deere", "Massey Ferguson", "New Holland"],
+        },
+      },
     ]
   },
   rydanz: {
@@ -2185,7 +2467,7 @@ const CATALOGS = {
         applications: ["Vehículos deportivos", "Altas velocidades", "Conducción dinámica"],
         benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Baja resistencia al rodamiento"],
         approvals: [],
-        specifications: { size: "225/45 R17", season: "Verano", speedRating: "W", loadIndex: "94" },
+        specifications: { size: "225/45 R17", car: ["Toyota Supra", "Nissan Z", "Mazda MX-5", "Subaru WRX", "Honda S2000"], season: "Verano", speedRating: "W", loadIndex: "94" },
         presentations: []
       },
       {
@@ -2198,7 +2480,7 @@ const CATALOGS = {
         applications: ["SUVs", "Pickups", "Uso mixto ciudad/carretera"],
         benefits: ["Tracción versátil", "Durabilidad", "Confort de marcha"],
         approvals: [],
-        specifications: { size: "265/70 R16", season: "All-Season", speedRating: "S", loadIndex: "112" },
+        specifications: { size: "265/70 R16", car: ["Toyota Hilux", "Ford Ranger", "Nissan Frontier", "Mitsubishi L200", "Isuzu D-Max"], season: "All-Season", speedRating: "S", loadIndex: "112" },
         presentations: []
       },
       {
@@ -2211,7 +2493,7 @@ const CATALOGS = {
         applications: ["Sedanos", "Compactos", "Uso familiar"],
         benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
         approvals: [],
-        specifications: { size: "205/55 R16", season: "All-Season", speedRating: "H", loadIndex: "91" },
+        specifications: { size: "205/55 R16", car: ["Toyota Corolla", "Honda Civic", "Hyundai Elantra", "Nissan Sentra", "Kia Forte"], season: "All-Season", speedRating: "H", loadIndex: "91" },
         presentations: []
       },
       {
@@ -2224,7 +2506,7 @@ const CATALOGS = {
         applications: ["SUVs medianos", "Crossovers", "Vehículos familiares"],
         benefits: ["Estabilidad a alta velocidad", "Frenado en mojado", "Confort superior"],
         approvals: [],
-        specifications: { size: "235/60 R18", season: "All-Season", speedRating: "V", loadIndex: "103" },
+        specifications: { size: "235/60 R18", car: ["Toyota Highlander", "Honda CR-V", "Hyundai Santa Fe", "Kia Sorento", "Ford Explorer"], season: "All-Season", speedRating: "V", loadIndex: "103" },
         presentations: []
       },
       {
@@ -2237,7 +2519,7 @@ const CATALOGS = {
         applications: ["Zonas con nieve", "Climas fríos", "Vehículos en invierno"],
         benefits: ["Certificación invernal 3PMSF", "Agarre en nieve", "Frenado en hielo"],
         approvals: ["3PMSF", "M+S"],
-        specifications: { size: "195/65 R15", season: "Invierno", speedRating: "T", loadIndex: "91" },
+        specifications: { size: "195/65 R15", car: ["Toyota Corolla", "Honda Civic", "Hyundai Accent", "Nissan Versa", "Chevrolet Aveo"], season: "Invierno", speedRating: "T", loadIndex: "91" },
         presentations: []
       },
       {
@@ -2250,8 +2532,116 @@ const CATALOGS = {
         applications: ["Vehículos económicos", "Flotas", "Uso urbano"],
         benefits: ["Ahorro de combustible", "Larga duración", "Precio accesible"],
         approvals: [],
-        specifications: { size: "185/65 R15", season: "Verano", speedRating: "H", loadIndex: "88" },
+        specifications: { size: "185/65 R15", car: ["Toyota Corolla", "Honda Fit", "Hyundai Accent", "Nissan March", "Kia Rio"], season: "Verano", speedRating: "H", loadIndex: "88" },
         presentations: []
+      }
+    ]
+  },
+  alix: {
+    brand: BRANDS.alix,
+    categories: Object.values(ALIX_TIRE_CAT),
+    products: [
+      {
+        id: 'alix-1',
+        name: "Vezetta",
+        type: "Neumático de turismo",
+        description: "Desarrollados para usuarios de vehículos sedanes y cupés, posee un atractivo diseño que combina estabilidad, maniobrabilidad y desempeño.",
+        category: ALIX_TIRE_CAT.VEZ,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: [
+          "Diseño atractivo y moderno.",
+          "Bloques anchos en hombros que mejoran la estabilidad lateral.",
+          "Andar suave y silencioso en todo tipo de superficie.",
+        ],
+        specifications: {
+          sizes: ["165/70R13", "175/70R13", "175/65R14", "185/65R14"],
+          cars: ["Toyota Corolla", "Chevrolet Aveo", "Hyundai Elantra", "Kia Cerato", "Renault Logan"],
+        },
+      },
+      {
+        id: 'alix-2',
+        name: "Vezetta Plus",
+        type: "Neumático de turismo premium",
+        description: "El ALIX VEZETTA PLUS es un neumático diseñado para ofrecer un excelente desempeño en cualquier tipo de carretera. Si buscas neumáticos con gran rendimiento y larga duración, este es el producto ideal para ti.",
+        category: ALIX_TIRE_CAT.VEZ_PLUS,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: [
+          "Banda diseñada para proporcionar un manejo tranquilo, cómodo y seguro.",
+          "Excelente adherencia en carreteras mojadas y secas.",
+          "Hombros rígidos para garantizar máxima estabilidad en las curvas.",
+        ],
+        specifications: {
+          sizes: ["195/60R15"],
+          cars: ["Honda Civic", "Toyota Corolla", "Hyundai Elantra", "Mazda 3", "Volkswagen Jetta"],
+        },
+      },
+      {
+        id: 'alix-3',
+        name: "Veloce",
+        type: "Neumático de alto rendimiento",
+        description: "Los neumáticos ALIX VELOCE son ideales para superficies pavimentadas húmedas y secas. Ofrecen un excelente rendimiento y mayor confort en el camino, además de una alta resistencia al desgaste irregular.",
+        category: ALIX_TIRE_CAT.VEL,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: [
+          "Nueva banda de rodamiento diseñada para aumentar la durabilidad.",
+          "Grooves externos ampliados para mejor desalojo de agua.",
+          "Especialmente diseñado para mayor confort.",
+        ],
+        specifications: {
+          sizes: ["205/55R16"],
+          cars: ["Honda Civic", "Volkswagen Golf", "Ford Focus", "Toyota Corolla", "Mazda 3"],
+        },
+      },
+      {
+        id: 'alix-4',
+        name: "Impact HT Plus",
+        type: "Neumático highway para SUV y pick-up",
+        description: "El neumático ALIX IMPACT HT PLUS está especialmente diseñado para su uso en pick-ups de trabajo liviano y vehículos utilitarios deportivos (SUV), en caminos mayoritariamente pavimentados.",
+        category: ALIX_TIRE_CAT.IMP,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: [
+          "Nueva banda de rodamiento mejorada para aumentar vida útil.",
+          "Surcos optimizados para un manejo cómodo y silencioso.",
+          "Gran balance de desempeño entre carreteras y terrenos no pavimentados.",
+        ],
+        specifications: {
+          sizes: ["P235/60R16", "P255/70R16"],
+          cars: ["Toyota Hilux", "Ford Ranger", "Chevrolet S10", "Nissan Frontier", "Mitsubishi L200"],
+        },
+      },
+      {
+        id: 'alix-5',
+        name: "ST-17",
+        type: "Neumático para motocicleta urbana",
+        description: "El neumático ALIX ST-17 fue desarrollado para enfrentar las peores condiciones de uso en áreas urbanas y en carretera, brindando agilidad, manejo seguro y respuesta rápida.",
+        category: ALIX_TIRE_CAT.ST,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Diseño elegante y deportivo.",
+          "Óptima adherencia sobre pavimento seco y húmedo.",
+          "Estructura reforzada para proporcionar alta resistencia al impacto y comodidad al motociclista.",
+        ],
+        specifications: {
+          sizes: ["110/90-16 M/C", "2.75-18 M/C", "90/90-18 M/C"],
+          cars: ["Honda CB 125", "Yamaha YBR 125", "Suzuki GN 125", "AKT 125", "Bera BR 150"],
+        },
+      },
+      {
+        id: 'alix-6',
+        name: "CT-21",
+        type: "Neumático para moto de trabajo",
+        description: "Neumático especial para motos de trabajo. Alto desempeño en áreas urbanas y sub-urbanas. Otorga resistencia, estabilidad y excelente tracción.",
+        category: ALIX_TIRE_CAT.CT,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Alto desempeño en las rutas más exigentes.",
+          "Gran estabilidad y agarre en suelo seco y húmedo.",
+          "Alta durabilidad y resistencia al desgaste.",
+        ],
+        specifications: {
+          sizes: ["90/90-18M/C", "3.00-18M/C"],
+          cars: ["Honda CG 150", "Yamaha YBR 125", "Bajaj Boxer 150", "Hero Hunk", "TVS Apache"],
+        },
       }
     ]
   }
