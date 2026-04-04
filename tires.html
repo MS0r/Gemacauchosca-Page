@@ -14,7 +14,7 @@
   <link rel="icon" href="images/g_white_red_back.png" type="image/png">
 </head>
 
-<body class="catalog-page">
+<body class="catalog-page page-tires">
   <header class="header header--small">
     <div class="header-content header-content--small">
       <div class="company-logo company-logo--small">
@@ -83,7 +83,7 @@
       </div>
 
       <div id="tireFilters" class="search-filters" style="display: none;">
-        <div class="size-suggestions" id="sizeSuggestions"></div>
+        <div class="size-suggestions" id="suggestions"></div>
       </div>
 
       <div class="results-count">
@@ -92,13 +92,6 @@
     </aside>
 
     <main class="catalog-main">
-      <button class="mobile-filter-btn" id="mobileFilterBtn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
-        </svg>
-        Filtros
-        <span class="filter-badge" id="filterBadge" style="display: none;">0</span>
-      </button>
       <div id="productsGrid" class="products-grid">
         <!-- Products will be rendered here -->
       </div>
@@ -114,25 +107,6 @@
       </div>
     </main>
   </div>
-
-  <!-- Mobile Filter Drawer -->
-  <div class="filter-drawer" id="filterDrawer">
-    <div class="filter-drawer-header">
-      <h3>Filtros</h3>
-      <button class="filter-drawer-close" id="filterDrawerClose">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <div class="filter-drawer-content" id="filterDrawerContent">
-      <!-- Filters rendered here on mobile -->
-    </div>
-    <div class="filter-drawer-footer">
-      <button class="filter-apply-btn" id="filterApplyBtn">Aplicar filtros</button>
-    </div>
-  </div>
-  <div class="filter-drawer-backdrop" id="filterDrawerBackdrop"></div>
 
   <!-- Product Modal -->
   <div id="productModal" class="modal">
