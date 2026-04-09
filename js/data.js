@@ -4,43 +4,52 @@ const BRANDS = {
     name: 'Mobil',
     type: 'oil',
     logo: 'M',
-    logoImage: 'images/mobil_logo.png',
-    logoImageBlack: 'images/mobil_black.png',
-    logoImageWhite: 'images/mobil_white.png'
+    logoImage: 'images/logos/mobil_logo.webp',
+    logoImageBlack: 'images/logos/mobil_black.webp',
+    logoImageWhite: 'images/logos/mobil_white.webp'
   },
   firestone: {
     id: 'firestone',
     name: 'Firestone',
     type: 'tires',
     logo: 'F',
-    logoImage: 'images/firestone_red_logo_name.png',
+    logoImage: 'images/logos/firestone_red_logo_name.webp',
     logoImageBlack: null,
-    logoImageWhite: 'images/firestone_white_name.png'
+    logoImageWhite: 'images/logos/firestone_white_name.webp'
   },
   rydanz: {
     id: 'rydanz',
     name: 'Rydanz',
     type: 'tires',
     logo: 'R',
-    logoImage: 'images/rydanz_black_normal.png',
-    logoImageBlack: 'images/rydanz_black_normal.png',
-    logoImageWhite: 'images/rydanz_white_normal.png'
+    logoImage: 'images/logos/rydanz_black_normal.webp',
+    logoImageBlack: 'images/logos/rydanz_black_normal.webp',
+    logoImageWhite: 'images/logos/rydanz_white_normal.webp'
   },
   vp_racing: {
     id: 'vp_racing',
     name: 'VP Racing',
     type: 'oil',
     logo: 'V',
-    logoImage: 'images/vp_racing_logo.png',
-    logoImageBlack: 'images/vp_racing_logo.png',
-    logoImageWhite: 'images/vp_racing_logo.png'
+    logoImage: 'images/logos/vp_racing_logo.webp',
+    logoImageBlack: 'images/logos/vp_racing_logo.webp',
+    logoImageWhite: 'images/logos/vp_racing_logo.webp'
   },
   alix: {
     id: 'alix',
     name: 'Alix',
     type: 'tires',
     logo: 'A',
-    logoImage: 'images/alix_red_logo.png',
+    logoImage: 'images/logos/alix_red_logo.webp',
+  },
+  bekka: {
+    id: 'bekka',
+    name: 'Bekka',
+    type: 'tires',
+    logo: 'B',
+    logoImage: 'images/logos/bekka_logo.webp',
+    logoImageBlack: 'images/logos/bekka_logo_black.webp',
+    logoImageWhite: 'images/logos/bekka_logo_white.webp'
   }
 };
 
@@ -122,1402 +131,1400 @@ const ESP_ATTRIBUTES_TIRE = {
   loadIndex: 'Índice de carga'
 }
 
-const rawProducts = [
-  {
-    id: "mobil-1",
-    name: "Mobil Super™ 3000 XE 5W-30",
-    image: "images/mobil/mobil_super_3000_xe_5w_30.png",
-    type: "Lubricante sintético para vehículos a gasolina y diésel con filtro de partículas diésel (DPF)",
-    description: "Aceite de motor sintético de alto desempeño con bajo contenido de cenizas para motores de vehículos gasolina o diesel prolongando la vida útil del motor y protegiendo los sistemas de reducción de emisiones.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Motores a gasolina y diésel livianos de últimas tecnologías",
-      "Vehículos livianos y SUV",
-      "Motores de alto rendimiento"
-    ],
-    benefits: [
-      "Protege los sistemas de tratamiento de gases de escape o los catalizadores, reduciendo las emisiones",
-      "Periodos extendidos de cambio de aceite (más kilómetros entre cambios)",
-      "Protección contra el desgaste del motor y la formación de depósitos",
-      "Proporciona excelente fluidez en arranque en frío",
-      "Permite la operación prolongada a altas temperaturas evitando la oxidación o degradación del aceite"
-    ],
-    approvals: [
-      "Aprobación Mercedes Benz 229.31",
-      "Aprobación Mercedes Benz 229.51",
-      "Aprobación Mercedes Benz 229.52",
-      "Volkswagen 505 00",
-      "Volkswagen 505 01",
-      "General Motors Dexos 2™-SF"
-    ],
-    requirements: ["FORD WSS-M2C917A"],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "5W-30",
-      api: ["SN"],
-      acea: ["C2-16", "C3-16"],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: ["DPF"],
-      other: []
-    }
-  },
-  {
-    id: "mobil-2",
-    name: "Mobil Super™ 3000 X4 5W-40",
-    image: "images/mobil/mobil_super_3000_x4_5w_40.webp",
-    type: "Lubricante sintético para vehículos gasolina y diésel sin trampa de partículas (DPF)",
-    description: "Aceite de motor totalmente sintético que ayuda a prolongar la vida útil del motor de vehículos de cualquier tipo y edad, mediante una mayor protección en un amplio rango de temperaturas.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: ["Casi todas las tecnologías de motores.", "Gasolina y diésel.", "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas.", "Manejo en carretera a velocidad de crucero y conducción en ciudad con arranques y paros continuos.", "Condiciones de operación normales a frecuentemente severas.", "Motores de alto desempeño."
-    ],
-    benefits: [
-      "Protección mejorada contra el desgaste del motor y la formación de depósitos",
-      "Protección superior del motor durante el arranque en frío",
-      "Protección mejorada a altas temperaturas"
-    ],
-    approvals: [
-      "Aprobación MB 229.3",
-      "Aprobación MB 229.5",
-      "Volskwagen 502 00",
-      "Volskwagen 505 00",
-      "Porsche A40",
-      "Peugeot/Citroen PSA 2296",
-      "BMW Longlife-01",
-      "RENAULT RN0700",
-      "RENAULT RN0710"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "5W-40",
-      api: ["SN"],
-      acea: ["A3/B4-16", "A3/B3-16"],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: ["TDI"],
-      other: []
-    }
-  },
-  {
-    id: "mobil-3",
-    name: "Mobil Super™ 2000 5W-20",
-    image: "images/mobil/mobil_super_2000_5w_20.png",
-    type: "Lubricante semisintético para vehículos a gasolina y gas",
-    description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Motores a gasolina y gas",
-      "Vehículos livianos y SUV",
-      "Conducción en ciudad con paradas frecuentes",
-      "Condiciones de funcionamiento severas en terrenos exigentes"
-    ],
-    benefits: [
-      "Una mejor economía de combustible",
-      "Protección contra el desgaste del motor y la formación de depósitos",
-      "Protección superior del motor durante el arranque",
-      "Protección a altas temperaturas"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "5W-20",
-      api: ["SN"],
-      acea: [],
-      ilsac: ["GF-5"],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: ["RESOURCE CONSERVING"]
-    }
-  },
-  {
-    id: "mobil-4",
-    name: "Mobil Super™ 2000 10W-30",
-    image: "images/mobil/mobil_super_2000_10w_30.webp",
-    type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
-    description: "Aceite semi-sintético mejorado de alta calidad para motores que cumplen con las más recientes especificaciones de la industria para los aceites de motores.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Las más recientes tecnologías de motores de gasolina",
-      "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
-      "Conducción en la ciudad con muchas paradas",
-      "Condiciones operacionales normales a severas",
-      "Turboalimentadores",
-      "Motores de alto desempeño"
-    ],
-    benefits: [
-      "Una mejor economía de combustible de hasta un 3%",
-      "Protección contra el desgaste del motor y la formación de depósitos",
-      "Protección superior del motor durante el arranque",
-      "Protección a altas temperaturas",
-      "Evita la pre-ignición"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "10W-30",
-      api: ["SN PLUS"],
-      acea: [],
-      ilsac: ["GF-6A"],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: ["RESOURCE CONSERVING"]
-    }
-  },
-  {
-    id: "mobil-5",
-    name: "Mobil Super™ 1000 20W-50",
-    image: "images/mobil/mobil_super_1000_20w_50.webp",
-    type: "Lubricante multigrado para motores a gasolina",
-    description: "Aceites minerales de primera calidad que cumple con exigentes requerimientos de la industria para lubricantes de motores. Diseñados para proporcionar un alto nivel de desempeño y protección en variadas condiciones de funcionamiento.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Casi todas las tecnologías de motores de gasolina",
-      "Vehículos de pasajeros y SUV",
-      "Condiciones normales de funcionamiento",
-      "Apropiado para utilizarse en un amplio rango de condiciones de temperatura"
-    ],
-    benefits: [
-      "Protección prolongada contra el desgaste del motor",
-      "Protección del motor durante el arranque",
-      "Ayuda a combatir los lodos"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "20W-50",
-      api: ["SN"],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  {
-    id: "mobil-6",
-    name: "Mobil Special™ Alto Kilometraje 25W-50",
-    image: "images/mobil/mobil_special_alto_kilometraje_25w_50.webp",
-    type: "Lubricante para motores con alto kilometraje",
-    description: "Brinda una gruesa película de aceite que ayuda a proteger los motores a gasolina que operan bajo condiciones severas, como altas temperaturas y en tráfico de ciudad donde el parar y arrancar es frecuente.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.GAS,
-    applications: ["Motores con más de 150.000 kilómetros"],
-    benefits: [
-      "Reduce el consumo de aceite",
-      "Reduce el desgaste y la corrosión del motor"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "25W-50",
-      api: ["SG"],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  // {
-  //   id: "mobil-7",
-  //   name: "Mobil Super™ 4T MX 10W-30",
-  //   image: "images/mobil/mobil_super_4t_mx_10w-30.webp",
-  //   type: "Lubricante semisintético para motocicletas de 4 Tiempos",
-  //   description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos diseñado fundamentalmente para uso general en muchos tipos de motocicletas y motores de cuatro tiempos.",
-  //   category: "Motocicletas 4 tiempos",
-  //   line: "PVL - Línea MCO",
-  //   applications: [
-  //     "Motocicletas de 4 tiempos que especifican aceite SAE 10W-30",
-  //     "Motores enfriados por aire",
-  //     "Motores de 4 tiempos equipados con convertidores catalíticos"
-  //   ],
-  //   benefits: [
-  //     "Ahorros en el consumo de combustible",
-  //     "Protección contra el desgaste para alargar vida útil del motor",
-  //     "Ayuda a mantener más limpio el motor",
-  //     "Excelentes propiedades de fricción"
-  //   ],
-  //   presentations: [PRESEN.CUARTO],
-  //   specifications: {
-  //     viscosity: "10W-30",
-  //     api: ["SL"],
-  //     acea: [],
-  //     ilsac: [],
-  //     jaso: ["MA2"],
-  //     iso: [],
-  //     nmma: [],
-  //     oem: [],
-  //     compatibility: [],
-  //     other: []
-  //   }
-  // },
-  {
-    id: "mobil-8",
-    name: "Mobil Super™ 4T 20W-50",
-    image: "images/mobil/mobil_super_4t_20w_50.webp",
-    type: "Lubricante semisintético para motocicletas de 4 Tiempos",
-    description: "Combina aceites minerales de calidad altamente refinados y un avanzado sistema de aditivos para proporcionar una buena limpieza del motor, buena protección contra el desgaste y protección contra la corrosión.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.MOTO,
-    applications: ["Uso general en muchos tipos de motocicletas y motores de cuatro tiempos"],
-    benefits: [
-      "Ayuda a prolongar la vida útil del motor",
-      "Ayuda a mantener los motores limpios",
-      "Protege los componentes críticos del motor",
-      "Buena protección contra la corrosión"
-    ],
-    presentations: [PRESEN.LITRO],
-    specifications: {
-      viscosity: "20W-50",
-      api: ["SL"],
-      acea: [],
-      ilsac: [],
-      jaso: ["MA2"],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  // {
-  //   id: "mobil-9",
-  //   name: "Mobil Delvac Legend™ 1640",
-  //   image: "images/mobil/mobil_delvac_legend_1640.jpg",
-  //   type: "Aceites de alto rendimiento para motores diésel",
-  //   description: "Aceite monogrado de alto rendimiento para motores diésel formulados a partir de aceites base de avanzada tecnología y un equilibrado sistema de aditivos. Están recomendados por ExxonMobil para ser utilizados en motores interenfriados y turboalimentados que funcionan en condiciones severas tanto en carretera como fuera de ella, así como en una amplia gama de aplicaciones en las que se recomienda un lubricante monogrado.",
-  //   category: OIL_CAT.SEMI,
-  //   line: OIL_LINES.DIE,
-  //   applications: [
-  //     "Equipos accionados por motores diésel aspirados naturalmente y turbocargados",
-  //     "Transporte de servicio ligero y pesado por carretera",
-  //     "Industrias fuera de carreteras, entre ellas: construcción, minería, explotación de canteras y agricultura"
-  //   ],
-  //   benefits: [
-  //     "Excelente protección contra el espesamiento del aceite, los depósitos de altas temperaturas, la acumulación de lodos, la degradación del aceite y la corrosión",
-  //     "Reserva de TBN extendida",
-  //     "Prolongación de la vida útil del motor, menos desgaste, excelente protección contra el atascamiento de los anillos.",
-  //     "Control a largo plazo de los depósitos y del desgaste. Controla la formación de ácidos cuando se utilizan combustibles con alto contenido de azufre"
-  //   ],
-  //   presentations: [PRESEN.TAMBOR],
-  //   specifications: {
-  //     viscosity: "5W-40",
-  //     api: ["SF", "CF"],
-  //     acea: ["E2"],
-  //     ilsac: [],
-  //     jaso: [],
-  //     iso: [],
-  //     nmma: ["270"],
-  //     oem: [],
-  //     compatibility: [],
-  //     other: []
-  //   }
-  // },
-  {
-    id: "mobil-10",
-    name: "Mobil Delvac Modern™ 15W-40",
-    image: "images/mobil/mobil_delvac_modern_15w_40.webp",
-    type: "Aceite de alto desempeño para motores diésel de servicio pesado",
-    description: "aceite de tecnología sintética para motores diésel que ayuda a prolongar la vida útil del motor, lo cual le permite operar su negocio con confianza. Este producto cumple o excede los requisitos de los fabricantes de equipos originales (OEM) y ofrece un alto desempeño en aplicaciones tanto dentro como fuera de la carretera.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.DIE,
-    applications: [
-      "Motores diésel de servicio pesado modernos Euro V/VI (DPF, SCR, CRT, DOC, EGR)",
-      "Motores diésel con diseños más viejos y convencionales de aspiración natural",
-      "Camiones de servicio pesado en carretera y fuera de carretera"
-    ],
-    benefits: [
-      "Superior estabilidad contra la oxidación",
-      "Protección contra la corrosión",
-      "Larga vida útil del motor y del aceite",
-      "Mayor eficiencia del motor"
-    ],
-    approvals: [
-      "Mack EOS-4.5",
-      "Aprobación MB 228.31",
-      "Cummins CES 20081",
-      "CATERPILLAR ECF-3",
-      "Volvo VDS-4.5",
-      "ACEA E7-16, E9-16"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "15W-40",
-      api: ["CK-4", "CJ-4", "CI-4 PLUS", "CI-4", "CH-4", "SN"],
-      acea: ["E7", "E9"],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  // {
-  //   id: "mobil-11",
-  //   name: "Mobil 1™ Synthetic ATF",
-  //   image: "images/mobil/mobil_1_synthetic_atf.webp",
-  //   type: "Lubricante sintético para transmisiones automáticas",
-  //   description: "Supera a los fluidos convencionales para transmisiones automáticas y ayuda a proporcionar excepcional resistencia contra la degradación del aceite y la formación de depósitos.",
-  //   category: "Transmisiones Automáticas",
-  //   line: "Línea ATF",
-  //   applications: [
-  //     "Vehículos modernos de alto desempeño (automóviles, SUV, SUT, furgonetas, camiones ligeros)",
-  //     "Aplicaciones que requieren niveles de desempeño Dexron III, Ford Mercon y Mercon V"
-  //   ],
-  //   benefits: [
-  //     "Excelente estabilidad térmica y frente a la oxidación",
-  //     "Excelente fluidez a bajas temperaturas",
-  //     "Propiedades friccionales mejoradas a largo plazo"
-  //   ],
-  //   approvals: [],
-  //   presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
-  //   specifications: {
-  //     viscosity: null,
-  //     api: [],
-  //     acea: [],
-  //     ilsac: [],
-  //     jaso: ["1-A"],
-  //     iso: [],
-  //     nmma: [],
-  //     oem: ["MERCON V", "DEXRON IIIH"],
-  //     compatibility: [],
-  //     other: []
-  //   }
-  // },
-  {
-    id: "mobil-12",
-    name: "Mobil Grease XHP 222",
-    image: "images/mobil/mobil_grease_xhp_222.png",
-    type: "Grasa de Complejo de Litio",
-    description: "Mobilgrease XHP 222 es una grasa de complejo de litio de servicio extendido diseñada para una amplia variedad de aplicaciones y condiciones de operación severas.",
-    category: OIL_CAT.GRA,
-    line: OIL_LINES.GRA,
-    applications: [
-      "Sector industrial, automotriz, de construcción y marino",
-      "Alta temperatura, contaminación por agua, carga de choque",
-      "Aplicaciones industriales y marinas, componentes de chasis"
-    ],
-    benefits: [
-      "Excelente resistencia a la oxidación y corrosión",
-      "Estructura altamente adhesiva y cohesiva",
-      "Muy buen desempeño anti desgaste",
-      "Resistencia excelente al lavado por agua"
-    ],
-    presentations: ["0,39 kg", PRESEN.PAILA],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: ["Complejo de litio"]
-    }
-  },
-  {
-    id: "mobil-13",
-    name: "Mobilube™ HD-A Plus 80W-90",
-    image: "images/mobil/mobilube_hd_plus_80w_90.webp",
-    type: "Lubricante para engranajes automotrices",
-    description: "Está diseñado para transmisiones, ejes y mandos finales comerciales donde se esperan presiones extremas y cargas de impacto, y está recomendado por ExxonMobil para aplicaciones que requieren un servicio API GL-5. Está formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos. Este lubricante es un lubricante de servicio pesado para engranajes que permite prolongar los intervalos entre cambios de aceite, predominantemente en ejes Mercedes Benz.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.TRAN,
-    applications: [
-      "Transmisiones manuales, ejes y mandos finales automotrices de servicio pesado que requieren un desempeño de nivel API GL-5",
-      "Autos y camiones ligeros de carretera; vehículos comerciales de servicio pesado",
-      "Industrias fuera de carretera, entre ellas: construcción, minería, explotación de canteras y agricultura",
-      "Otras cajas de cambios, engranajes de dirección y cajas de cambios variables"
-    ],
-    benefits: [
-      "Excelente estabilidad térmica y resistencia a la oxidación a altas temperaturas",
-      "Larga vida útil de los engranajes y cojinetes debido a la mínima generación de depósitos. Larga vida útil de los sellos.",
-      "Protección mejorada contra el desgaste de baja velocidad/alto torque y contra el rayado de alta velocidad, especialmente en ejes traseros muy cargados.",
-      "Mayor capacidad de carga. Reducción en los costos de mantenimiento y mayor vida útil de los equipos.",
-      "Protección efectiva contra la herrumbre y la corrosión.",
-      "Reducción del desgaste y mayor vida útil de los componentes."
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "80W-90",
-      api: ["GL-5"],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  {
-    id: "mobil-14",
-    name: "Mobil Hydraulic AW 68",
-    image: "images/mobil/mobil_hydraulic_aw_68.png",
-    type: "Aceite hidráulico antidesgaste",
-    description: "Aceite hidráulico antidesgaste de buena calidad destinado a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.IND,
-    applications: [
-      "Sistemas con bombas de engranajes, de paletas, radiales y axiales de pistón",
-      "Situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables"
-    ],
-    benefits: [
-      "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas",
-      "Protección contra la corrosión",
-      "Filtrabilidad para prevenir la obstrucción de los filtros"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "AW 68",
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: []
-    }
-  },
-  {
-    id: "mobil-15",
-    name: "Mobil Super™ 2000 5W-30",
-    image: "images/mobil/mobil_super_2000_5w_30.png",
-    type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
-    description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Motores a gasolina y gas",
-      "Motores turboalimentados de inyección directa de gasolina",
-      "Vehículos livianos y SUV",
-      "Conducción en ciudad con paradas frecuentes",
-      "Condiciones de funcionamiento severas en terrenos exigentes"
-    ],
-    benefits: [
-      "Una mejor economía de combustible de hasta un 3%",
-      "Protección contra el desgaste del motor y la formación de depósitos",
-      "Protección superior del motor durante el arranque",
-      "Protección a altas temperaturas",
-      "Evita la pre-ignición"
-    ],
-    approvals: [
-      "General Motors 6094M",
-      "Chrysler MS-6395",
-      "FORD WSS-M2C929-A",
-      "FORD WSS-M2C946-A",
-      "FORD WSS-M2C946-B1"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "5W-30",
-      api: ["SN PLUS"],
-      ilsac: ["GF-5"],
-      other: ["RESOURCE CONSERVING"]
-    }
-  },
-  {
-    id: "mobil-16",
-    name: "Mobil Super™ Moto Scooter MX 10W-40 4T",
-    image: "images/mobil/mobil_super_moto_scoter_mx_10w_40.webp",
-    type: "Lubricante sintético para motos 4T",
-    description: "Aceite para motos scooter de 4 tiempos que protege el motor de diversas condiciones de conducción, minimizando las vibraciones y dando protección a las altas temperaturas.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Motores scooter de 4 tiempos con transmisión automática",
-      "Motores de scooter de alta potencia",
-      "Todos los cilindrajes recomendados por el fabricante"
-    ],
-    benefits: [
-      "Molécula antidesgaste termoactivada para excelente protección a altas temperaturas",
-      "Reduce la fricción logrando una conducción confortable",
-      "Excelente protección contra el desgaste",
-      "Buena estabilidad térmica, a la oxidación y control de depósitos",
-      "Excelentes propiedades de protección contra la corrosión",
-      "Propiedades mejoradas a baja temperatura"
-    ],
-    presentations: [PRESEN.LITRO],
-    specifications: {
-      viscosity: "10W-40",
-      api: ["SL"],
-      jaso: ["MB 2016"]
-    }
-  },
-  {
-    id: "mobil-17",
-    name: "Mobil Delvac Modern™ 15W-40 Full Protection",
-    image: "images/mobil/mobil_delvac_modern_15w_40_full_protection.png",
-    type: "Aceite de alto desempeño para motores diésel de servicio pesado",
-    description: "Aceite con tecnología sintética para motores diésel de última generación y de bajas emisiones que cumple o excede los requerimientos de los fabricantes de equipo original.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.DIE,
-    applications: [
-      "Alto rendimiento dentro y fuera de las carreteras y en aplicaciones marinas",
-      "Sistemas de control de emisiones de vehículos Euro V/VI",
-      "Compatible con equipos de tecnologías anteriores"
-    ],
-    benefits: [
-      "Larga vida para el motor",
-      "Trabajo pesado",
-      "Control de hollín",
-      "Aprobado por fabricantes, Equipo Original",
-      "Estabilidad Térmica y a la oxidación"
-    ],
-    approvals: [
-      "Detroit Fluids Specification 93K222",
-      "Detroit Fluids Specification 93K218",
-      "Deutz DQC II-10 LA",
-      "Mack EOS-4.5, EO-O Premium Plus",
-      "Aprobación MB 228.31",
-      "Cummins CES 20081 / 20086",
-      "Camiones Renault RLD-3",
-      "MAN M 3575",
-      "MAN M 3275-1",
-      "Volvo VDS-4.5, VDS-4",
-      "CATERPILLAR ECF-3",
-      "ALLISON TES 439",
-      "ACEA E7-16, E9-16",
-      "JASO DH-2"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "15W-40",
-      api: ["CK-4", "CJ-4", "CI-4 PLUS", "CI-4", "CH-4", "SN"],
-      "acea": ["E7", "E9"]
-    }
-  },
-  {
-    id: "mobil-18",
-    name: "Mobil 1™ 0W-20",
-    image: "images/mobil/mobil_1_ow_20.webp",
-    type: "Lubricante totalmente sintético de avanzada economía de combustible para motores",
-    description: "Avanzado aceite totalmente sintético diseñado para brindar una excepcional protección al motor y una mejorada economía de combustible.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Todos los tipos de vehículos de pasajeros, SUV, furgonetas y camiones ligeros con motores a gasolina",
-      "Aplicaciones SAE 5W-20 y 0W-20",
-      "Condiciones de frío extremo"
-    ],
-    benefits: [
-      "Fórmula avanzada totalmente sintética de baja viscosidad",
-      "Excepcional estabilidad térmica y contra la oxidación",
-      "Excepcionales capacidades a baja temperatura",
-      "Sistema de aditivos de componentes precisamente balanceado"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "0W-20",
-      api: ["SN"],
-      ilsac: ["GF-5"]
-    }
-  },
-  {
-    id: "mobil-19",
-    name: "Mobilube HD 85W-140",
-    image: "images/mobil/mobil_sae_85w_140.png",
-    type: "Lubricantes de servicio pesado para engranajes automotrices",
-    description: "Lubricante de alto rendimiento para servicio pesado en engranajes formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.TRAN,
-    applications: [
-      "Ejes y transmisiones finales para servicio pesado",
-      "Aplicaciones automotrices que requieren API GL-5",
-      "Camiones de carga ligera y carga pesada y vehículos comerciales",
-      "Maquinaria de industria: construcción, extracción, minería y agricultura"
-    ],
-    benefits: [
-      "Compatible con los sellos y empaques automotrices usuales",
-      "Sobresaliente protección contra el desgaste a bajas velocidades/altos torques",
-      "Protección contra el rayado a altas velocidades",
-      "Excelente protección contra la herrumbre y la corrosión",
-      "Excepcional estabilidad térmica y resistencia a la oxidación",
-      "Lubricación efectiva a bajas temperaturas"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "85W-140",
-      api: ["GL-5"]
-    }
-  },
-  // {
-  //   id: "mobil-20",
-  //   name: "Mobil Super™ 2000 X1 10W-40",
-  //   image: "images/mobil/mobil_super_2000_x1_10w_40.webp",
-  //   type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
-  //   description: "Lubricante de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
-  //   category: OIL_CAT.SEMI,
-  //   line: "Mobil Super 2000",
-  //   applications: [
-  //     "Motores a gasolina y gas",
-  //     "Motores turboalimentados de inyección directa de gasolina",
-  //     "Vehículos livianos y SUV",
-  //     "Conducción en ciudad con paradas frecuentes",
-  //     "Condiciones operacionales normales a severas"
-  //   ],
-  //   benefits: [
-  //     "Protección contra el desgaste del motor y la formación de depósitos",
-  //     "Protección superior del motor durante el arranque",
-  //     "Protección a altas temperaturas",
-  //     "Evita la pre-ignición"
-  //   ],
-  //   presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-  //   specifications: {
-  //     viscosity: "10W-40",
-  //     api: ["SN PLUS"],
-  //     "acea": ["A3/B3-16"],
-  //   },
-  //   approvals: [
-  //     "Aprobación Mercedes Benz 229.1",
-  //     "Volkswagen 501 01",
-  //     "Volkswagen 505 00"
-  //   ]
-  // }, 
-  {
-    id: "mobil-21",
-    name: "Mobil Special™ HD 50",
-    image: "images/mobil/mobil_special_hd_50.webp",
-    type: "Aceite de motor monogrado de alto rendimiento.",
-    description: "Formulados a partir de bases lubricantes minerales de alta calidad y de un sistema de aditivos para brindar el desempeño requerido por los motores de combustión interna en donde es requerido un nivel de calidad API SF o API CC. Contienen un efectivo balance de detergentes y dispersantes para reducir la formación de lodos y depósitos, retener la alcalinidad (TBN) y reducir el desgaste.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Motores de gasolina de Vehículos de pasajeros, Vehículos comerciales",
-      "Motores de gasolina de maquinaria agrícola",
-      "Motores diésel de vehículos comerciales y equipos para la construcción",
-      "Transmisiones manuales que requieran aceites de calidad API GL1"
-    ],
-    benefits: [
-      "Bajo consumo de aceite",
-      "Limpieza del motor"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "HD 50",
-      api: ["SF", "CC"]
-    }
-  },
-  {
-    id: "mobil-22",
-    name: "Mobil Super™ 4T MX 10W-40",
-    image: "images/mobil/mobil_super_4t_mx_10w_40.webp",
-    type: "Lubricante semisintético para motos 4T",
-    description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Motocicletas de 4 tiempos que requieren aceite SAE 10W-40", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
-    ],
-    benefits: [
-      "Protección contra el desgaste para alargar vida útil del motor",
-      "Ayuda a mantener más limpio el motor",
-      "Excelentes propiedades  de fricción",
-      "Ayuda a reducir las emisiones"
-    ],
-    presentations: [PRESEN.LITRO],
-    specifications: {
-      viscosity: "10W-40",
-      api: ["SL"],
-      jaso: ["MA2"]
-    }
-  },
-  {
-    id: "mobil-23",
-    name: "Mobil Super™ 4T MX 15W-50",
-    image: "images/mobil/mobil_super_4t_mx_15w_50.webp",
-    type: "Lubricante semisintético para motos 4T",
-    description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Motocicletas de 4 tiempos que requieren aceite SAE 10W-50", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
-    ],
-    benefits: [
-      "Protección contra el desgaste para alargar vida útil del motor",
-      "Ayuda a mantener más limpio el motor",
-      "Excelentes propiedades  de fricción",
-      "Ayuda a reducir las emisiones"
-    ],
-    presentations: [PRESEN.LITRO],
-    specifications: {
-      viscosity: "15W-50",
-      api: ["SL"],
-      jaso: ["MA2"]
-    }
-  },
-  {
-    id: "mobil-24",
-    name: "Mobil Super™ Moto 2T",
-    image: "images/mobil/mobil_super_moto_2t.webp",
-    type: "Lubricante mineral para motos 2T",
-    description: "Mobil Super Moto 2T combina aceites minerales de alta calidad con un robusto sistema de aditivos que proporciona una buena limpieza y desempeño superior al motor. Mobil Super Moto 2T está pre-diluido para asegurar una rápida mezcla con el combustible. Utilice la proporción de mezcla recomendada por el fabricante. Atienda siempre las recomendaciones del manual del usuario.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Adecuado para otros equipos con motores de dos tiempos a gasolina", "Compatible con sistemas de lubricación automática", "Compatible con sistemas de mezcla de aceite con el combustible"
-    ],
-    benefits: [
-      "Ayuda a prolongar la vida útil del motor",
-      "Estabilidad térmica y a la oxidación y control de los depósitos",
-      "Evita la pre-ignición"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "ASTM D 445",
-      api: ["TC"],
-      jaso: ["FB"],
-      iso: ["L-EGB"]
-    }
-  },
-  {
-    id: "mobil-25",
-    name: "Mobil™ Extra 2T",
-    image: "images/mobil/mobil_extra_2t.webp",
-    type: "Lubricante sintético para motos 2T",
-    description: "Mobil Extra 2T combina una mezcla de aceites básicos minerales y sintetizados de alta calidad con un sistema de aditivos avanzado para proporcionar una excelente limpieza del motor y un escape de gases libre de humo. Viene diluido para facilitar su mezcla al agregarlo al combustible.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.MOTO,
-    applications: [
-
-    ],
-    benefits: [
-      "Gas de escape sin humo",
-      "Protección contra el desgaste para alargar vida útil del motor",
-      "Proporciona una mayor estabilidad contra la oxidación"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.PINTA],
-    specifications: {
-      viscosity: "ASTM D 445",
-      api: ["TC"],
-      jaso: ["FC"],
-      iso: ["L-EGB"]
-    }
-  },
-  {
-    id: "mobil-26",
-    name: "Mobil Outboard™ Plus 2T",
-    image: "images/mobil/mobil_outboard_plus_2t.png",
-    type: "Lubricante para motores fuera de borda 2 Tiempos",
-    description: "Mobil Outboard Plus es un aceite de alto desempeño para motores de dos tiempos que está diseñado para muchos motores de dos tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda. Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente. Mobil Outboard Plus está prediluido para facilitar la mezcla cuando se añade al combustible.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Recomendado para inyección directa y sistemas premezclados gasolina/lubricante",
-      "Adecuado para motores de dos tiempos enfriados por aire de trabajo liviano a moderado",
-      "Aplicable en equipos como cortadoras de pasto, sierras eléctricas, sopladoras de hojas y orilladoras de pasto"
-    ],
-    benefits: [
-      "Extiende la vida del motor.",
-      "Extiende la vida de las bujias y de las valvúlas previendo los depositos de suuciedad.",
-      "Mejora la economia del combustible.",
-      "Buena capacidad para altas y bajas temperaturas",
-      "No es toxico para la vida marina"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: ["TC"],
-      nmma: ["TC-W3"],
-    }
-  },
-  // {
-  //   id: "mobil-27",
-  //   name: "Mobil Delvac XHP™ ESP S 10W-40",
-  //   image: "images/mobil/mobil_delvac_xhp_esp_10w-40.png",
-  //   type: "Lubricante sintético para la protección del sistema de emisión de aceite de motor diésel",
-  //   description: "Aceite sintético de alto desempeño diseñado para proporcionar lubricación a motores diésel modernos de alto rendimiento y bajas emisiones, utilizados en aplicaciones severas. Este aceite se ha diseñado utilizando aceites base ultrarefinadas que proporcionan una excelente fluidez a bajas temperaturas, retención de la viscosidad a altas temperaturas y control de la volatilidad.",
-  //   category: "Servicio Pesado - Diésel",
-  //   line: "Línea CVL",
-  //   applications: [
-  //     "Motores diésel de servicio pesado, incluyendo los vehículos modernos de bajas emisiones Euro V/VI que utilizan tecnologías tales como Filtros de Partículas para Motores Diésel (DPF), Reducción Catalítica Selectiva (SCR), Trampas de Regeneración Continua (CRT), Catalizadores de Oxidación para Motores Diésel (DOC) y Recirculación de Gases de Escape (EGR)",
-  //     "Equipos accionados por motores diésel aspirados naturalmente y turboalimentados",
-  //     "Camiones y autobuses de carretera usados en viajes de larga y corta distancia",
-  //     "Equipos fuera de carretera para la minería, la construcción y la agricultura",
-  //     "Motores de fábrica europeos que requieren la especificación ACEA E4-16, E6-16, E7-16, E9-16"
-  //   ],
-  //   benefits: [
-  //     "Ayuda a brindar una larga vida del motor",
-  //     "Largos intervalos entre cambios de aceite",
-  //     "Propiedades anti-desgaste, anti-rayado y protección",
-  //     "Ayuda a proteger los dispositivos de los sistemas de escape"
-  //   ],
-  //   approvals: [
-  //     "MTU Categoría de aceite 3.1",
-  //     "MAN M 3477/ M 3575/ M 3271-1",
-  //     "Volvo VDS-4/ VDS-3",
-  //     "Camiones Renault RLD-3/ RLD-2",
-  //     "Deutz DQC IV-10 LA",
-  //     "Scania bajo contenido de cenizas",
-  //     "Voith Aceite retardador Clase B",
-  //     "Motores Kamaz Euro-3, 4 y -5",
-  //     "Mercedes Benz 228.51 / 235.28",
-  //     "Mack EO-O PREMIUM PLUS"
-  //   ],
-  //   presentations: [PRESEN.PAILA],
-  //   specifications: {
-  //     viscosity: "10W-40",
-  //     api: ["CJ-4", "CI-4 PLUS"],
-  //     acea: ["E4-16", "E6-16", "E7-16", "E9-16"],
-  //     jaso: ["DH-2"]
-  //   },
-  //   "requirements": [
-  //     "Cummins CES 20081",
-  //     "CATERPILLAR ECF-3"
-  //   ]
-  // },
-  // {
-  //   id: "mobil-28",
-  //   name: "Mobil Delvac™ 1340",
-  //   image: "images/mobil/mobil_delvac_1340.png",
-  //   type: "Lubricante para motores diésel de servicio pesado turbocargados",
-  //   description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
-  //   category: "Servicio Pesado - Diésel",
-  //   line: "Línea CVL",
-  //   applications: [
-  //     "Motores diésel que utilizan diseños más viejos y convencionales de aspiración natural",
-  //     "Camiones de servicio pesado en carretera y aplicaciones fuera de carretera, incluyendo transporte, minería, construcción, agrícolas y marinas"
-  //   ],
-  //   benefits: [
-  //     "Excelente protección contra el pegado de los anillos",
-  //     "Excelente control del consumo de aceite"
-  //   ],
-  //   presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
-  //   specifications: {
-  //     viscosity: null,
-  //     api: ["CF", "SF"],
-  //   }
-  // },
-  {
-    id: "mobil-29",
-    name: "Mobil Delvac™ Legend 1350 SAE50",
-    image: "images/mobil/mobil_delvac_1350.webp",
-    type: "Lubricante para motores diésel de servicio pesado turbocargados",
-    description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.DIE,
-    applications: [
-      "Motores diésel que utilizan diseños más viejos y convencionales de aspiración natural",
-      "Camiones de servicio pesado en carretera y aplicaciones fuera de carretera, incluyendo transporte, minería, construcción, agrícolas y marinas"
-    ],
-    benefits: [
-      "Excelente protección contra el pegado de los anillos",
-      "Excelente control del consumo de aceite"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: ["CF", "SF"],
-    }
-  },
-  {
-    id: "mobil-30",
-    name: "Mobil Delvac™ Extended life 50/50",
-    image: "images/mobil/mobil_delvac_extended_life_50_50.png",
-    type: "Lubricante para motores diésel de servicio pesado turbocargados",
-    description: "El refrigerante/anticongelante de vida prolongada y prediluido Mobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es un refrigerante a base de etilenglicol exento de fosfatos, silicatos, nitritos y boratos, listo para usar, que ha sido diseñado para proporcionar una excepcional protección contra la cavitación y la corrosión de todos los metales del sistema de enfriamiento.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze está formulado con inhibidores orgánicos de la corrosión para proporcionar una protección total del sistema de enfriamiento de hasta 1.600.000 kilómetros de uso en carretera (8 años o 20.000 horas de uso fuera de la carretera). Puesto que los inhibidores de corrosión orgánicos no se agotan con facilidad, Mobil Delvac™ Extended Life 50/50 Prediluted Coolant/Antifreeze elimina la necesidad de utilizar aditivos suplementarios para refrigerantes (SCA) que sí se requieren al usar refrigerantes convencionales.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es una mezcla 50/50 de Mobil Delvac Extended Life Coolant/Antifreeze y agua desionizada.",
-    category: OIL_CAT.ETI,
-    line: OIL_LINES.ESP,
-    applications: [
-      "Todo tipo de motores de servicio pesado diesel, de gasolina y de gas natural.",
-      "Aplicaciones de motores estacionarios, independientemente del tipo de combustible utilizado.",
-      "Sistemas de enfriamiento marino donde se requiere protección contra el congelamiento.",
-      "Flotas mixtas donde hay presentes camiones de servicio tanto ligero como pesado."
-    ],
-    benefits: [
-      "Ideal para motores a gasolina y a Diesel en las condiciones más severas. Proporciona protección total de los sistemas de enfriamiento durante 1.600.000 km de uso en carretera (8 años o 20.000 horas de uso fuera de carretera).",
-      "Elimina la necesidad de \"aditivos suplementarios para refrigerantes\" (SCA, por su sigla en inglés), los cuales si se requieren al utilizar refrigerantes convencionales."
-    ],
-    presentations: [PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: []
-    }
-  },
-  {
-    id: "mobil-31",
-    name: "Mobil ATF™ D/M",
-    image: "images/mobil/mobil_atf_d_m.webp",
-    type: "Fluido para transmisión automática",
-    description: "Proporciona excelente estabilidad contra la oxidación y la fricción, propiedades antidesgaste, y la fluidez a bajas temperaturas deseada para la mayoría de las transmisiones automáticas.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.TRAN,
-    applications: [
-      "Recomendado para aplicaciones que requieren: General Motors DEXRON® IIIH Ford MERCON® Allison Transmission C-4",
-      "No recomendado para: GM DEXRON® VI, Ford MERCON® V, MERCON LV®, MERCON SP® y Type F ATF",
-      "Puede utilizarse como aceite lubricante en compresores de aire rotatorios bajo ciertas condiciones",
-      "Buen desempeño a bajas temperaturas",
-      "Alta resistencia a la oxidación para cumplir requisitos de servicio en compresores"
-    ],
-    benefits: [
-      "Excelente estabilidad contra la oxidación",
-      "Buenas características lubricantes",
-      "Propiedades de fricción controladas",
-      "Prevención de la corrosión"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: [],
-      compatibility: [],
-      other: ["ALLISON C- 4 / MERCON / DEXRON IIIH"]
-    }
-  },
-  {
-    id: "mobil-32",
-    name: "Mobil Super™ 2000 10W-40",
-    image: "images/mobil/mobil_super_2000_10w_40.png",
-    type: "Lubricante Mobil para vehículos de pasajeros",
-    description: "Aceite mejorado semisintético de calidad premium para motores que cumplen con las más recientes especificaciones de los aceites para motores de la industria. Está diseñado para proporcionar un excelente nivel de protección y desempeño bajo las condiciones más exigentes.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Las más recientes tecnologías de motores de gasolina",
-      "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
-      "Conducción en la ciudad con muchas paradas",
-      "Condiciones operacionales normales a severas",
-      "Turboalimentadores",
-      "Motores de alto desempeño"
-    ],
-    benefits: [
-      "Excelente limpieza del motor",
-      "Excelente protección a altas temperaturas",
-      "Mejora la eficiencia del motor reduciendo el preencendido a bajas revoluciones (LSPI)"
-    ],
-    presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "10W-40",
-      api: ["SL", "SM", "SN", "SN PLUS", "SP"],
-      acea: ["A3/B3"],
-      other: ["RESOURCE CONSERVING"]
-    },
-  },
-  {
-    id: "mobil-33",
-    name: "Mobil Outboard™ Plus 4T 10W-40",
-    image: "images/mobil/mobil_outboard_plus_4t_10w_40.webp",
-    type: "Aceite de desempeño superior para motores fuera de borda de cuatro tiempos",
-    description: "Aceite de alto desempeño para motores de cuatro tiempos que está diseñado para muchos motores de cuatro tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda.Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.MOTO,
-    applications: [
-      "Utilizado en motores modernos de alto rendimiento, refrigerados por agua y de cuatro tiempos.",
-      "Uso en motores de cuatro tiempos donde se recomiendan los aceites NMMA FC-W."
-    ],
-    benefits: [
-      "Protección contra los depósitos, la corrosión y el desgaste.",
-      "Minimiza las fllas de las bujías y pre-ingnición, fomentando una operación segura."
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "10W-40",
-      api: ["SL"],
-      nmma: ["FC-W"]
-    }
-  },
-  {
-    id: "mobil-34",
-    name: "Mobil Delvac Legend™ 25W-50 High Mileage",
-    image: "images/mobil/mobil_delvac_legend_25w_50.png",
-    type: "Aceite de alto rendimiento para motores diésel",
-    description: "Aceite para motores diésel de alto rendimiento y alta viscosidad que proporciona una comprobada protección en motores diésel que operan en aplicaciones de servicio severo. Mobil Delvac 25W-50 High Mileage es recomendado para utilizarse en una amplia gama de aplicaciones de servicio pesado y en los ambientes operativos que se encuentran en las industrias de acarreo en camiones, minera, de la construcción, de explotación de canteras y agrícola.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.DIE,
-    applications: [
-      "Equipos de fabricantes europeos, japoneses y estadounidenses propulsados por motores diésel de aspiración natural o turboalimentados",
-      "Transporte de servicio ligero y pesado por carretera",
-      "Industrias fuera de carreteras, entre ellas: construcción, minería, explotación de canteras y agricultura"
-    ],
-    benefits: [
-      "Estabilidad térmica y ante la oxidación",
-      "Controla la acumulación de lodos y depósitos",
-      "Reserva de TBN",
-      "Control de depósitos y neutralización de ácidos",
-      "Alta viscosidad y estabilidad ante los esfuerzos de corte que le permite mantenerse en su grado",
-      "Menor consumo de aceite, mayor protección contra el desgaste y alta presión de aceite en un amplio rango de temperaturas de operación.",
-      "Excelente detergencia/dispersancia",
-      "Motores más limpios y una mayor vida útil de estos",
-      "Compatibilidad con los componentes",
-      "Larga vida útil de las empaquetaduras y sellos"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "25W-50",
-      api: ["CF", "SF"],
-    }
-  },
-  {
-    id: "mobil-35",
-    name: "Mobil™ Dexron-VI ATF",
-    image: "images/mobil/mobil_atf_d_m_dexron_VI.jpg",
-    type: "Fluido para transmisión automática",
-    description: "Es una formulación de alto desempeño a base de una mezcla de productos sintéticos que cumple con los rigurosos requisitos de la especificación DEXRON-VI de General Motors y proporciona protección de la garantía para vehículos de General Motors del año 2006 en adelante. También proporciona un desempeño mejorado en vehículos de General Motors más viejos, cuando DEXRON es especificado.",
-    category: OIL_CAT.SEMI,
-    line: OIL_LINES.TRAN,
-    applications: [
-      "Brinda protección de la garantía para vehículos GM 2006 y más nuevos."
-    ],
-    benefits: [
-      "Prolongada vida útil del fluido",
-      "Mejor estabilidad térmica y ante la oxidación",
-      "Propiedades de fricción optimizadas que proporcionan cambios de marcha suaves durante la operación a bajas temperaturas y que ayudan a prevenir la vibración de la transmisión",
-      "Excelente resistencia a la formación de lodos y depósitos",
-      "Una mejor protección antidesgaste que contribuye a prolongar la vida útil de la transmisión",
-      "Sobresaliente desempeño a bajas temperaturas"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "Brookfield 11500",
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      oem: ["GM DEXRON-VI"],
-      compatibility: ["Compatible con DEXRON IIIH y anteriores, pero no recomendado para vehículos que requieren DEXRON-VI"]
-    }
-  },
-  {
-    id: "mobil-36",
-    name: "Mobilfluid™ 424",
-    image: "images/mobil/mobilfluid_424.jpg",
-    type: "Lubricante multipropósito para tractores",
-    description: "Lubricante multiuso y de extra alto rendimiento para tractores diseñado para cumplir o exceder los requisitos de los fluidos hidráulicos y de transmisión.  La tecnología avanzada de Mobilfluid 424 está diseñada para optimizar el desempeño de los tractores agrícolas y comerciales que operan en una amplia gama de entornos y condiciones.  Mobilfluid 424 combina aceites base selectos y un paquete de aditivos de avanzada tecnología para proporcionar las variadas propiedades de desempeño de los lubricantes que se requieren en los trenes de transmisión de potencia de equipos agrícolas y de construcción en aplicaciones de servicio severo.  Es particularmente adecuado para reducir el chirrido y traqueteo de los frenos húmedos y de las tomas de fuerza.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.TRAN,
-    applications: [
-      "Transmisiones, diferenciales, mandos finales, sistemas hidráulicos, sistemas de dirección asistida, frenos húmedos, tomas de fuerza y accionamientos hidrostáticos de servicio pesado",
-      "Industrias fuera de carretera que incluyen: agricultura, construcción y canteras",
-      "Llenado hasta el tope o recarga de sistemas",
-      "En aplicaciones de transmisiones comerciales que requieren fluidos Tipo A (Sufijo A), Dexron y Tipo F. No utilizarse en transmisiones automáticas de vehículos de pasajeros",
-      "Aplicaciones que requieren lubricantes grado API GL-4 o SAE 80W en todas las aplicaciones de engranajes excepto en los diseños de engranajes hipoides",
-      "Excelente reemplazo de aceites de motor recomendados para sistemas hidráulicos y de transmisión"
-    ],
-    benefits: [
-      "Propiedades de fricción mejoradas",
-      "Desempeño optimizado en embragues y tomas de fuerza",
-      "Mejor control de los chirridos y traqueteos de los frenos húmedos y de las tomas de fuerza",
-      "Compatible con los más recientes materiales y elastómeros de los embragues",
-      "Mayor vida útil del embrague y menos fugas",
-      "Alto índice de viscosidad y estabilidad ante el cizallamiento",
-      "Respuesta operativa consistente"
-    ],
-    presentations: [PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: "4300",
-      api: ["GL-4"],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: [],
-      nmma: [],
-      compatibility: []
-    }
-  },
-  {
-    id: "mobil-37",
-    name: "Mobil Nuto™ H 68",
-    image: "images/mobil/mobil_nuto_h_68.png",
-    type: "Aceite hidráulico",
-    description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.IND,
-    applications: [
-      "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
-      "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
-      "Donde la presencia de pequeñas cantidades de agua es inevitable"
-    ],
-    benefits: [
-      "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
-      "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
-      "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: ["VG 68"],
-      nmma: [],
-      compatibility: []
-    },
-    approvals: [
-      "Denison HF-0",
-      "Denison HF-1",
-      "Denison HF-2"
-    ],
-    requirements: [
-      "ASTM D6158 (Class HM)",
-      "DIN 51524-2:2017-06",
-      "ISO L-HM (ISO 11158:2023)",
-      "Fives Cincinnati P-69"
-    ]
-  },
-  {
-    id: "mobil-38",
-    name: "Mobil Nuto™ H 46",
-    image: "images/mobil/mobil_nuto_h_68.png",
-    type: "Aceite hidráulico",
-    description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.IND,
-    applications: [
-      "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
-      "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
-      "Donde la presencia de pequeñas cantidades de agua es inevitable"
-    ],
-    benefits: [
-      "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
-      "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
-      "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: ["VG 46"],
-      nmma: [],
-      compatibility: []
-    },
-    approvals: [
-      "Denison HF-0",
-      "Denison HF-1",
-      "Denison HF-2"
-    ],
-    requirements: [
-      "ASTM D6158 (Class HM)",
-      "DIN 51524-2:2017-06",
-      "ISO L-HM (ISO 11158:2023)"
-    ]
-  },
-  {
-    id: "mobil-39",
-    name: "Mobil Nuto™ H 32",
-    image: "images/mobil/mobil_nuto_h_68.png",
-    type: "Aceite hidráulico",
-    description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
-    category: OIL_CAT.MIN,
-    line: OIL_LINES.IND,
-    applications: [
-      "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
-      "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
-      "Donde la presencia de pequeñas cantidades de agua es inevitable"
-    ],
-    benefits: [
-      "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
-      "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
-      "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
-    ],
-    presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
-    specifications: {
-      viscosity: null,
-      api: [],
-      acea: [],
-      ilsac: [],
-      jaso: [],
-      iso: ["VG 32"],
-      nmma: [],
-      compatibility: []
-    },
-    approvals: [
-      "Denison HF-0",
-      "Denison HF-1",
-      "Denison HF-2"
-    ],
-    requirements: [
-      "Fives Cincinnati P-68",
-      "ASTM D6158 (Class HM)",
-      "DIN 51524-2:2017-06",
-      "ISO L-HM (ISO 11158:2023)"
-    ]
-  },
-  {
-    id: "mobil-40",
-    name: "Mobil 1™ 0W-16",
-    image: "images/mobil/mobil_1_0w_16.avif",
-    type: "Aceite avanzado totalmente sintético para motores.",
-    description: "Mantenga a su motor funcionando con la máxima eficiencia a la vez que mejora la economía de combustible. Diseñado para los motores avanzados e híbridos de hoy en día, el aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 ayuda a mejorar la economía de combustible* y a prolongar la vida útil del motor en vehículos de cualquier antigüedad. Mobil 1 0W-20 Advanced Fuel Economy utiliza Fórmula de Triple Acción, distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios a su vehículo. Los componentes especiales en el aceite sintético reducen la fricción y ayudan a prevenir la formación de depósitos y la acumulación de lodo para mantener las piezas críticas del motor limpias y protegidas hasta 16,000 km (10,000 millas) entre cambios de aceite.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Mobil 1 0W-16 está recomendado por ExxonMobil para aplicaciones SAE 0W-16 en motores a gasolina e híbridos diseñados para funcionar con aceite para motores de viscosidad SAE 0W-16.",
-      "Mobil 1 0W-16 no se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante. Revise siempre el manual del propietario para determinar el grado de viscosidad del aceite recomendado por el fabricante, la clasificación de servicio API y cualquier aprobación del fabricante.",
-      "Se obtiene una mejora potencial en la economía de combustible al cambiar aceites de mayor viscosidad a un grado de viscosidad más bajo. Los ahorros reales dependen del tipo de vehículo/motor, la temperatura exterior, el tipo de conducción, las condiciones de la carretera y la viscosidad de su actual aceite de motor.",
-      "Protege hasta 16,000 km (10,000 millas) o 1 año, lo que ocurra primero. Para mayor información acerca de la Garantía Limitada de Mobil 1, visítenos en Mobil.US."
-    ],
-    benefits: [
-      "El aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 tiene una baja viscosidad para ayudar a mejorar la economía de combustible*.",
-      "Utiliza la Fórmula de Triple Acción», distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios del motor.",
-      "Ayuda a proteger las partes críticas del motor durante hasta 16 000 km (10 000 millas) entre cambios de aceite,** controlando la oxidación para prevenir la degradación del aceite y manteniendo una viscosidad óptima.",
-      "Cumple con las normas ILSAC GF-6 para ayudar a proporcionar una protección contra la preignición a bajas velocidades (LSPI) y el desgaste de la cadena de distribución, a la vez que mantiene a su motor limpio.",
-      "Ayuda a prolongar la vida del motor, al prevenir la formación de depósitos dañinos y la acumulación de lodos.",
-      "Proporciona una excelente protección contra el calor interno del motor hasta 260°C (500°F) y contra las bajas temperaturas hasta -40°C (-40°F)."
-    ],
-    presentations: [PRESEN.CUARTO, `5x ${PRESEN.CUARTO}`],
-    specifications: {
-      viscosity: "0W-16",
-      api: ["SP"],
-      ilsac: ["GF-6B"]
-    }
-  },
-  {
-    id: "mobil-41",
-    name: "Mobil 1™ 5W-20",
-    image: "images/mobil/mobil_1_5w_20.webp",
-    type: "Aceite avanzado totalmente sintético para motores.",
-    description: "Avanzado aceite completamente sintético para motores diseñado para brindar una excelente protección al motor con el fin de que éste siga funcionando como nuevo y para proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite.* Mobil 1 5W-20 cumple o excede los estándares más exigentes de la industria y supera a nuestros aceites de mezcla convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto desempeño.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Está recomendado por ExxonMobil para todo tipo de vehículo moderno con motor de gasolina, incluyendo motores de alto rendimiento turboalimentados y sobrealimentados con multiválvulas y con inyección de combustible usados en automóviles de pasajeros, vehículos deportivos utilitarios (SUV), y furgonetas y camiones ligeros.",
-      "Aceite de motor de alto rendimiento para todo tipo de automóviles para los que se recomienda esta viscosidad",
-      "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
-    ],
-    benefits: [
-      "Avanzada fórmula completamente sintética",
-      "Mantiene al motor funcionando como nuevo",
-      "Sobresaliente estabilidad térmica y ante la oxidación",
-      "Protege hasta 16.000 kilómetros entre cambios de aceite*.",
-      "Excepcionales capacidades a bajas temperaturas",
-      "Arranque rápido y una protección rápida en climas fríos ayuda a prolongar la vida del motor"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "5W-20",
-      api: ["SP"],
-      ilsac: ["GF-6A"]
-    }
-  },
-  {
-    id: "mobil-42",
-    name: "Mobil 1™ 5W-30",
-    image: "images/mobil/mobil_1_5w_30.jpg",
-    type: "Aceite avanzado totalmente sintético para motores",
-    description: "El avanzado aceite sintético para motores Mobil 1 utiliza la emblemática Fórmula de Triple Acción de Mobil 1 para ofrecer un excelente rendimiento, protección y limpieza del motor a vehículos de todas las edades. Los componentes especiales en el aceite sintético prolongan la vida del motor al reducir la fricción que causa la acumulación de depósitos y lodos, lo cual mantiene a las piezas críticas del motor limpias y protegidas hasta 10.000 millas entre cambios de aceite.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
-      "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
-    ],
-    benefits: [
-      "Ayuda a proteger las piezas críticas del motor hasta 10.000 millas entre cambios de aceite, al controlar la oxidación de manera de evitar la descomposición del aceite y mantener una excelente viscosidad.",
-      "Cumple con las normas ILSAC GF-6 que ayudan a proporcionar una protección contra el preencendido a bajas velocidades (LSPI) y el desgaste de la cadena de distribución, a la vez que mantiene a su motor limpio y ayuda a mejorar su economía de combustible.",
-      "Ayuda a prolongar la vida del motor al prevenir los depósitos dañinos y la acumulación de lodos",
-      "Proporciona una excelente protección contra el calor interno del motor (hasta 500 grados F) y contra las bajas temperaturas (hasta -30 grados F)"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "5W-30",
-      api: ["SP"],
-      ilsac: ["GF-6A"]
-    }
-  },
-  {
-    id: "mobil-43",
-    name: "Mobil 1™ 10W-30",
-    image: "images/mobil/mobil_1_10w_30.png",
-    type: "Aceite avanzado totalmente sintético para motores",
-    description: "Aceite para motores totalmente sintético diseñado para ayudar a proporcionar una excelente protección del motor con el fin de mantenerlo funcionando como nuevo y proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite*. Mobil 1 10W-30 cumple o excede los estándares más exigentes de la industria y brinda un desempeño superior al de nuestras mezclas de aceites convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto rendimiento",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
-      "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
-    ],
-    benefits: ["Avanzada fórmula completamente sintética",
-      "Mantiene al motor funcionando como nuevo",
-      "Sobresaliente estabilidad térmica y ante la oxidación",
-      "Protege hasta 16.000 kilómetros entre cambios de aceite*.",
-      "Excelente desempeño a bajas temperaturas",
-      "Arranque rápido y una protección rápida en climas fríos ayuda a prolongar la vida del motor"],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "10W-30",
-      api: ["SP"],
-      ilsac: ["GF-6A"]
-    }
-  },
-  {
-    id: "mobil-44",
-    name: "Mobil 1™ FS 0W-40",
-    image: "images/mobil/mobil_1_fs_0w_40.webp",
-    type: "Aceite avanzado para motores totalmente sintético",
-    description: "El avanzado aceite para motores totalmente sintético Mobil™ 1 FS 0W-40 está diseñado para las más modernas tecnologías de motores de gasolina y diésel (sin filtros de partículas) y ofrece un excelente desempeño integral. Proporciona un poder de limpieza y una protección contra el desgaste excepcionales. Mobil™ 1 FS 0W-40 mantiene el motor funcionando como nuevo bajo todas las condiciones de conducción.",
-    category: OIL_CAT.SINT,
-    line: OIL_LINES.GAS,
-    applications: [
-      "Las últimas tecnologías de motores, incluso turbo­cargadores, inyección directa, diésel (sin filtros para partículas) e híbridos.",
-      "Motores de alto desempeño.",
-      "Casi todas las condiciones de operación, desde moderadas hasta extremas"
-    ],
-    benefits: [
-      "Cumple o supera las más recientes normas de los fabricantes de equipos originales (OEM) y de la industria.",
-      "Proporciona un desempeño general excelente",
-      "Tiene excelentes propiedades a baja temperatura para brindar una protección rápida del motor durante el arranque",
-      "Tiene propiedades de fricción mejoradas que ayudan a ahorrar combustible",
-      "Ofrece una protección rápida para reducir el desgaste del motor y la formación de depósitos, incluso bajo las condiciones de conducción más extremas",
-      "Proporciona una excepcional potencia de limpieza para los motores sucios"
-    ],
-    presentations: [PRESEN.CUARTO],
-    specifications: {
-      viscosity: "0W-40",
-      api: ["SP"],
-      ilsac: []
-    }
-  }
-];
-
 const CATALOGS = {
   mobil: {
     brand: BRANDS.mobil,
     categories: [],
-    products: []
+    products: [
+      {
+        id: "mobil-1",
+        name: "Mobil Super™ 3000 XE 5W-30",
+        image: "images/mobil/mobil_super_3000_xe_5w_30.webp",
+        type: "Lubricante sintético para vehículos a gasolina y diésel con filtro de partículas diésel (DPF)",
+        description: "Aceite de motor sintético de alto desempeño con bajo contenido de cenizas para motores de vehículos gasolina o diesel prolongando la vida útil del motor y protegiendo los sistemas de reducción de emisiones.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Motores a gasolina y diésel livianos de últimas tecnologías",
+          "Vehículos livianos y SUV",
+          "Motores de alto rendimiento"
+        ],
+        benefits: [
+          "Protege los sistemas de tratamiento de gases de escape o los catalizadores, reduciendo las emisiones",
+          "Periodos extendidos de cambio de aceite (más kilómetros entre cambios)",
+          "Protección contra el desgaste del motor y la formación de depósitos",
+          "Proporciona excelente fluidez en arranque en frío",
+          "Permite la operación prolongada a altas temperaturas evitando la oxidación o degradación del aceite"
+        ],
+        approvals: [
+          "Aprobación Mercedes Benz 229.31",
+          "Aprobación Mercedes Benz 229.51",
+          "Aprobación Mercedes Benz 229.52",
+          "Volkswagen 505 00",
+          "Volkswagen 505 01",
+          "General Motors Dexos 2™-SF"
+        ],
+        requirements: ["FORD WSS-M2C917A"],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "5W-30",
+          api: ["SN"],
+          acea: ["C2-16", "C3-16"],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: ["DPF"],
+          other: []
+        }
+      },
+      {
+        id: "mobil-2",
+        name: "Mobil Super™ 3000 X4 5W-40",
+        image: "images/mobil/mobil_super_3000_x4_5w_40.webp",
+        type: "Lubricante sintético para vehículos gasolina y diésel sin trampa de partículas (DPF)",
+        description: "Aceite de motor totalmente sintético que ayuda a prolongar la vida útil del motor de vehículos de cualquier tipo y edad, mediante una mayor protección en un amplio rango de temperaturas.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: ["Casi todas las tecnologías de motores.", "Gasolina y diésel.", "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas.", "Manejo en carretera a velocidad de crucero y conducción en ciudad con arranques y paros continuos.", "Condiciones de operación normales a frecuentemente severas.", "Motores de alto desempeño."
+        ],
+        benefits: [
+          "Protección mejorada contra el desgaste del motor y la formación de depósitos",
+          "Protección superior del motor durante el arranque en frío",
+          "Protección mejorada a altas temperaturas"
+        ],
+        approvals: [
+          "Aprobación MB 229.3",
+          "Aprobación MB 229.5",
+          "Volskwagen 502 00",
+          "Volskwagen 505 00",
+          "Porsche A40",
+          "Peugeot/Citroen PSA 2296",
+          "BMW Longlife-01",
+          "RENAULT RN0700",
+          "RENAULT RN0710"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "5W-40",
+          api: ["SN"],
+          acea: ["A3/B4-16", "A3/B3-16"],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: ["TDI"],
+          other: []
+        }
+      },
+      {
+        id: "mobil-3",
+        name: "Mobil Super™ 2000 5W-20",
+        image: "images/mobil/mobil_super_2000_5w_20.webp",
+        type: "Lubricante semisintético para vehículos a gasolina y gas",
+        description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Motores a gasolina y gas",
+          "Vehículos livianos y SUV",
+          "Conducción en ciudad con paradas frecuentes",
+          "Condiciones de funcionamiento severas en terrenos exigentes"
+        ],
+        benefits: [
+          "Una mejor economía de combustible",
+          "Protección contra el desgaste del motor y la formación de depósitos",
+          "Protección superior del motor durante el arranque",
+          "Protección a altas temperaturas"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "5W-20",
+          api: ["SN"],
+          acea: [],
+          ilsac: ["GF-5"],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: ["RESOURCE CONSERVING"]
+        }
+      },
+      {
+        id: "mobil-4",
+        name: "Mobil Super™ 2000 10W-30",
+        image: "images/mobil/mobil_super_2000_10w_30.webp",
+        type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
+        description: "Aceite semi-sintético mejorado de alta calidad para motores que cumplen con las más recientes especificaciones de la industria para los aceites de motores.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Las más recientes tecnologías de motores de gasolina",
+          "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
+          "Conducción en la ciudad con muchas paradas",
+          "Condiciones operacionales normales a severas",
+          "Turboalimentadores",
+          "Motores de alto desempeño"
+        ],
+        benefits: [
+          "Una mejor economía de combustible de hasta un 3%",
+          "Protección contra el desgaste del motor y la formación de depósitos",
+          "Protección superior del motor durante el arranque",
+          "Protección a altas temperaturas",
+          "Evita la pre-ignición"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "10W-30",
+          api: ["SN PLUS"],
+          acea: [],
+          ilsac: ["GF-6A"],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: ["RESOURCE CONSERVING"]
+        }
+      },
+      {
+        id: "mobil-5",
+        name: "Mobil Super™ 1000 20W-50",
+        image: "images/mobil/mobil_super_1000_20w_50.webp",
+        type: "Lubricante multigrado para motores a gasolina",
+        description: "Aceites minerales de primera calidad que cumple con exigentes requerimientos de la industria para lubricantes de motores. Diseñados para proporcionar un alto nivel de desempeño y protección en variadas condiciones de funcionamiento.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Casi todas las tecnologías de motores de gasolina",
+          "Vehículos de pasajeros y SUV",
+          "Condiciones normales de funcionamiento",
+          "Apropiado para utilizarse en un amplio rango de condiciones de temperatura"
+        ],
+        benefits: [
+          "Protección prolongada contra el desgaste del motor",
+          "Protección del motor durante el arranque",
+          "Ayuda a combatir los lodos"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "20W-50",
+          api: ["SN"],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      {
+        id: "mobil-6",
+        name: "Mobil Special™ Alto Kilometraje 25W-50",
+        image: "images/mobil/mobil_special_alto_kilometraje_25w_50.webp",
+        type: "Lubricante para motores con alto kilometraje",
+        description: "Brinda una gruesa película de aceite que ayuda a proteger los motores a gasolina que operan bajo condiciones severas, como altas temperaturas y en tráfico de ciudad donde el parar y arrancar es frecuente.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.GAS,
+        applications: ["Motores con más de 150.000 kilómetros"],
+        benefits: [
+          "Reduce el consumo de aceite",
+          "Reduce el desgaste y la corrosión del motor"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "25W-50",
+          api: ["SG"],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      // {
+      //   id: "mobil-7",
+      //   name: "Mobil Super™ 4T MX 10W-30",
+      //   image: "images/mobil/mobil_super_4t_mx_10w-30.webp",
+      //   type: "Lubricante semisintético para motocicletas de 4 Tiempos",
+      //   description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos diseñado fundamentalmente para uso general en muchos tipos de motocicletas y motores de cuatro tiempos.",
+      //   category: "Motocicletas 4 tiempos",
+      //   line: "PVL - Línea MCO",
+      //   applications: [
+      //     "Motocicletas de 4 tiempos que especifican aceite SAE 10W-30",
+      //     "Motores enfriados por aire",
+      //     "Motores de 4 tiempos equipados con convertidores catalíticos"
+      //   ],
+      //   benefits: [
+      //     "Ahorros en el consumo de combustible",
+      //     "Protección contra el desgaste para alargar vida útil del motor",
+      //     "Ayuda a mantener más limpio el motor",
+      //     "Excelentes propiedades de fricción"
+      //   ],
+      //   presentations: [PRESEN.CUARTO],
+      //   specifications: {
+      //     viscosity: "10W-30",
+      //     api: ["SL"],
+      //     acea: [],
+      //     ilsac: [],
+      //     jaso: ["MA2"],
+      //     iso: [],
+      //     nmma: [],
+      //     oem: [],
+      //     compatibility: [],
+      //     other: []
+      //   }
+      // },
+      {
+        id: "mobil-8",
+        name: "Mobil Super™ 4T 20W-50",
+        image: "images/mobil/mobil_super_4t_20w_50.webp",
+        type: "Lubricante semisintético para motocicletas de 4 Tiempos",
+        description: "Combina aceites minerales de calidad altamente refinados y un avanzado sistema de aditivos para proporcionar una buena limpieza del motor, buena protección contra el desgaste y protección contra la corrosión.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.MOTO,
+        applications: ["Uso general en muchos tipos de motocicletas y motores de cuatro tiempos"],
+        benefits: [
+          "Ayuda a prolongar la vida útil del motor",
+          "Ayuda a mantener los motores limpios",
+          "Protege los componentes críticos del motor",
+          "Buena protección contra la corrosión"
+        ],
+        presentations: [PRESEN.LITRO],
+        specifications: {
+          viscosity: "20W-50",
+          api: ["SL"],
+          acea: [],
+          ilsac: [],
+          jaso: ["MA2"],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      // {
+      //   id: "mobil-9",
+      //   name: "Mobil Delvac Legend™ 1640",
+      //   image: "images/mobil/mobil_delvac_legend_1640.webp",
+      //   type: "Aceites de alto rendimiento para motores diésel",
+      //   description: "Aceite monogrado de alto rendimiento para motores diésel formulados a partir de aceites base de avanzada tecnología y un equilibrado sistema de aditivos. Están recomendados por ExxonMobil para ser utilizados en motores interenfriados y turboalimentados que funcionan en condiciones severas tanto en carretera como fuera de ella, así como en una amplia gama de aplicaciones en las que se recomienda un lubricante monogrado.",
+      //   category: OIL_CAT.SEMI,
+      //   line: OIL_LINES.DIE,
+      //   applications: [
+      //     "Equipos accionados por motores diésel aspirados naturalmente y turbocargados",
+      //     "Transporte de servicio ligero y pesado por carretera",
+      //     "Industrias fuera de carreteras, entre ellas: construcción, minería, explotación de canteras y agricultura"
+      //   ],
+      //   benefits: [
+      //     "Excelente protección contra el espesamiento del aceite, los depósitos de altas temperaturas, la acumulación de lodos, la degradación del aceite y la corrosión",
+      //     "Reserva de TBN extendida",
+      //     "Prolongación de la vida útil del motor, menos desgaste, excelente protección contra el atascamiento de los anillos.",
+      //     "Control a largo plazo de los depósitos y del desgaste. Controla la formación de ácidos cuando se utilizan combustibles con alto contenido de azufre"
+      //   ],
+      //   presentations: [PRESEN.TAMBOR],
+      //   specifications: {
+      //     viscosity: "5W-40",
+      //     api: ["SF", "CF"],
+      //     acea: ["E2"],
+      //     ilsac: [],
+      //     jaso: [],
+      //     iso: [],
+      //     nmma: ["270"],
+      //     oem: [],
+      //     compatibility: [],
+      //     other: []
+      //   }
+      // },
+      {
+        id: "mobil-10",
+        name: "Mobil Delvac Modern™ 15W-40",
+        image: "images/mobil/mobil_delvac_modern_15w_40.webp",
+        type: "Aceite de alto desempeño para motores diésel de servicio pesado",
+        description: "aceite de tecnología sintética para motores diésel que ayuda a prolongar la vida útil del motor, lo cual le permite operar su negocio con confianza. Este producto cumple o excede los requisitos de los fabricantes de equipos originales (OEM) y ofrece un alto desempeño en aplicaciones tanto dentro como fuera de la carretera.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.DIE,
+        applications: [
+          "Motores diésel de servicio pesado modernos Euro V/VI (DPF, SCR, CRT, DOC, EGR)",
+          "Motores diésel con diseños más viejos y convencionales de aspiración natural",
+          "Camiones de servicio pesado en carretera y fuera de carretera"
+        ],
+        benefits: [
+          "Superior estabilidad contra la oxidación",
+          "Protección contra la corrosión",
+          "Larga vida útil del motor y del aceite",
+          "Mayor eficiencia del motor"
+        ],
+        approvals: [
+          "Mack EOS-4.5",
+          "Aprobación MB 228.31",
+          "Cummins CES 20081",
+          "CATERPILLAR ECF-3",
+          "Volvo VDS-4.5",
+          "ACEA E7-16, E9-16"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "15W-40",
+          api: ["CK-4", "CJ-4", "CI-4 PLUS", "CI-4", "CH-4", "SN"],
+          acea: ["E7", "E9"],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      // {
+      //   id: "mobil-11",
+      //   name: "Mobil 1™ Synthetic ATF",
+      //   image: "images/mobil/mobil_1_synthetic_atf.webp",
+      //   type: "Lubricante sintético para transmisiones automáticas",
+      //   description: "Supera a los fluidos convencionales para transmisiones automáticas y ayuda a proporcionar excepcional resistencia contra la degradación del aceite y la formación de depósitos.",
+      //   category: "Transmisiones Automáticas",
+      //   line: "Línea ATF",
+      //   applications: [
+      //     "Vehículos modernos de alto desempeño (automóviles, SUV, SUT, furgonetas, camiones ligeros)",
+      //     "Aplicaciones que requieren niveles de desempeño Dexron III, Ford Mercon y Mercon V"
+      //   ],
+      //   benefits: [
+      //     "Excelente estabilidad térmica y frente a la oxidación",
+      //     "Excelente fluidez a bajas temperaturas",
+      //     "Propiedades friccionales mejoradas a largo plazo"
+      //   ],
+      //   approvals: [],
+      //   presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
+      //   specifications: {
+      //     viscosity: null,
+      //     api: [],
+      //     acea: [],
+      //     ilsac: [],
+      //     jaso: ["1-A"],
+      //     iso: [],
+      //     nmma: [],
+      //     oem: ["MERCON V", "DEXRON IIIH"],
+      //     compatibility: [],
+      //     other: []
+      //   }
+      // },
+      {
+        id: "mobil-12",
+        name: "Mobil Grease XHP 222",
+        image: "images/mobil/mobil_grease_xhp_222.webp",
+        type: "Grasa de Complejo de Litio",
+        description: "Mobilgrease XHP 222 es una grasa de complejo de litio de servicio extendido diseñada para una amplia variedad de aplicaciones y condiciones de operación severas.",
+        category: OIL_CAT.GRA,
+        line: OIL_LINES.GRA,
+        applications: [
+          "Sector industrial, automotriz, de construcción y marino",
+          "Alta temperatura, contaminación por agua, carga de choque",
+          "Aplicaciones industriales y marinas, componentes de chasis"
+        ],
+        benefits: [
+          "Excelente resistencia a la oxidación y corrosión",
+          "Estructura altamente adhesiva y cohesiva",
+          "Muy buen desempeño anti desgaste",
+          "Resistencia excelente al lavado por agua"
+        ],
+        presentations: ["0,39 kg", PRESEN.PAILA],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: ["Complejo de litio"]
+        }
+      },
+      {
+        id: "mobil-13",
+        name: "Mobilube™ HD-A Plus 80W-90",
+        image: "images/mobil/mobilube_hd_plus_80w_90.webp",
+        type: "Lubricante para engranajes automotrices",
+        description: "Está diseñado para transmisiones, ejes y mandos finales comerciales donde se esperan presiones extremas y cargas de impacto, y está recomendado por ExxonMobil para aplicaciones que requieren un servicio API GL-5. Está formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos. Este lubricante es un lubricante de servicio pesado para engranajes que permite prolongar los intervalos entre cambios de aceite, predominantemente en ejes Mercedes Benz.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.TRAN,
+        applications: [
+          "Transmisiones manuales, ejes y mandos finales automotrices de servicio pesado que requieren un desempeño de nivel API GL-5",
+          "Autos y camiones ligeros de carretera; vehículos comerciales de servicio pesado",
+          "Industrias fuera de carretera, entre ellas: construcción, minería, explotación de canteras y agricultura",
+          "Otras cajas de cambios, engranajes de dirección y cajas de cambios variables"
+        ],
+        benefits: [
+          "Excelente estabilidad térmica y resistencia a la oxidación a altas temperaturas",
+          "Larga vida útil de los engranajes y cojinetes debido a la mínima generación de depósitos. Larga vida útil de los sellos.",
+          "Protección mejorada contra el desgaste de baja velocidad/alto torque y contra el rayado de alta velocidad, especialmente en ejes traseros muy cargados.",
+          "Mayor capacidad de carga. Reducción en los costos de mantenimiento y mayor vida útil de los equipos.",
+          "Protección efectiva contra la herrumbre y la corrosión.",
+          "Reducción del desgaste y mayor vida útil de los componentes."
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "80W-90",
+          api: ["GL-5"],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      {
+        id: "mobil-14",
+        name: "Mobil Hydraulic AW 68",
+        image: "images/mobil/mobil_hydraulic_aw_68.webp",
+        type: "Aceite hidráulico antidesgaste",
+        description: "Aceite hidráulico antidesgaste de buena calidad destinado a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.IND,
+        applications: [
+          "Sistemas con bombas de engranajes, de paletas, radiales y axiales de pistón",
+          "Situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables"
+        ],
+        benefits: [
+          "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas",
+          "Protección contra la corrosión",
+          "Filtrabilidad para prevenir la obstrucción de los filtros"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "AW 68",
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      {
+        id: "mobil-15",
+        name: "Mobil Super™ 2000 5W-30",
+        image: "images/mobil/mobil_super_2000_5w_30.webp",
+        type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
+        description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Motores a gasolina y gas",
+          "Motores turboalimentados de inyección directa de gasolina",
+          "Vehículos livianos y SUV",
+          "Conducción en ciudad con paradas frecuentes",
+          "Condiciones de funcionamiento severas en terrenos exigentes"
+        ],
+        benefits: [
+          "Una mejor economía de combustible de hasta un 3%",
+          "Protección contra el desgaste del motor y la formación de depósitos",
+          "Protección superior del motor durante el arranque",
+          "Protección a altas temperaturas",
+          "Evita la pre-ignición"
+        ],
+        approvals: [
+          "General Motors 6094M",
+          "Chrysler MS-6395",
+          "FORD WSS-M2C929-A",
+          "FORD WSS-M2C946-A",
+          "FORD WSS-M2C946-B1"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "5W-30",
+          api: ["SN PLUS"],
+          ilsac: ["GF-5"],
+          other: ["RESOURCE CONSERVING"]
+        }
+      },
+      {
+        id: "mobil-16",
+        name: "Mobil Super™ Moto Scooter MX 10W-40 4T",
+        image: "images/mobil/mobil_super_moto_scoter_mx_10w_40.webp",
+        type: "Lubricante sintético para motos 4T",
+        description: "Aceite para motos scooter de 4 tiempos que protege el motor de diversas condiciones de conducción, minimizando las vibraciones y dando protección a las altas temperaturas.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Motores scooter de 4 tiempos con transmisión automática",
+          "Motores de scooter de alta potencia",
+          "Todos los cilindrajes recomendados por el fabricante"
+        ],
+        benefits: [
+          "Molécula antidesgaste termoactivada para excelente protección a altas temperaturas",
+          "Reduce la fricción logrando una conducción confortable",
+          "Excelente protección contra el desgaste",
+          "Buena estabilidad térmica, a la oxidación y control de depósitos",
+          "Excelentes propiedades de protección contra la corrosión",
+          "Propiedades mejoradas a baja temperatura"
+        ],
+        presentations: [PRESEN.LITRO],
+        specifications: {
+          viscosity: "10W-40",
+          api: ["SL"],
+          jaso: ["MB 2016"]
+        }
+      },
+      {
+        id: "mobil-17",
+        name: "Mobil Delvac Modern™ 15W-40 Full Protection",
+        image: "images/mobil/mobil_delvac_modern_15w_40_full_protection.webp",
+        type: "Aceite de alto desempeño para motores diésel de servicio pesado",
+        description: "Aceite con tecnología sintética para motores diésel de última generación y de bajas emisiones que cumple o excede los requerimientos de los fabricantes de equipo original.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.DIE,
+        applications: [
+          "Alto rendimiento dentro y fuera de las carreteras y en aplicaciones marinas",
+          "Sistemas de control de emisiones de vehículos Euro V/VI",
+          "Compatible con equipos de tecnologías anteriores"
+        ],
+        benefits: [
+          "Larga vida para el motor",
+          "Trabajo pesado",
+          "Control de hollín",
+          "Aprobado por fabricantes, Equipo Original",
+          "Estabilidad Térmica y a la oxidación"
+        ],
+        approvals: [
+          "Detroit Fluids Specification 93K222",
+          "Detroit Fluids Specification 93K218",
+          "Deutz DQC II-10 LA",
+          "Mack EOS-4.5, EO-O Premium Plus",
+          "Aprobación MB 228.31",
+          "Cummins CES 20081 / 20086",
+          "Camiones Renault RLD-3",
+          "MAN M 3575",
+          "MAN M 3275-1",
+          "Volvo VDS-4.5, VDS-4",
+          "CATERPILLAR ECF-3",
+          "ALLISON TES 439",
+          "ACEA E7-16, E9-16",
+          "JASO DH-2"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "15W-40",
+          api: ["CK-4", "CJ-4", "CI-4 PLUS", "CI-4", "CH-4", "SN"],
+          "acea": ["E7", "E9"]
+        }
+      },
+      {
+        id: "mobil-18",
+        name: "Mobil 1™ 0W-20",
+        image: "images/mobil/mobil_1_ow_20.webp",
+        type: "Lubricante totalmente sintético de avanzada economía de combustible para motores",
+        description: "Avanzado aceite totalmente sintético diseñado para brindar una excepcional protección al motor y una mejorada economía de combustible.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Todos los tipos de vehículos de pasajeros, SUV, furgonetas y camiones ligeros con motores a gasolina",
+          "Aplicaciones SAE 5W-20 y 0W-20",
+          "Condiciones de frío extremo"
+        ],
+        benefits: [
+          "Fórmula avanzada totalmente sintética de baja viscosidad",
+          "Excepcional estabilidad térmica y contra la oxidación",
+          "Excepcionales capacidades a baja temperatura",
+          "Sistema de aditivos de componentes precisamente balanceado"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "0W-20",
+          api: ["SN"],
+          ilsac: ["GF-5"]
+        }
+      },
+      {
+        id: "mobil-19",
+        name: "Mobilube HD 85W-140",
+        image: "images/mobil/mobil_sae_85w_140.webp",
+        type: "Lubricantes de servicio pesado para engranajes automotrices",
+        description: "Lubricante de alto rendimiento para servicio pesado en engranajes formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.TRAN,
+        applications: [
+          "Ejes y transmisiones finales para servicio pesado",
+          "Aplicaciones automotrices que requieren API GL-5",
+          "Camiones de carga ligera y carga pesada y vehículos comerciales",
+          "Maquinaria de industria: construcción, extracción, minería y agricultura"
+        ],
+        benefits: [
+          "Compatible con los sellos y empaques automotrices usuales",
+          "Sobresaliente protección contra el desgaste a bajas velocidades/altos torques",
+          "Protección contra el rayado a altas velocidades",
+          "Excelente protección contra la herrumbre y la corrosión",
+          "Excepcional estabilidad térmica y resistencia a la oxidación",
+          "Lubricación efectiva a bajas temperaturas"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "85W-140",
+          api: ["GL-5"]
+        }
+      },
+      // {
+      //   id: "mobil-20",
+      //   name: "Mobil Super™ 2000 X1 10W-40",
+      //   image: "images/mobil/mobil_super_2000_x1_10w_40.webp",
+      //   type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
+      //   description: "Lubricante de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
+      //   category: OIL_CAT.SEMI,
+      //   line: "Mobil Super 2000",
+      //   applications: [
+      //     "Motores a gasolina y gas",
+      //     "Motores turboalimentados de inyección directa de gasolina",
+      //     "Vehículos livianos y SUV",
+      //     "Conducción en ciudad con paradas frecuentes",
+      //     "Condiciones operacionales normales a severas"
+      //   ],
+      //   benefits: [
+      //     "Protección contra el desgaste del motor y la formación de depósitos",
+      //     "Protección superior del motor durante el arranque",
+      //     "Protección a altas temperaturas",
+      //     "Evita la pre-ignición"
+      //   ],
+      //   presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+      //   specifications: {
+      //     viscosity: "10W-40",
+      //     api: ["SN PLUS"],
+      //     "acea": ["A3/B3-16"],
+      //   },
+      //   approvals: [
+      //     "Aprobación Mercedes Benz 229.1",
+      //     "Volkswagen 501 01",
+      //     "Volkswagen 505 00"
+      //   ]
+      // }, 
+      {
+        id: "mobil-21",
+        name: "Mobil Special™ HD 50",
+        image: "images/mobil/mobil_special_hd_50.webp",
+        type: "Aceite de motor monogrado de alto rendimiento.",
+        description: "Formulados a partir de bases lubricantes minerales de alta calidad y de un sistema de aditivos para brindar el desempeño requerido por los motores de combustión interna en donde es requerido un nivel de calidad API SF o API CC. Contienen un efectivo balance de detergentes y dispersantes para reducir la formación de lodos y depósitos, retener la alcalinidad (TBN) y reducir el desgaste.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Motores de gasolina de Vehículos de pasajeros, Vehículos comerciales",
+          "Motores de gasolina de maquinaria agrícola",
+          "Motores diésel de vehículos comerciales y equipos para la construcción",
+          "Transmisiones manuales que requieran aceites de calidad API GL1"
+        ],
+        benefits: [
+          "Bajo consumo de aceite",
+          "Limpieza del motor"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "HD 50",
+          api: ["SF", "CC"]
+        }
+      },
+      {
+        id: "mobil-22",
+        name: "Mobil Super™ 4T MX 10W-40",
+        image: "images/mobil/mobil_super_4t_mx_10w_40.webp",
+        type: "Lubricante semisintético para motos 4T",
+        description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Motocicletas de 4 tiempos que requieren aceite SAE 10W-40", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
+        ],
+        benefits: [
+          "Protección contra el desgaste para alargar vida útil del motor",
+          "Ayuda a mantener más limpio el motor",
+          "Excelentes propiedades  de fricción",
+          "Ayuda a reducir las emisiones"
+        ],
+        presentations: [PRESEN.LITRO],
+        specifications: {
+          viscosity: "10W-40",
+          api: ["SL"],
+          jaso: ["MA2"]
+        }
+      },
+      {
+        id: "mobil-23",
+        name: "Mobil Super™ 4T MX 15W-50",
+        image: "images/mobil/mobil_super_4t_mx_15w_50.webp",
+        type: "Lubricante semisintético para motos 4T",
+        description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Motocicletas de 4 tiempos que requieren aceite SAE 10W-50", "Protección adecuada para transmisiones y embragues del motor", "Especialmente adecuado para motores refrigerados por aire que operan a altas temperaturas", "Recomendado para motores de 4 tiempos con convertidores catalíticos (reducción de emisiones)"
+        ],
+        benefits: [
+          "Protección contra el desgaste para alargar vida útil del motor",
+          "Ayuda a mantener más limpio el motor",
+          "Excelentes propiedades  de fricción",
+          "Ayuda a reducir las emisiones"
+        ],
+        presentations: [PRESEN.LITRO],
+        specifications: {
+          viscosity: "15W-50",
+          api: ["SL"],
+          jaso: ["MA2"]
+        }
+      },
+      {
+        id: "mobil-24",
+        name: "Mobil Super™ Moto 2T",
+        image: "images/mobil/mobil_super_moto_2t.webp",
+        type: "Lubricante mineral para motos 2T",
+        description: "Mobil Super Moto 2T combina aceites minerales de alta calidad con un robusto sistema de aditivos que proporciona una buena limpieza y desempeño superior al motor. Mobil Super Moto 2T está pre-diluido para asegurar una rápida mezcla con el combustible. Utilice la proporción de mezcla recomendada por el fabricante. Atienda siempre las recomendaciones del manual del usuario.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Adecuado para otros equipos con motores de dos tiempos a gasolina", "Compatible con sistemas de lubricación automática", "Compatible con sistemas de mezcla de aceite con el combustible"
+        ],
+        benefits: [
+          "Ayuda a prolongar la vida útil del motor",
+          "Estabilidad térmica y a la oxidación y control de los depósitos",
+          "Evita la pre-ignición"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "ASTM D 445",
+          api: ["TC"],
+          jaso: ["FB"],
+          iso: ["L-EGB"]
+        }
+      },
+      {
+        id: "mobil-25",
+        name: "Mobil™ Extra 2T",
+        image: "images/mobil/mobil_extra_2t.webp",
+        type: "Lubricante sintético para motos 2T",
+        description: "Mobil Extra 2T combina una mezcla de aceites básicos minerales y sintetizados de alta calidad con un sistema de aditivos avanzado para proporcionar una excelente limpieza del motor y un escape de gases libre de humo. Viene diluido para facilitar su mezcla al agregarlo al combustible.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.MOTO,
+        applications: [
+
+        ],
+        benefits: [
+          "Gas de escape sin humo",
+          "Protección contra el desgaste para alargar vida útil del motor",
+          "Proporciona una mayor estabilidad contra la oxidación"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.PINTA],
+        specifications: {
+          viscosity: "ASTM D 445",
+          api: ["TC"],
+          jaso: ["FC"],
+          iso: ["L-EGB"]
+        }
+      },
+      {
+        id: "mobil-26",
+        name: "Mobil Outboard™ Plus 2T",
+        image: "images/mobil/mobil_outboard_plus_2t.webp",
+        type: "Lubricante para motores fuera de borda 2 Tiempos",
+        description: "Mobil Outboard Plus es un aceite de alto desempeño para motores de dos tiempos que está diseñado para muchos motores de dos tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda. Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente. Mobil Outboard Plus está prediluido para facilitar la mezcla cuando se añade al combustible.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Recomendado para inyección directa y sistemas premezclados gasolina/lubricante",
+          "Adecuado para motores de dos tiempos enfriados por aire de trabajo liviano a moderado",
+          "Aplicable en equipos como cortadoras de pasto, sierras eléctricas, sopladoras de hojas y orilladoras de pasto"
+        ],
+        benefits: [
+          "Extiende la vida del motor.",
+          "Extiende la vida de las bujias y de las valvúlas previendo los depositos de suuciedad.",
+          "Mejora la economia del combustible.",
+          "Buena capacidad para altas y bajas temperaturas",
+          "No es toxico para la vida marina"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: ["TC"],
+          nmma: ["TC-W3"],
+        }
+      },
+      // {
+      //   id: "mobil-27",
+      //   name: "Mobil Delvac XHP™ ESP S 10W-40",
+      //   image: "images/mobil/mobil_delvac_xhp_esp_10w-40.webp",
+      //   type: "Lubricante sintético para la protección del sistema de emisión de aceite de motor diésel",
+      //   description: "Aceite sintético de alto desempeño diseñado para proporcionar lubricación a motores diésel modernos de alto rendimiento y bajas emisiones, utilizados en aplicaciones severas. Este aceite se ha diseñado utilizando aceites base ultrarefinadas que proporcionan una excelente fluidez a bajas temperaturas, retención de la viscosidad a altas temperaturas y control de la volatilidad.",
+      //   category: "Servicio Pesado - Diésel",
+      //   line: "Línea CVL",
+      //   applications: [
+      //     "Motores diésel de servicio pesado, incluyendo los vehículos modernos de bajas emisiones Euro V/VI que utilizan tecnologías tales como Filtros de Partículas para Motores Diésel (DPF), Reducción Catalítica Selectiva (SCR), Trampas de Regeneración Continua (CRT), Catalizadores de Oxidación para Motores Diésel (DOC) y Recirculación de Gases de Escape (EGR)",
+      //     "Equipos accionados por motores diésel aspirados naturalmente y turboalimentados",
+      //     "Camiones y autobuses de carretera usados en viajes de larga y corta distancia",
+      //     "Equipos fuera de carretera para la minería, la construcción y la agricultura",
+      //     "Motores de fábrica europeos que requieren la especificación ACEA E4-16, E6-16, E7-16, E9-16"
+      //   ],
+      //   benefits: [
+      //     "Ayuda a brindar una larga vida del motor",
+      //     "Largos intervalos entre cambios de aceite",
+      //     "Propiedades anti-desgaste, anti-rayado y protección",
+      //     "Ayuda a proteger los dispositivos de los sistemas de escape"
+      //   ],
+      //   approvals: [
+      //     "MTU Categoría de aceite 3.1",
+      //     "MAN M 3477/ M 3575/ M 3271-1",
+      //     "Volvo VDS-4/ VDS-3",
+      //     "Camiones Renault RLD-3/ RLD-2",
+      //     "Deutz DQC IV-10 LA",
+      //     "Scania bajo contenido de cenizas",
+      //     "Voith Aceite retardador Clase B",
+      //     "Motores Kamaz Euro-3, 4 y -5",
+      //     "Mercedes Benz 228.51 / 235.28",
+      //     "Mack EO-O PREMIUM PLUS"
+      //   ],
+      //   presentations: [PRESEN.PAILA],
+      //   specifications: {
+      //     viscosity: "10W-40",
+      //     api: ["CJ-4", "CI-4 PLUS"],
+      //     acea: ["E4-16", "E6-16", "E7-16", "E9-16"],
+      //     jaso: ["DH-2"]
+      //   },
+      //   "requirements": [
+      //     "Cummins CES 20081",
+      //     "CATERPILLAR ECF-3"
+      //   ]
+      // },
+      // {
+      //   id: "mobil-28",
+      //   name: "Mobil Delvac™ 1340",
+      //   image: "images/mobil/mobil_delvac_1340.webp",
+      //   type: "Lubricante para motores diésel de servicio pesado turbocargados",
+      //   description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
+      //   category: "Servicio Pesado - Diésel",
+      //   line: "Línea CVL",
+      //   applications: [
+      //     "Motores diésel que utilizan diseños más viejos y convencionales de aspiración natural",
+      //     "Camiones de servicio pesado en carretera y aplicaciones fuera de carretera, incluyendo transporte, minería, construcción, agrícolas y marinas"
+      //   ],
+      //   benefits: [
+      //     "Excelente protección contra el pegado de los anillos",
+      //     "Excelente control del consumo de aceite"
+      //   ],
+      //   presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
+      //   specifications: {
+      //     viscosity: null,
+      //     api: ["CF", "SF"],
+      //   }
+      // },
+      {
+        id: "mobil-29",
+        name: "Mobil Delvac™ Legend 1350 SAE50",
+        image: "images/mobil/mobil_delvac_1350.webp",
+        type: "Lubricante para motores diésel de servicio pesado turbocargados",
+        description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.DIE,
+        applications: [
+          "Motores diésel que utilizan diseños más viejos y convencionales de aspiración natural",
+          "Camiones de servicio pesado en carretera y aplicaciones fuera de carretera, incluyendo transporte, minería, construcción, agrícolas y marinas"
+        ],
+        benefits: [
+          "Excelente protección contra el pegado de los anillos",
+          "Excelente control del consumo de aceite"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: ["CF", "SF"],
+        }
+      },
+      {
+        id: "mobil-30",
+        name: "Mobil Delvac™ Extended life 50/50",
+        image: "images/mobil/mobil_delvac_extended_life_50_50.webp",
+        type: "Lubricante para motores diésel de servicio pesado turbocargados",
+        description: "El refrigerante/anticongelante de vida prolongada y prediluido Mobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es un refrigerante a base de etilenglicol exento de fosfatos, silicatos, nitritos y boratos, listo para usar, que ha sido diseñado para proporcionar una excepcional protección contra la cavitación y la corrosión de todos los metales del sistema de enfriamiento.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze está formulado con inhibidores orgánicos de la corrosión para proporcionar una protección total del sistema de enfriamiento de hasta 1.600.000 kilómetros de uso en carretera (8 años o 20.000 horas de uso fuera de la carretera). Puesto que los inhibidores de corrosión orgánicos no se agotan con facilidad, Mobil Delvac™ Extended Life 50/50 Prediluted Coolant/Antifreeze elimina la necesidad de utilizar aditivos suplementarios para refrigerantes (SCA) que sí se requieren al usar refrigerantes convencionales.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es una mezcla 50/50 de Mobil Delvac Extended Life Coolant/Antifreeze y agua desionizada.",
+        category: OIL_CAT.ETI,
+        line: OIL_LINES.ESP,
+        applications: [
+          "Todo tipo de motores de servicio pesado diesel, de gasolina y de gas natural.",
+          "Aplicaciones de motores estacionarios, independientemente del tipo de combustible utilizado.",
+          "Sistemas de enfriamiento marino donde se requiere protección contra el congelamiento.",
+          "Flotas mixtas donde hay presentes camiones de servicio tanto ligero como pesado."
+        ],
+        benefits: [
+          "Ideal para motores a gasolina y a Diesel en las condiciones más severas. Proporciona protección total de los sistemas de enfriamiento durante 1.600.000 km de uso en carretera (8 años o 20.000 horas de uso fuera de carretera).",
+          "Elimina la necesidad de \"aditivos suplementarios para refrigerantes\" (SCA, por su sigla en inglés), los cuales si se requieren al utilizar refrigerantes convencionales."
+        ],
+        presentations: [PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: []
+        }
+      },
+      {
+        id: "mobil-31",
+        name: "Mobil ATF™ D/M",
+        image: "images/mobil/mobil_atf_d_m.webp",
+        type: "Fluido para transmisión automática",
+        description: "Proporciona excelente estabilidad contra la oxidación y la fricción, propiedades antidesgaste, y la fluidez a bajas temperaturas deseada para la mayoría de las transmisiones automáticas.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.TRAN,
+        applications: [
+          "Recomendado para aplicaciones que requieren: General Motors DEXRON® IIIH Ford MERCON® Allison Transmission C-4",
+          "No recomendado para: GM DEXRON® VI, Ford MERCON® V, MERCON LV®, MERCON SP® y Type F ATF",
+          "Puede utilizarse como aceite lubricante en compresores de aire rotatorios bajo ciertas condiciones",
+          "Buen desempeño a bajas temperaturas",
+          "Alta resistencia a la oxidación para cumplir requisitos de servicio en compresores"
+        ],
+        benefits: [
+          "Excelente estabilidad contra la oxidación",
+          "Buenas características lubricantes",
+          "Propiedades de fricción controladas",
+          "Prevención de la corrosión"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: ["ALLISON C- 4 / MERCON / DEXRON IIIH"]
+        }
+      },
+      {
+        id: "mobil-32",
+        name: "Mobil Super™ 2000 10W-40",
+        image: "images/mobil/mobil_super_2000_10w_40.webp",
+        type: "Lubricante Mobil para vehículos de pasajeros",
+        description: "Aceite mejorado semisintético de calidad premium para motores que cumplen con las más recientes especificaciones de los aceites para motores de la industria. Está diseñado para proporcionar un excelente nivel de protección y desempeño bajo las condiciones más exigentes.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Las más recientes tecnologías de motores de gasolina",
+          "Vehículos de pasajeros, camionetas deportivas, camiones ligeros y furgonetas",
+          "Conducción en la ciudad con muchas paradas",
+          "Condiciones operacionales normales a severas",
+          "Turboalimentadores",
+          "Motores de alto desempeño"
+        ],
+        benefits: [
+          "Excelente limpieza del motor",
+          "Excelente protección a altas temperaturas",
+          "Mejora la eficiencia del motor reduciendo el preencendido a bajas revoluciones (LSPI)"
+        ],
+        presentations: [PRESEN.CUARTO, PRESEN.GALON, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "10W-40",
+          api: ["SL", "SM", "SN", "SN PLUS", "SP"],
+          acea: ["A3/B3"],
+          other: ["RESOURCE CONSERVING"]
+        },
+      },
+      {
+        id: "mobil-33",
+        name: "Mobil Outboard™ Plus 4T 10W-40",
+        image: "images/mobil/mobil_outboard_plus_4t_10w_40.webp",
+        type: "Aceite de desempeño superior para motores fuera de borda de cuatro tiempos",
+        description: "Aceite de alto desempeño para motores de cuatro tiempos que está diseñado para muchos motores de cuatro tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda.Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.MOTO,
+        applications: [
+          "Utilizado en motores modernos de alto rendimiento, refrigerados por agua y de cuatro tiempos.",
+          "Uso en motores de cuatro tiempos donde se recomiendan los aceites NMMA FC-W."
+        ],
+        benefits: [
+          "Protección contra los depósitos, la corrosión y el desgaste.",
+          "Minimiza las fllas de las bujías y pre-ingnición, fomentando una operación segura."
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "10W-40",
+          api: ["SL"],
+          nmma: ["FC-W"]
+        }
+      },
+      {
+        id: "mobil-34",
+        name: "Mobil Delvac Legend™ 25W-50 High Mileage",
+        image: "images/mobil/mobil_delvac_legend_25w_50.webp",
+        type: "Aceite de alto rendimiento para motores diésel",
+        description: "Aceite para motores diésel de alto rendimiento y alta viscosidad que proporciona una comprobada protección en motores diésel que operan en aplicaciones de servicio severo. Mobil Delvac 25W-50 High Mileage es recomendado para utilizarse en una amplia gama de aplicaciones de servicio pesado y en los ambientes operativos que se encuentran en las industrias de acarreo en camiones, minera, de la construcción, de explotación de canteras y agrícola.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.DIE,
+        applications: [
+          "Equipos de fabricantes europeos, japoneses y estadounidenses propulsados por motores diésel de aspiración natural o turboalimentados",
+          "Transporte de servicio ligero y pesado por carretera",
+          "Industrias fuera de carreteras, entre ellas: construcción, minería, explotación de canteras y agricultura"
+        ],
+        benefits: [
+          "Estabilidad térmica y ante la oxidación",
+          "Controla la acumulación de lodos y depósitos",
+          "Reserva de TBN",
+          "Control de depósitos y neutralización de ácidos",
+          "Alta viscosidad y estabilidad ante los esfuerzos de corte que le permite mantenerse en su grado",
+          "Menor consumo de aceite, mayor protección contra el desgaste y alta presión de aceite en un amplio rango de temperaturas de operación.",
+          "Excelente detergencia/dispersancia",
+          "Motores más limpios y una mayor vida útil de estos",
+          "Compatibilidad con los componentes",
+          "Larga vida útil de las empaquetaduras y sellos"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "25W-50",
+          api: ["CF", "SF"],
+        }
+      },
+      {
+        id: "mobil-35",
+        name: "Mobil™ Dexron-VI ATF",
+        image: "images/mobil/mobil_atf_d_m_dexron_VI.webp",
+        type: "Fluido para transmisión automática",
+        description: "Es una formulación de alto desempeño a base de una mezcla de productos sintéticos que cumple con los rigurosos requisitos de la especificación DEXRON-VI de General Motors y proporciona protección de la garantía para vehículos de General Motors del año 2006 en adelante. También proporciona un desempeño mejorado en vehículos de General Motors más viejos, cuando DEXRON es especificado.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.TRAN,
+        applications: [
+          "Brinda protección de la garantía para vehículos GM 2006 y más nuevos."
+        ],
+        benefits: [
+          "Prolongada vida útil del fluido",
+          "Mejor estabilidad térmica y ante la oxidación",
+          "Propiedades de fricción optimizadas que proporcionan cambios de marcha suaves durante la operación a bajas temperaturas y que ayudan a prevenir la vibración de la transmisión",
+          "Excelente resistencia a la formación de lodos y depósitos",
+          "Una mejor protección antidesgaste que contribuye a prolongar la vida útil de la transmisión",
+          "Sobresaliente desempeño a bajas temperaturas"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "Brookfield 11500",
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: ["GM DEXRON-VI"],
+          compatibility: ["Compatible con DEXRON IIIH y anteriores, pero no recomendado para vehículos que requieren DEXRON-VI"]
+        }
+      },
+      {
+        id: "mobil-36",
+        name: "Mobilfluid™ 424",
+        image: "images/mobil/mobilfluid_424.webp",
+        type: "Lubricante multipropósito para tractores",
+        description: "Lubricante multiuso y de extra alto rendimiento para tractores diseñado para cumplir o exceder los requisitos de los fluidos hidráulicos y de transmisión.  La tecnología avanzada de Mobilfluid 424 está diseñada para optimizar el desempeño de los tractores agrícolas y comerciales que operan en una amplia gama de entornos y condiciones.  Mobilfluid 424 combina aceites base selectos y un paquete de aditivos de avanzada tecnología para proporcionar las variadas propiedades de desempeño de los lubricantes que se requieren en los trenes de transmisión de potencia de equipos agrícolas y de construcción en aplicaciones de servicio severo.  Es particularmente adecuado para reducir el chirrido y traqueteo de los frenos húmedos y de las tomas de fuerza.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.TRAN,
+        applications: [
+          "Transmisiones, diferenciales, mandos finales, sistemas hidráulicos, sistemas de dirección asistida, frenos húmedos, tomas de fuerza y accionamientos hidrostáticos de servicio pesado",
+          "Industrias fuera de carretera que incluyen: agricultura, construcción y canteras",
+          "Llenado hasta el tope o recarga de sistemas",
+          "En aplicaciones de transmisiones comerciales que requieren fluidos Tipo A (Sufijo A), Dexron y Tipo F. No utilizarse en transmisiones automáticas de vehículos de pasajeros",
+          "Aplicaciones que requieren lubricantes grado API GL-4 o SAE 80W en todas las aplicaciones de engranajes excepto en los diseños de engranajes hipoides",
+          "Excelente reemplazo de aceites de motor recomendados para sistemas hidráulicos y de transmisión"
+        ],
+        benefits: [
+          "Propiedades de fricción mejoradas",
+          "Desempeño optimizado en embragues y tomas de fuerza",
+          "Mejor control de los chirridos y traqueteos de los frenos húmedos y de las tomas de fuerza",
+          "Compatible con los más recientes materiales y elastómeros de los embragues",
+          "Mayor vida útil del embrague y menos fugas",
+          "Alto índice de viscosidad y estabilidad ante el cizallamiento",
+          "Respuesta operativa consistente"
+        ],
+        presentations: [PRESEN.GALON, PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: "4300",
+          api: ["GL-4"],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          compatibility: []
+        }
+      },
+      {
+        id: "mobil-37",
+        name: "Mobil Nuto™ H 68",
+        image: "images/mobil/mobil_nuto_h_68.webp",
+        type: "Aceite hidráulico",
+        description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.IND,
+        applications: [
+          "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
+          "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
+          "Donde la presencia de pequeñas cantidades de agua es inevitable"
+        ],
+        benefits: [
+          "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
+          "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
+          "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: ["VG 68"],
+          nmma: [],
+          compatibility: []
+        },
+        approvals: [
+          "Denison HF-0",
+          "Denison HF-1",
+          "Denison HF-2"
+        ],
+        requirements: [
+          "ASTM D6158 (Class HM)",
+          "DIN 51524-2:2017-06",
+          "ISO L-HM (ISO 11158:2023)",
+          "Fives Cincinnati P-69"
+        ]
+      },
+      {
+        id: "mobil-38",
+        name: "Mobil Nuto™ H 46",
+        image: "images/mobil/mobil_nuto_h_68.webp",
+        type: "Aceite hidráulico",
+        description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.IND,
+        applications: [
+          "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
+          "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
+          "Donde la presencia de pequeñas cantidades de agua es inevitable"
+        ],
+        benefits: [
+          "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
+          "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
+          "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: ["VG 46"],
+          nmma: [],
+          compatibility: []
+        },
+        approvals: [
+          "Denison HF-0",
+          "Denison HF-1",
+          "Denison HF-2"
+        ],
+        requirements: [
+          "ASTM D6158 (Class HM)",
+          "DIN 51524-2:2017-06",
+          "ISO L-HM (ISO 11158:2023)"
+        ]
+      },
+      {
+        id: "mobil-39",
+        name: "Mobil Nuto™ H 32",
+        image: "images/mobil/mobil_nuto_h_68.webp",
+        type: "Aceite hidráulico",
+        description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
+        category: OIL_CAT.MIN,
+        line: OIL_LINES.IND,
+        applications: [
+          "Sistemas que utilizan bombas de engranajes, de paletas, radiales y axiales de pistón para los que se requieren características leves de antidesgaste",
+          "En situaciones donde la contaminación del aceite hidráulico o las fugas son inevitables",
+          "Donde la presencia de pequeñas cantidades de agua es inevitable"
+        ],
+        benefits: [
+          "Buen desempeño antidesgaste que ayuda a reducir el desgaste de las bombas y a prolongar la vida útil de las mismas",
+          "Protección contra la corrosión que ayuda a reducir los efectos negativos de la humedad sobre los componentes del sistema",
+          "Filtrabilidad para prevenir la obstrucción de los filtros incluso en la presencia de agua"
+        ],
+        presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+        specifications: {
+          viscosity: null,
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: ["VG 32"],
+          nmma: [],
+          compatibility: []
+        },
+        approvals: [
+          "Denison HF-0",
+          "Denison HF-1",
+          "Denison HF-2"
+        ],
+        requirements: [
+          "Fives Cincinnati P-68",
+          "ASTM D6158 (Class HM)",
+          "DIN 51524-2:2017-06",
+          "ISO L-HM (ISO 11158:2023)"
+        ]
+      },
+      {
+        id: "mobil-40",
+        name: "Mobil 1™ 0W-16",
+        image: "images/mobil/mobil_1_0w_16.webp",
+        type: "Aceite avanzado totalmente sintético para motores.",
+        description: "Mantenga a su motor funcionando con la máxima eficiencia a la vez que mejora la economía de combustible. Diseñado para los motores avanzados e híbridos de hoy en día, el aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 ayuda a mejorar la economía de combustible* y a prolongar la vida útil del motor en vehículos de cualquier antigüedad. Mobil 1 0W-20 Advanced Fuel Economy utiliza Fórmula de Triple Acción, distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios a su vehículo. Los componentes especiales en el aceite sintético reducen la fricción y ayudan a prevenir la formación de depósitos y la acumulación de lodo para mantener las piezas críticas del motor limpias y protegidas hasta 16,000 km (10,000 millas) entre cambios de aceite.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Mobil 1 0W-16 está recomendado por ExxonMobil para aplicaciones SAE 0W-16 en motores a gasolina e híbridos diseñados para funcionar con aceite para motores de viscosidad SAE 0W-16.",
+          "Mobil 1 0W-16 no se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante. Revise siempre el manual del propietario para determinar el grado de viscosidad del aceite recomendado por el fabricante, la clasificación de servicio API y cualquier aprobación del fabricante.",
+          "Se obtiene una mejora potencial en la economía de combustible al cambiar aceites de mayor viscosidad a un grado de viscosidad más bajo. Los ahorros reales dependen del tipo de vehículo/motor, la temperatura exterior, el tipo de conducción, las condiciones de la carretera y la viscosidad de su actual aceite de motor.",
+          "Protege hasta 16,000 km (10,000 millas) o 1 año, lo que ocurra primero. Para mayor información acerca de la Garantía Limitada de Mobil 1, visítenos en Mobil.US."
+        ],
+        benefits: [
+          "El aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 tiene una baja viscosidad para ayudar a mejorar la economía de combustible*.",
+          "Utiliza la Fórmula de Triple Acción», distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios del motor.",
+          "Ayuda a proteger las partes críticas del motor durante hasta 16 000 km (10 000 millas) entre cambios de aceite,** controlando la oxidación para prevenir la degradación del aceite y manteniendo una viscosidad óptima.",
+          "Cumple con las normas ILSAC GF-6 para ayudar a proporcionar una protección contra la preignición a bajas velocidades (LSPI) y el desgaste de la cadena de distribución, a la vez que mantiene a su motor limpio.",
+          "Ayuda a prolongar la vida del motor, al prevenir la formación de depósitos dañinos y la acumulación de lodos.",
+          "Proporciona una excelente protección contra el calor interno del motor hasta 260°C (500°F) y contra las bajas temperaturas hasta -40°C (-40°F)."
+        ],
+        presentations: [PRESEN.CUARTO, `5x ${PRESEN.CUARTO}`],
+        specifications: {
+          viscosity: "0W-16",
+          api: ["SP"],
+          ilsac: ["GF-6B"]
+        }
+      },
+      {
+        id: "mobil-41",
+        name: "Mobil 1™ 5W-20",
+        image: "images/mobil/mobil_1_5w_20.webp",
+        type: "Aceite avanzado totalmente sintético para motores.",
+        description: "Avanzado aceite completamente sintético para motores diseñado para brindar una excelente protección al motor con el fin de que éste siga funcionando como nuevo y para proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite.* Mobil 1 5W-20 cumple o excede los estándares más exigentes de la industria y supera a nuestros aceites de mezcla convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto desempeño.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Está recomendado por ExxonMobil para todo tipo de vehículo moderno con motor de gasolina, incluyendo motores de alto rendimiento turboalimentados y sobrealimentados con multiválvulas y con inyección de combustible usados en automóviles de pasajeros, vehículos deportivos utilitarios (SUV), y furgonetas y camiones ligeros.",
+          "Aceite de motor de alto rendimiento para todo tipo de automóviles para los que se recomienda esta viscosidad",
+          "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
+        ],
+        benefits: [
+          "Avanzada fórmula completamente sintética",
+          "Mantiene al motor funcionando como nuevo",
+          "Sobresaliente estabilidad térmica y ante la oxidación",
+          "Protege hasta 16.000 kilómetros entre cambios de aceite*.",
+          "Excepcionales capacidades a bajas temperaturas",
+          "Arranque rápido y una protección rápida en climas fríos ayuda a prolongar la vida del motor"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "5W-20",
+          api: ["SP"],
+          ilsac: ["GF-6A"]
+        }
+      },
+      {
+        id: "mobil-42",
+        name: "Mobil 1™ 5W-30",
+        image: "images/mobil/mobil_1_5w_30.webp",
+        type: "Aceite avanzado totalmente sintético para motores",
+        description: "El avanzado aceite sintético para motores Mobil 1 utiliza la emblemática Fórmula de Triple Acción de Mobil 1 para ofrecer un excelente rendimiento, protección y limpieza del motor a vehículos de todas las edades. Los componentes especiales en el aceite sintético prolongan la vida del motor al reducir la fricción que causa la acumulación de depósitos y lodos, lo cual mantiene a las piezas críticas del motor limpias y protegidas hasta 10.000 millas entre cambios de aceite.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
+          "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
+        ],
+        benefits: [
+          "Ayuda a proteger las piezas críticas del motor hasta 10.000 millas entre cambios de aceite, al controlar la oxidación de manera de evitar la descomposición del aceite y mantener una excelente viscosidad.",
+          "Cumple con las normas ILSAC GF-6 que ayudan a proporcionar una protección contra el preencendido a bajas velocidades (LSPI) y el desgaste de la cadena de distribución, a la vez que mantiene a su motor limpio y ayuda a mejorar su economía de combustible.",
+          "Ayuda a prolongar la vida del motor al prevenir los depósitos dañinos y la acumulación de lodos",
+          "Proporciona una excelente protección contra el calor interno del motor (hasta 500 grados F) y contra las bajas temperaturas (hasta -30 grados F)"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "5W-30",
+          api: ["SP"],
+          ilsac: ["GF-6A"]
+        }
+      },
+      {
+        id: "mobil-43",
+        name: "Mobil 1™ 10W-30",
+        image: "images/mobil/mobil_1_10w_30.webp",
+        type: "Aceite avanzado totalmente sintético para motores",
+        description: "Aceite para motores totalmente sintético diseñado para ayudar a proporcionar una excelente protección del motor con el fin de mantenerlo funcionando como nuevo y proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite*. Mobil 1 10W-30 cumple o excede los estándares más exigentes de la industria y brinda un desempeño superior al de nuestras mezclas de aceites convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto rendimiento",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Aceite de motor de alto desempeño para todo tipo de automóviles para los que se recomienda esta viscosidad",
+          "No se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante."
+        ],
+        benefits: ["Avanzada fórmula completamente sintética",
+          "Mantiene al motor funcionando como nuevo",
+          "Sobresaliente estabilidad térmica y ante la oxidación",
+          "Protege hasta 16.000 kilómetros entre cambios de aceite*.",
+          "Excelente desempeño a bajas temperaturas",
+          "Arranque rápido y una protección rápida en climas fríos ayuda a prolongar la vida del motor"],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "10W-30",
+          api: ["SP"],
+          ilsac: ["GF-6A"]
+        }
+      },
+      {
+        id: "mobil-44",
+        name: "Mobil 1™ FS 0W-40",
+        image: "images/mobil/mobil_1_fs_0w_40.webp",
+        type: "Aceite avanzado para motores totalmente sintético",
+        description: "El avanzado aceite para motores totalmente sintético Mobil™ 1 FS 0W-40 está diseñado para las más modernas tecnologías de motores de gasolina y diésel (sin filtros de partículas) y ofrece un excelente desempeño integral. Proporciona un poder de limpieza y una protección contra el desgaste excepcionales. Mobil™ 1 FS 0W-40 mantiene el motor funcionando como nuevo bajo todas las condiciones de conducción.",
+        category: OIL_CAT.SINT,
+        line: OIL_LINES.GAS,
+        applications: [
+          "Las últimas tecnologías de motores, incluso turbo­cargadores, inyección directa, diésel (sin filtros para partículas) e híbridos.",
+          "Motores de alto desempeño.",
+          "Casi todas las condiciones de operación, desde moderadas hasta extremas"
+        ],
+        benefits: [
+          "Cumple o supera las más recientes normas de los fabricantes de equipos originales (OEM) y de la industria.",
+          "Proporciona un desempeño general excelente",
+          "Tiene excelentes propiedades a baja temperatura para brindar una protección rápida del motor durante el arranque",
+          "Tiene propiedades de fricción mejoradas que ayudan a ahorrar combustible",
+          "Ofrece una protección rápida para reducir el desgaste del motor y la formación de depósitos, incluso bajo las condiciones de conducción más extremas",
+          "Proporciona una excepcional potencia de limpieza para los motores sucios"
+        ],
+        presentations: [PRESEN.CUARTO],
+        specifications: {
+          viscosity: "0W-40",
+          api: ["SP"],
+          ilsac: []
+        }
+      }
+    ]
   },
   vp_racing: {
     brand: BRANDS.vp_racing,
@@ -2644,20 +2651,37 @@ const CATALOGS = {
         },
       }
     ]
+  },
+  bekka: {
+    brand: BRANDS.bekka,
+    categories: [],
+    products: [
+      {
+        id: "3490-3491",
+        name: "Absorbedor de Agua Bekka® para Tanques de Combustible Diésel",
+        type: "Accesorio / Absorbedor de agua",
+        description: "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua.",
+        benefits: [
+          "Protege el combustible almacenado de contaminación y agua",
+          "Versión instantánea para remoción rápida de agua",
+          "Versión reutilizable para uso continuo en tanques enterrados o a nivel de suelo",
+          "Versión móvil para cisternas y tanques estacionarios de patios y fincas"
+        ],
+        specifications: {
+          "has_lead": false,
+          "variants": {
+            "mobile": { id: "34904", "use": "Cisternas y tanques estacionarios de patios y fincas" },
+            "instant": { id: "34906", "action_time": "30 minutos", "use": "Remoción rápida de agua" },
+            "reusable": { id: "34908 / 34915", "use": "Uso continuo en tanques enterrados o a nivel de suelo" }
+          },
+          "compatible_with": "Tanques de combustible diésel"
+        },
+        presentations: ["PINTA"],
+        "summary": "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua."
+      }
+    ]
   }
 };
-
-function initCatalogs() {
-  CATALOGS.mobil.products = rawProducts;
-
-  const categories = new Set();
-  rawProducts.forEach(p => {
-    if (p.category) categories.add(p.category);
-  });
-  CATALOGS.mobil.categories = Array.from(categories).sort();
-}
-
-initCatalogs();
 
 function getBrand(brandId) {
   return BRANDS[brandId] || null;
