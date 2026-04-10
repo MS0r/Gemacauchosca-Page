@@ -139,7 +139,7 @@ const CATALOGS = {
       {
         id: "mobil-1",
         name: "Mobil Super™ 3000 XE 5W-30",
-        image: "images/mobil/mobil_super_3000_xe_5w_30.webp",
+        images: ["images/mobil/mobil_super_3000_xe_5w_30.webp", "images/mobil/mobil_super_3000_xe_5w_30_2.webp"],
         type: "Lubricante sintético para vehículos a gasolina y diésel con filtro de partículas diésel (DPF)",
         description: "Aceite de motor sintético de alto desempeño con bajo contenido de cenizas para motores de vehículos gasolina o diesel prolongando la vida útil del motor y protegiendo los sistemas de reducción de emisiones.",
         category: OIL_CAT.SINT,
@@ -182,7 +182,7 @@ const CATALOGS = {
       {
         id: "mobil-2",
         name: "Mobil Super™ 3000 X4 5W-40",
-        image: "images/mobil/mobil_super_3000_x4_5w_40.webp",
+        images: ["images/mobil/mobil_super_3000_x4_5w_40.webp", "images/mobil/mobil_super_3000_x4_5w_40_2.webp"],
         type: "Lubricante sintético para vehículos gasolina y diésel sin trampa de partículas (DPF)",
         description: "Aceite de motor totalmente sintético que ayuda a prolongar la vida útil del motor de vehículos de cualquier tipo y edad, mediante una mayor protección en un amplio rango de temperaturas.",
         category: OIL_CAT.SINT,
@@ -222,7 +222,7 @@ const CATALOGS = {
       {
         id: "mobil-3",
         name: "Mobil Super™ 2000 5W-20",
-        image: "images/mobil/mobil_super_2000_5w_20.webp",
+        images: ["images/mobil/mobil_super_2000_5w_20.webp", "images/mobil/mobil_super_2000_5w_20_2.webp"],
         type: "Lubricante semisintético para vehículos a gasolina y gas",
         description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
         category: OIL_CAT.SEMI,
@@ -256,7 +256,7 @@ const CATALOGS = {
       {
         id: "mobil-4",
         name: "Mobil Super™ 2000 10W-30",
-        image: "images/mobil/mobil_super_2000_10w_30.webp",
+        images: ["images/mobil/mobil_super_2000_10w_30.webp", "images/mobil/mobil_super_2000_10w_30_2.webp", "images/mobil/mobil_super_2000_10w_30_3.webp"],
         type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
         description: "Aceite semi-sintético mejorado de alta calidad para motores que cumplen con las más recientes especificaciones de la industria para los aceites de motores.",
         category: OIL_CAT.SEMI,
@@ -293,7 +293,7 @@ const CATALOGS = {
       {
         id: "mobil-5",
         name: "Mobil Super™ 1000 20W-50",
-        image: "images/mobil/mobil_super_1000_20w_50.webp",
+        images: ["images/mobil/mobil_super_1000_20w_50.webp", "images/mobil/mobil_super_1000_20w_50_2.webp", "images/mobil/mobil_super_1000_20w_50_3.webp", "images/mobil/mobil_super_1000_20w_50_4.webp", "images/mobil/mobil_super_1000_20w_50_5.webp"],
         type: "Lubricante multigrado para motores a gasolina",
         description: "Aceites minerales de primera calidad que cumple con exigentes requerimientos de la industria para lubricantes de motores. Diseñados para proporcionar un alto nivel de desempeño y protección en variadas condiciones de funcionamiento.",
         category: OIL_CAT.MIN,
@@ -326,7 +326,7 @@ const CATALOGS = {
       {
         id: "mobil-6",
         name: "Mobil Special™ Alto Kilometraje 25W-50",
-        image: "images/mobil/mobil_special_alto_kilometraje_25w_50.webp",
+        images: ["images/mobil/mobil_special_alto_kilometraje_25w_50.webp", "images/mobil/mobil_special_alto_kilometraje_25w_50_2.webp"],
         type: "Lubricante para motores con alto kilometraje",
         description: "Brinda una gruesa película de aceite que ayuda a proteger los motores a gasolina que operan bajo condiciones severas, como altas temperaturas y en tráfico de ciudad donde el parar y arrancar es frecuente.",
         category: OIL_CAT.MIN,
@@ -386,7 +386,7 @@ const CATALOGS = {
       {
         id: "mobil-8",
         name: "Mobil Super™ 4T 20W-50",
-        image: "images/mobil/mobil_super_4t_20w_50.webp",
+        images: ["images/mobil/mobil_super_4t_20w_50.webp", "images/mobil/mobil_super_4t_20w_50_2.webp"],
         type: "Lubricante semisintético para motocicletas de 4 Tiempos",
         description: "Combina aceites minerales de calidad altamente refinados y un avanzado sistema de aditivos para proporcionar una buena limpieza del motor, buena protección contra el desgaste y protección contra la corrosión.",
         category: OIL_CAT.MIN,
@@ -448,7 +448,7 @@ const CATALOGS = {
       {
         id: "mobil-10",
         name: "Mobil Delvac Modern™ 15W-40",
-        image: "images/mobil/mobil_delvac_modern_15w_40.webp",
+        images: ["images/mobil/mobil_delvac_modern_15w_40.webp", "images/mobil/mobil_delvac_modern_15w_40_2.webp"],
         type: "Aceite de alto desempeño para motores diésel de servicio pesado",
         description: "aceite de tecnología sintética para motores diésel que ayuda a prolongar la vida útil del motor, lo cual le permite operar su negocio con confianza. Este producto cumple o excede los requisitos de los fabricantes de equipos originales (OEM) y ofrece un alto desempeño en aplicaciones tanto dentro como fuera de la carretera.",
         category: OIL_CAT.MIN,
@@ -521,7 +521,7 @@ const CATALOGS = {
       {
         id: "mobil-12",
         name: "Mobil Grease XHP 222",
-        image: "images/mobil/mobil_grease_xhp_222.webp",
+        images: ["images/mobil/mobil_grease_xhp_222.webp"],
         type: "Grasa de Complejo de Litio",
         description: "Mobilgrease XHP 222 es una grasa de complejo de litio de servicio extendido diseñada para una amplia variedad de aplicaciones y condiciones de operación severas.",
         category: OIL_CAT.GRA,
@@ -554,7 +554,7 @@ const CATALOGS = {
       {
         id: "mobil-13",
         name: "Mobilube™ HD-A Plus 80W-90",
-        image: "images/mobil/mobilube_hd_plus_80w_90.webp",
+        images: ["images/mobil/mobilube_hd_plus_80w_90.webp", "images/mobil/mobilube_hd_plus_80w_90_2.webp", "images/mobil/mobilube_hd_plus_80w_90_3.webp", "images/mobil/mobilube_hd_plus_80w_90_4.webp"],
         type: "Lubricante para engranajes automotrices",
         description: "Está diseñado para transmisiones, ejes y mandos finales comerciales donde se esperan presiones extremas y cargas de impacto, y está recomendado por ExxonMobil para aplicaciones que requieren un servicio API GL-5. Está formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos. Este lubricante es un lubricante de servicio pesado para engranajes que permite prolongar los intervalos entre cambios de aceite, predominantemente en ejes Mercedes Benz.",
         category: OIL_CAT.MIN,
@@ -590,7 +590,7 @@ const CATALOGS = {
       {
         id: "mobil-14",
         name: "Mobil Hydraulic AW 68",
-        image: "images/mobil/mobil_hydraulic_aw_68.webp",
+        images: ["images/mobil/mobil_hydraulic_aw_68.webp", "images/mobil/mobil_hydraulic_aw_68_2.webp"],
         type: "Aceite hidráulico antidesgaste",
         description: "Aceite hidráulico antidesgaste de buena calidad destinado a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas.",
         category: OIL_CAT.MIN,
@@ -621,7 +621,7 @@ const CATALOGS = {
       {
         id: "mobil-15",
         name: "Mobil Super™ 2000 5W-30",
-        image: "images/mobil/mobil_super_2000_5w_30.webp",
+        images: ["images/mobil/mobil_super_2000_5w_30.webp"],
         type: "Lubricante semisintético para vehículos a gasolina, gas y motores turboalimentados de inyección directa de gasolina",
         description: "Aceite de motor semisintético que ayuda a alargar la vida del motor, reduciendo el desgaste y evitando la formación de depósitos.",
         category: OIL_CAT.SEMI,
@@ -658,7 +658,7 @@ const CATALOGS = {
       {
         id: "mobil-16",
         name: "Mobil Super™ Moto Scooter MX 10W-40 4T",
-        image: "images/mobil/mobil_super_moto_scoter_mx_10w_40.webp",
+        images: ["images/mobil/mobil_super_moto_scoter_mx_10w_40.webp", "images/mobil/mobil_super_moto_scoter_mx_10w_40_2.webp"],
         type: "Lubricante sintético para motos 4T",
         description: "Aceite para motos scooter de 4 tiempos que protege el motor de diversas condiciones de conducción, minimizando las vibraciones y dando protección a las altas temperaturas.",
         category: OIL_CAT.SEMI,
@@ -686,7 +686,7 @@ const CATALOGS = {
       {
         id: "mobil-17",
         name: "Mobil Delvac Modern™ 15W-40 Full Protection",
-        image: "images/mobil/mobil_delvac_modern_15w_40_full_protection.webp",
+        images: ["images/mobil/mobil_delvac_modern_15w_40_full_protection.webp", "images/mobil/mobil_delvac_modern_15w_40_full_protection_2.webp", "images/mobil/mobil_delvac_modern_15w_40_full_protection_3.webp"],
         type: "Aceite de alto desempeño para motores diésel de servicio pesado",
         description: "Aceite con tecnología sintética para motores diésel de última generación y de bajas emisiones que cumple o excede los requerimientos de los fabricantes de equipo original.",
         category: OIL_CAT.MIN,
@@ -729,7 +729,7 @@ const CATALOGS = {
       {
         id: "mobil-18",
         name: "Mobil 1™ 0W-20",
-        image: "images/mobil/mobil_1_ow_20.webp",
+        images: ["images/mobil/mobil_1_ow_20.webp"],
         type: "Lubricante totalmente sintético de avanzada economía de combustible para motores",
         description: "Avanzado aceite totalmente sintético diseñado para brindar una excepcional protección al motor y una mejorada economía de combustible.",
         category: OIL_CAT.SINT,
@@ -755,7 +755,7 @@ const CATALOGS = {
       {
         id: "mobil-19",
         name: "Mobilube HD 85W-140",
-        image: "images/mobil/mobil_sae_85w_140.webp",
+        images: ["images/mobil/mobil_sae_85w_140.webp", "images/mobil/mobil_sae_85w_140_2.webp"],
         type: "Lubricantes de servicio pesado para engranajes automotrices",
         description: "Lubricante de alto rendimiento para servicio pesado en engranajes formulado a partir de aceites base de alto rendimiento y un avanzado sistema de aditivos.",
         category: OIL_CAT.MIN,
@@ -816,7 +816,7 @@ const CATALOGS = {
       {
         id: "mobil-21",
         name: "Mobil Special™ HD 50",
-        image: "images/mobil/mobil_special_hd_50.webp",
+        images: ["images/mobil/mobil_special_hd_50.webp", "images/mobil/mobil_special_hd_50_2.webp"],
         type: "Aceite de motor monogrado de alto rendimiento.",
         description: "Formulados a partir de bases lubricantes minerales de alta calidad y de un sistema de aditivos para brindar el desempeño requerido por los motores de combustión interna en donde es requerido un nivel de calidad API SF o API CC. Contienen un efectivo balance de detergentes y dispersantes para reducir la formación de lodos y depósitos, retener la alcalinidad (TBN) y reducir el desgaste.",
         category: OIL_CAT.MIN,
@@ -840,7 +840,7 @@ const CATALOGS = {
       {
         id: "mobil-22",
         name: "Mobil Super™ 4T MX 10W-40",
-        image: "images/mobil/mobil_super_4t_mx_10w_40.webp",
+        images: ["images/mobil/mobil_super_4t_mx_10w_40.webp", "images/mobil/mobil_super_4t_mx_10w_40_2.webp"],
         type: "Lubricante semisintético para motos 4T",
         description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
         category: OIL_CAT.SEMI,
@@ -864,7 +864,7 @@ const CATALOGS = {
       {
         id: "mobil-23",
         name: "Mobil Super™ 4T MX 15W-50",
-        image: "images/mobil/mobil_super_4t_mx_15w_50.webp",
+        images: ["images/mobil/mobil_super_4t_mx_15w_50.webp", "images/mobil/mobil_super_4t_mx_15w_50_2.webp"],
         type: "Lubricante semisintético para motos 4T",
         description: "Aceite semisintético de alto desempeño para motores de motocicletas de cuatro tiempos, concebido principalmente para su uso general en muchos tipos de motocicletas y motores de cuatro tiempos. Su exclusiva fórmula proporciona excelentes características de flujo que permiten reducir el desgaste del motor durante el arranque y una excelente protección de la transmisión y del embrague durante la operación.",
         category: OIL_CAT.SEMI,
@@ -888,7 +888,7 @@ const CATALOGS = {
       {
         id: "mobil-24",
         name: "Mobil Super™ Moto 2T",
-        image: "images/mobil/mobil_super_moto_2t.webp",
+        images: ["images/mobil/mobil_super_moto_2t.webp", "images/mobil/mobil_super_moto_2t_2.webp", "images/mobil/mobil_super_moto_2t_3.webp"],
         type: "Lubricante mineral para motos 2T",
         description: "Mobil Super Moto 2T combina aceites minerales de alta calidad con un robusto sistema de aditivos que proporciona una buena limpieza y desempeño superior al motor. Mobil Super Moto 2T está pre-diluido para asegurar una rápida mezcla con el combustible. Utilice la proporción de mezcla recomendada por el fabricante. Atienda siempre las recomendaciones del manual del usuario.",
         category: OIL_CAT.MIN,
@@ -912,7 +912,7 @@ const CATALOGS = {
       {
         id: "mobil-25",
         name: "Mobil™ Extra 2T",
-        image: "images/mobil/mobil_extra_2t.webp",
+        images: ["images/mobil/mobil_extra_2t.webp", "images/mobil/mobil_extra_2t_3.webp", "images/mobil/mobil_extra_2t_4.webp"],
         type: "Lubricante sintético para motos 2T",
         description: "Mobil Extra 2T combina una mezcla de aceites básicos minerales y sintetizados de alta calidad con un sistema de aditivos avanzado para proporcionar una excelente limpieza del motor y un escape de gases libre de humo. Viene diluido para facilitar su mezcla al agregarlo al combustible.",
         category: OIL_CAT.SEMI,
@@ -936,7 +936,7 @@ const CATALOGS = {
       {
         id: "mobil-26",
         name: "Mobil Outboard™ Plus 2T",
-        image: "images/mobil/mobil_outboard_plus_2t.webp",
+        images: ["images/mobil/mobil_outboard_plus_2t.webp", "images/mobil/mobil_outboard_plus_2t_2.webp", "images/mobil/mobil_outboard_plus_2t_3.webp", "images/mobil/mobil_outboard_plus_2t_4.webp"],
         type: "Lubricante para motores fuera de borda 2 Tiempos",
         description: "Mobil Outboard Plus es un aceite de alto desempeño para motores de dos tiempos que está diseñado para muchos motores de dos tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda. Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente. Mobil Outboard Plus está prediluido para facilitar la mezcla cuando se añade al combustible.",
         category: OIL_CAT.MIN,
@@ -1030,7 +1030,7 @@ const CATALOGS = {
       {
         id: "mobil-29",
         name: "Mobil Delvac™ Legend 1350 SAE50",
-        image: "images/mobil/mobil_delvac_1350.webp",
+        images: ["images/mobil/mobil_delvac_1350.webp", "images/mobil/mobil_delvac_1350_2.webp", "images/mobil/mobil_delvac_1350_3.webp", "images/mobil/mobil_delvac_1350_4.webp"],
         type: "Lubricante para motores diésel de servicio pesado turbocargados",
         description: "Aceites monogrados para motores diesel de alto desempeño elaborados a partir de un sistema de aditivos balanceado. Estos aceites fueron diseñados para motores de aspiración natural y turbo-cargados que operan en condiciones severas tanto de carreteras o fuera de ellas. Los Mobil Delvac Serie 1300 son lubricantes usados en un amplio rango de aplicaciones en donde un aceite monogrado es requerido.",
         category: OIL_CAT.MIN,
@@ -1052,7 +1052,7 @@ const CATALOGS = {
       {
         id: "mobil-30",
         name: "Mobil Delvac™ Extended life 50/50",
-        image: "images/mobil/mobil_delvac_extended_life_50_50.webp",
+        images: ["images/mobil/mobil_delvac_extended_life_50_50.webp"],
         type: "Lubricante para motores diésel de servicio pesado turbocargados",
         description: "El refrigerante/anticongelante de vida prolongada y prediluido Mobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es un refrigerante a base de etilenglicol exento de fosfatos, silicatos, nitritos y boratos, listo para usar, que ha sido diseñado para proporcionar una excepcional protección contra la cavitación y la corrosión de todos los metales del sistema de enfriamiento.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze está formulado con inhibidores orgánicos de la corrosión para proporcionar una protección total del sistema de enfriamiento de hasta 1.600.000 kilómetros de uso en carretera (8 años o 20.000 horas de uso fuera de la carretera). Puesto que los inhibidores de corrosión orgánicos no se agotan con facilidad, Mobil Delvac™ Extended Life 50/50 Prediluted Coolant/Antifreeze elimina la necesidad de utilizar aditivos suplementarios para refrigerantes (SCA) que sí se requieren al usar refrigerantes convencionales.\nMobil Delvac Extended Life 50/50 Prediluted Coolant/Antifreeze es una mezcla 50/50 de Mobil Delvac Extended Life Coolant/Antifreeze y agua desionizada.",
         category: OIL_CAT.ETI,
@@ -1083,7 +1083,7 @@ const CATALOGS = {
       {
         id: "mobil-31",
         name: "Mobil ATF™ D/M",
-        image: "images/mobil/mobil_atf_d_m.webp",
+        images: ["images/mobil/mobil_atf_d_m.webp", "images/mobil/mobil_atf_d_m_2.webp"],
         type: "Fluido para transmisión automática",
         description: "Proporciona excelente estabilidad contra la oxidación y la fricción, propiedades antidesgaste, y la fluidez a bajas temperaturas deseada para la mayoría de las transmisiones automáticas.",
         category: OIL_CAT.MIN,
@@ -1118,7 +1118,7 @@ const CATALOGS = {
       {
         id: "mobil-32",
         name: "Mobil Super™ 2000 10W-40",
-        image: "images/mobil/mobil_super_2000_10w_40.webp",
+        images: ["images/mobil/mobil_super_2000_10w_40.webp", "images/mobil/mobil_super_2000_10w_40_2.webp", "images/mobil/mobil_super_2000_10w_40_1gal.webp", "images/mobil/mobil_super_2000_10w_40_1gal_2.webp"],
         type: "Lubricante Mobil para vehículos de pasajeros",
         description: "Aceite mejorado semisintético de calidad premium para motores que cumplen con las más recientes especificaciones de los aceites para motores de la industria. Está diseñado para proporcionar un excelente nivel de protección y desempeño bajo las condiciones más exigentes.",
         category: OIL_CAT.SEMI,
@@ -1147,7 +1147,7 @@ const CATALOGS = {
       {
         id: "mobil-33",
         name: "Mobil Outboard™ Plus 4T 10W-40",
-        image: "images/mobil/mobil_outboard_plus_4t_10w_40.webp",
+        images: ["images/mobil/mobil_outboard_plus_4t_10w_40.webp"],
         type: "Aceite de desempeño superior para motores fuera de borda de cuatro tiempos",
         description: "Aceite de alto desempeño para motores de cuatro tiempos que está diseñado para muchos motores de cuatro tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda.Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente.",
         category: OIL_CAT.MIN,
@@ -1170,7 +1170,7 @@ const CATALOGS = {
       {
         id: "mobil-34",
         name: "Mobil Delvac Legend™ 25W-50 High Mileage",
-        image: "images/mobil/mobil_delvac_legend_25w_50.webp",
+        images: ["images/mobil/mobil_delvac_legend_25w_50.webp"],
         type: "Aceite de alto rendimiento para motores diésel",
         description: "Aceite para motores diésel de alto rendimiento y alta viscosidad que proporciona una comprobada protección en motores diésel que operan en aplicaciones de servicio severo. Mobil Delvac 25W-50 High Mileage es recomendado para utilizarse en una amplia gama de aplicaciones de servicio pesado y en los ambientes operativos que se encuentran en las industrias de acarreo en camiones, minera, de la construcción, de explotación de canteras y agrícola.",
         category: OIL_CAT.MIN,
@@ -1201,7 +1201,7 @@ const CATALOGS = {
       {
         id: "mobil-35",
         name: "Mobil™ Dexron-VI ATF",
-        image: "images/mobil/mobil_atf_d_m_dexron_VI.webp",
+        images: ["images/mobil/mobil_atf_d_m_dexron_VI.webp", "images/mobil/mobil_atf_d_m_dexron_VI_2.webp"],
         type: "Fluido para transmisión automática",
         description: "Es una formulación de alto desempeño a base de una mezcla de productos sintéticos que cumple con los rigurosos requisitos de la especificación DEXRON-VI de General Motors y proporciona protección de la garantía para vehículos de General Motors del año 2006 en adelante. También proporciona un desempeño mejorado en vehículos de General Motors más viejos, cuando DEXRON es especificado.",
         category: OIL_CAT.SEMI,
@@ -1233,7 +1233,7 @@ const CATALOGS = {
       {
         id: "mobil-36",
         name: "Mobilfluid™ 424",
-        image: "images/mobil/mobilfluid_424.webp",
+        images: ["images/mobil/mobilfluid_424.webp"],
         type: "Lubricante multipropósito para tractores",
         description: "Lubricante multiuso y de extra alto rendimiento para tractores diseñado para cumplir o exceder los requisitos de los fluidos hidráulicos y de transmisión.  La tecnología avanzada de Mobilfluid 424 está diseñada para optimizar el desempeño de los tractores agrícolas y comerciales que operan en una amplia gama de entornos y condiciones.  Mobilfluid 424 combina aceites base selectos y un paquete de aditivos de avanzada tecnología para proporcionar las variadas propiedades de desempeño de los lubricantes que se requieren en los trenes de transmisión de potencia de equipos agrícolas y de construcción en aplicaciones de servicio severo.  Es particularmente adecuado para reducir el chirrido y traqueteo de los frenos húmedos y de las tomas de fuerza.",
         category: OIL_CAT.MIN,
@@ -1270,7 +1270,7 @@ const CATALOGS = {
       {
         id: "mobil-37",
         name: "Mobil Nuto™ H 68",
-        image: "images/mobil/mobil_nuto_h_68.webp",
+        images: ["images/mobil/mobil_nuto_h_68.webp"],
         type: "Aceite hidráulico",
         description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
         category: OIL_CAT.MIN,
@@ -1311,7 +1311,7 @@ const CATALOGS = {
       {
         id: "mobil-38",
         name: "Mobil Nuto™ H 46",
-        image: "images/mobil/mobil_nuto_h_68.webp",
+        images: ["images/mobil/mobil_nuto_h_68.webp"],
         type: "Aceite hidráulico",
         description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
         category: OIL_CAT.MIN,
@@ -1351,7 +1351,7 @@ const CATALOGS = {
       {
         id: "mobil-39",
         name: "Mobil Nuto™ H 32",
-        image: "images/mobil/mobil_nuto_h_68.webp",
+        images: ["images/mobil/mobil_nuto_h_68.webp"],
         type: "Aceite hidráulico",
         description: "Aceite hidráulico antidesgaste de buena calidad destinados a utilizarse en aplicaciones de servicios industriales y móviles que están sometidas a condiciones operativas moderadas y que requieren lubricantes antidesgaste. Su efectiva resistencia a la oxidación y estabilidad química son la base de la buena vida útil de dichos aceites en aplicaciones moderadas y severas.",
         category: OIL_CAT.MIN,
@@ -1392,7 +1392,7 @@ const CATALOGS = {
       {
         id: "mobil-40",
         name: "Mobil 1™ 0W-16",
-        image: "images/mobil/mobil_1_0w_16.webp",
+        images: ["images/mobil/mobil_1_0w_16.webp"],
         type: "Aceite avanzado totalmente sintético para motores.",
         description: "Mantenga a su motor funcionando con la máxima eficiencia a la vez que mejora la economía de combustible. Diseñado para los motores avanzados e híbridos de hoy en día, el aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 ayuda a mejorar la economía de combustible* y a prolongar la vida útil del motor en vehículos de cualquier antigüedad. Mobil 1 0W-20 Advanced Fuel Economy utiliza Fórmula de Triple Acción, distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios a su vehículo. Los componentes especiales en el aceite sintético reducen la fricción y ayudan a prevenir la formación de depósitos y la acumulación de lodo para mantener las piezas críticas del motor limpias y protegidas hasta 16,000 km (10,000 millas) entre cambios de aceite.",
         category: OIL_CAT.SINT,
@@ -1421,7 +1421,7 @@ const CATALOGS = {
       {
         id: "mobil-41",
         name: "Mobil 1™ 5W-20",
-        image: "images/mobil/mobil_1_5w_20.webp",
+        images: ["images/mobil/mobil_1_5w_20.webp"],
         type: "Aceite avanzado totalmente sintético para motores.",
         description: "Avanzado aceite completamente sintético para motores diseñado para brindar una excelente protección al motor con el fin de que éste siga funcionando como nuevo y para proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite.* Mobil 1 5W-20 cumple o excede los estándares más exigentes de la industria y supera a nuestros aceites de mezcla convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto desempeño.",
         category: OIL_CAT.SINT,
@@ -1449,7 +1449,7 @@ const CATALOGS = {
       {
         id: "mobil-42",
         name: "Mobil 1™ 5W-30",
-        image: "images/mobil/mobil_1_5w_30.webp",
+        images: ["images/mobil/mobil_1_5w_30.webp"],
         type: "Aceite avanzado totalmente sintético para motores",
         description: "El avanzado aceite sintético para motores Mobil 1 utiliza la emblemática Fórmula de Triple Acción de Mobil 1 para ofrecer un excelente rendimiento, protección y limpieza del motor a vehículos de todas las edades. Los componentes especiales en el aceite sintético prolongan la vida del motor al reducir la fricción que causa la acumulación de depósitos y lodos, lo cual mantiene a las piezas críticas del motor limpias y protegidas hasta 10.000 millas entre cambios de aceite.",
         category: OIL_CAT.SINT,
@@ -1474,7 +1474,7 @@ const CATALOGS = {
       {
         id: "mobil-43",
         name: "Mobil 1™ 10W-30",
-        image: "images/mobil/mobil_1_10w_30.webp",
+        images: ["images/mobil/mobil_1_10w_30.webp"],
         type: "Aceite avanzado totalmente sintético para motores",
         description: "Aceite para motores totalmente sintético diseñado para ayudar a proporcionar una excelente protección del motor con el fin de mantenerlo funcionando como nuevo y proteger las piezas críticas del motor hasta 16.000 kilómetros entre cambios de aceite*. Mobil 1 10W-30 cumple o excede los estándares más exigentes de la industria y brinda un desempeño superior al de nuestras mezclas de aceites convencionales y sintéticos. La tecnología Mobil 1™ de aceites sintéticos para motores viene como equipo estándar en muchos vehículos diferentes, incluyendo ciertos vehículos de alto rendimiento",
         category: OIL_CAT.SINT,
@@ -1499,7 +1499,7 @@ const CATALOGS = {
       {
         id: "mobil-44",
         name: "Mobil 1™ FS 0W-40",
-        image: "images/mobil/mobil_1_fs_0w_40.webp",
+        images: ["images/mobil/mobil_1_fs_0w_40.webp"],
         type: "Aceite avanzado para motores totalmente sintético",
         description: "El avanzado aceite para motores totalmente sintético Mobil™ 1 FS 0W-40 está diseñado para las más modernas tecnologías de motores de gasolina y diésel (sin filtros de partículas) y ofrece un excelente desempeño integral. Proporciona un poder de limpieza y una protección contra el desgaste excepcionales. Mobil™ 1 FS 0W-40 mantiene el motor funcionando como nuevo bajo todas las condiciones de conducción.",
         category: OIL_CAT.SINT,
@@ -1568,8 +1568,9 @@ const CATALOGS = {
             "proportion_maintenance": "1:260 litros",
             "proportion_activation": "1:38 litros"
           },
-          presentations: ["CUARTO"],
-          "summary": "Elevador de octanaje sin plomo para gasolina de calle. El más potente de su categoría con hasta +7 números de octanaje, compatible con catalizadores y sensores O2."
+          presentations: [PRESEN.CUARTO],
+          "summary": "Elevador de octanaje sin plomo para gasolina de calle. El más potente de su categoría con hasta +7 números de octanaje, compatible con catalizadores y sensores O2.",
+          images: ["images/vp_racing/vp_octanium_unleaded.webp", "images/vp_racing/vp_octanium_unleaded_2.webp"]
         },
         {
           id: "2857",
@@ -1595,8 +1596,9 @@ const CATALOGS = {
             "proportion_maintenance": "1:260 litros",
             "proportion_activation": "1:38 litros"
           },
-          presentations: ["CUARTO"],
-          "summary": "Elevador de octanaje con plomo para uso todoterreno y carreras. Mayor potencia que el Unleaded (+8 números), pero no apto para vehículos con catalizador."
+          presentations: [PRESEN.CUARTO],
+          "summary": "Elevador de octanaje con plomo para uso todoterreno y carreras. Mayor potencia que el Unleaded (+8 números), pero no apto para vehículos con catalizador.",
+          images: ["images/vp_racing/vp_octanium.webp", "images/vp_racing/vp_octanium_2.webp", "images/vp_racing/vp_octanium_3.webp"]
         },
         {
           id: "28556",
@@ -1621,8 +1623,9 @@ const CATALOGS = {
             "proportion_maintenance": "1:260 litros",
             "proportion_activation": "1:38 litros"
           },
-          presentations: ["PINTA"],
-          "summary": "Potenciador de octanaje compacto sin plomo, ideal para motos y autos pequeños. Compatible con catalizadores y sensores O2, con un incremento de hasta +5 números."
+          presentations: [PRESEN.PINTA],
+          "summary": "Potenciador de octanaje compacto sin plomo, ideal para motos y autos pequeños. Compatible con catalizadores y sensores O2, con un incremento de hasta +5 números.",
+          images: ["images/vp_racing/vp_octane_booster.webp"]
         },
         {
           id: "2849",
@@ -1648,8 +1651,9 @@ const CATALOGS = {
             "proportion_maintenance": "1:600 litros",
             "proportion_activation": "1:140 litros"
           },
-          presentations: ["PINTA"],
-          "summary": "Tratamiento integral 7 en 1 para gasolina. Limpia, lubrica y mejora el rendimiento en motores de 2 y 4 tiempos, eliminando agua, depósitos y aumentando el octanaje."
+          presentations: [PRESEN.PINTA],
+          "summary": "Tratamiento integral 7 en 1 para gasolina. Limpia, lubrica y mejora el rendimiento en motores de 2 y 4 tiempos, eliminando agua, depósitos y aumentando el octanaje.",
+          images: ["images/vp_racing/full_treatment_vp_7_in_1.webp", "images/vp_racing/full_treatment_vp_7_in_1_2.webp"]
         },
         {
           id: "2807",
@@ -1677,8 +1681,9 @@ const CATALOGS = {
             "proportion_maintenance": "1:600 litros",
             "proportion_activation": "1:140 litros"
           },
-          presentations: ["PINTA"],
-          "summary": "Limpiador profundo del sistema de combustible con tecnología PEA. Protege contra el etanol, reduce emisiones y restaura la potencia del motor. Uso cada 5.000 km."
+          presentations: [PRESEN.PINTA],
+          "summary": "Limpiador profundo del sistema de combustible con tecnología PEA. Protege contra el etanol, reduce emisiones y restaura la potencia del motor. Uso cada 5.000 km.",
+          images: ["images/vp_racing/fuel_system_cleaner.webp", "images/vp_racing/fuel_system_cleaner_2.webp", "images/vp_racing/fuel_system_cleaner_3.webp"]
         },
         {
           id: "2817",
@@ -1705,8 +1710,9 @@ const CATALOGS = {
             "proportion": "1:1280 litros",
             "coverage_per_bottle": "303 L por envase de 8 oz"
           },
-          presentations: ["PINTA"],
-          "summary": "Estabilizador de gasolina de larga duración (hasta 3 años) con protección especial anti-etanol. Ideal para vehículos, motos, cortadoras y equipos de almacenamiento prolongado."
+          presentations: [PRESEN.PINTA],
+          "summary": "Estabilizador de gasolina de larga duración (hasta 3 años) con protección especial anti-etanol. Ideal para vehículos, motos, cortadoras y equipos de almacenamiento prolongado.",
+          images: ["images/vp_racing/fuel_stabilizer_ethanol_armor.webp", "images/vp_racing/fuel_stabilizer_ethanol_armor_2.webp", "images/vp_racing/fuel_stabilizer_ethanol_armor_3.webp"]
         },
         {
           id: "1862",
@@ -1730,8 +1736,9 @@ const CATALOGS = {
             "requires_alcohol_compatible_components": true,
             "compatible_with": "Vehículos modificados para etanol"
           },
-          presentations: ["PAILA"],
-          "summary": "Etanol de carrera de altísima pureza (98% E) con 111.5 octanos. Para vehículos modificados. Requiere componentes compatibles con alcohol y no debe almacenarse prolongadamente."
+          presentations: [PRESEN.PAILA],
+          "summary": "Etanol de carrera de altísima pureza (98% E) con 111.5 octanos. Para vehículos modificados. Requiere componentes compatibles con alcohol y no debe almacenarse prolongadamente.",
+          images: ["images/vp_racing/x98_racing_fuel.webp"]
         },
         {
           id: "41814",
@@ -1759,8 +1766,9 @@ const CATALOGS = {
             "max_dose": "10% del volumen del tanque",
             "compatible_with": "Vehículos modificados E85 / Flex"
           },
-          presentations: ["GALON"],
-          "summary": "Combustible E85 de composición estable para vehículos modificados. Mayor consistencia que el E85 americano, con 101.6 octanos y sin plomo."
+          presentations: [PRESEN.GALON],
+          "summary": "Combustible E85 de composición estable para vehículos modificados. Mayor consistencia que el E85 americano, con 101.6 octanos y sin plomo.",
+          images: ["images/vp_racing/x85v_race_fuel.webp"]
         },
         {
           id: null,
@@ -1785,8 +1793,9 @@ const CATALOGS = {
             "use_case": "Carreras de resistencia, circuitos, rally carretera y todoterreno",
             "compatible_with": "Vehículos modificados"
           },
-          presentations: ["PAILA"],
-          "summary": "Combustible de carrera base etanol (85%) para pista y rally. Más consistente que el E85 de calle, con 101.6 octanos, sin plomo."
+          presentations: [PRESEN.PAILA],
+          "summary": "Combustible de carrera base etanol (85%) para pista y rally. Más consistente que el E85 de calle, con 101.6 octanos, sin plomo.",
+          images: ["images/vp_racing/X85_racing_fuel.webp"]
         },
         {
           id: "6402",
@@ -1813,8 +1822,9 @@ const CATALOGS = {
             "requires_tuning": false,
             "compatible_with": "Motores sin plomo de carrera, uso puro o en mezcla"
           },
-          presentations: ["PAILA", "TAMBOR"],
-          "summary": "Gasolina de carrera sin plomo y sin etanol de 96.8 octanos. Económica, apta para almacenamiento prolongado, no requiere modificaciones al motor y es segura para catalizadores."
+          presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+          "summary": "Gasolina de carrera sin plomo y sin etanol de 96.8 octanos. Económica, apta para almacenamiento prolongado, no requiere modificaciones al motor y es segura para catalizadores.",
+          images: ["images/vp_racing/c9_racing_fuel.webp"]
         },
         {
           id: "1122",
@@ -1838,8 +1848,9 @@ const CATALOGS = {
             "compatible_with": "Pista circular, carretera, motores 2 tiempos, lanchas",
             "use_case": "75% de los motores de carrera actuales"
           },
-          presentations: ["PAILA", "TAMBOR"],
-          "summary": "El combustible de carrera por excelencia de VP. Con plomo, 110.5 octanos, para motores de alta compresión (hasta 15:1), pista circular, carretera y motores de 2 tiempos."
+          presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+          "summary": "El combustible de carrera por excelencia de VP. Con plomo, 110.5 octanos, para motores de alta compresión (hasta 15:1), pista circular, carretera y motores de 2 tiempos.",
+          images: ["images/vp_racing/c12_racing_fuel.webp"]
         },
         {
           id: "1162",
@@ -1862,8 +1873,9 @@ const CATALOGS = {
             "requires_tuning": true,
             "compatible_with": "Motores turbo, supercargados, nitro, resistencia"
           },
-          presentations: ["PAILA", "TAMBOR"],
-          "summary": "Combustible de carrera de resistencia con el mayor octanaje de la gama (120). Con plomo, para motores extremos: turbo, supercargado, nitro y compresiones hasta 17:1."
+          presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+          "summary": "Combustible de carrera de resistencia con el mayor octanaje de la gama (120). Con plomo, para motores extremos: turbo, supercargado, nitro y compresiones hasta 17:1.",
+          images: ["images/vp_racing/c16_racing_fuel.webp"]
         },
         {
           id: "2372",
@@ -1886,8 +1898,9 @@ const CATALOGS = {
             "compatible_with": "Motores turbo y supercargados de carrera",
             "equivalent_to": "MS100"
           },
-          presentations: ["PAILA", "TAMBOR"],
-          "summary": "Gasolina de carrera sin plomo de 100 octanos para turbos y supercargados. Alternativa limpia al MS100, con baja oxigenación y rendimiento de alto nivel."
+          presentations: [PRESEN.PAILA, PRESEN.TAMBOR],
+          "summary": "Gasolina de carrera sin plomo de 100 octanos para turbos y supercargados. Alternativa limpia al MS100, con baja oxigenación y rendimiento de alto nivel.",
+          images: ["images/vp_racing/vp_performance_unleaded_reg.webp"]
         },
         {
           id: "1802",
@@ -1914,8 +1927,9 @@ const CATALOGS = {
             "packaging_note": "Tambores revestidos anti-óxido y anti-corrosión",
             "compatible_with": "Carreras legales con metanol"
           },
-          presentations: ["PAILA"],
-          "summary": "Metanol de carrera de máxima pureza (99.95%). Mantiene el motor frío, reduce la corrosión y es ideal para toda competencia legal que permita metanol."
+          presentations: [PRESEN.PAILA],
+          "summary": "Metanol de carrera de máxima pureza (99.95%). Mantiene el motor frío, reduce la corrosión y es ideal para toda competencia legal que permita metanol.",
+          images: ["images/vp_racing/m1_methanol.webp"]
         },
         {
           id: "2836",
@@ -1944,8 +1958,9 @@ const CATALOGS = {
             "proportion": "1:1280 litros",
             "compatible_with": "Diésel, biodiesel, motores diésel de carretera y todoterreno"
           },
-          presentations: ["PINTA", "MEDIO", "GALON"],
-          "summary": "El aditivo todo en uno para diésel: limpia, lubrica, aumenta el cetano, protege del frío y reduce el humo. El más completo y versátil de la línea diésel, en varios tamaños."
+          presentations: [PRESEN.PINTA, PRESEN.MEDIO, PRESEN.GALON],
+          "summary": "El aditivo todo en uno para diésel: limpia, lubrica, aumenta el cetano, protege del frío y reduce el humo. El más completo y versátil de la línea diésel, en varios tamaños.",
+          images: ["images/vp_racing/diesel_all_in_one.webp", "images/vp_racing/diesel_all_in_one_2.webp"]
         },
         {
           id: null,
@@ -1970,8 +1985,9 @@ const CATALOGS = {
             "biodiesel_compatible": true,
             "compatible_with": "Diésel y biodiesel, motores todoterreno y de carrera"
           },
-          presentations: ["CUARTO"],
-          "summary": "Potenciador de cetano diésel de máximo rendimiento (+10 números). Aumenta potencia, optimiza consumo, limpia inyectores y es compatible con biodiesel. Para uso todoterreno."
+          presentations: [PRESEN.CUARTO],
+          "summary": "Potenciador de cetano diésel de máximo rendimiento (+10 números). Aumenta potencia, optimiza consumo, limpia inyectores y es compatible con biodiesel. Para uso todoterreno.",
+          images: ["images/vp_racing/vp_cetanium.webp"]
         },
         {
           id: "VP6015016",
@@ -1995,8 +2011,9 @@ const CATALOGS = {
             "requires_sca": false,
             "compatible_with": "Vehículos a gasolina, automotrices y servicio pesado"
           },
-          presentations: ["GALON"],
-          "summary": "Refrigerante HOAT de vida extendida para vehículos a gasolina. Protege todos los metales del sistema, sin necesidad de aditivos extra, con intervalos de servicio largos."
+          presentations: [PRESEN.GALON],
+          "summary": "Refrigerante HOAT de vida extendida para vehículos a gasolina. Protege todos los metales del sistema, sin necesidad de aditivos extra, con intervalos de servicio largos.",
+          images: ["images/vp_racing/vp_ultra_power_gold.webp", "images/vp_racing/vp_ultra_power_gold_2.webp", "images/vp_racing/vp_ultra_power_gold_3.webp"]
         },
         {
           id: "VP6025016",
@@ -2022,8 +2039,9 @@ const CATALOGS = {
             "requires_sca": false,
             "compatible_with": "Semirremolques diésel, maquinaria de construcción y agrícola"
           },
-          presentations: ["GALON"],
-          "summary": "Refrigerante NOAT/HOAT para motores diésel de servicio pesado. Específico para semirremolques, maquinaria de construcción y agrícola. Máxima protección contra cavitación y corrosión."
+          presentations: [PRESEN.GALON],
+          "summary": "Refrigerante NOAT/HOAT para motores diésel de servicio pesado. Específico para semirremolques, maquinaria de construcción y agrícola. Máxima protección contra cavitación y corrosión.",
+          images: ["images/vp_racing/vp_ultra_power_red.webp", "images/vp_racing/vp_ultra_power_red_2.webp"]
         },
         {
           id: "VP7910020",
@@ -2043,8 +2061,9 @@ const CATALOGS = {
             "residue_free": false,
             "compatible_with": "Cadenas de rodillos, cadenas O-ring, X y Z. Motos de calle y todoterreno"
           },
-          presentations: ["PINTA"],
-          "summary": "Lubricante de cadena en aerosol de fórmula limpia y duradera. Repele suciedad, protege en todo tipo de terreno y no deja residuos voluminosos."
+          presentations: [PRESEN.PINTA],
+          "summary": "Lubricante de cadena en aerosol de fórmula limpia y duradera. Repele suciedad, protege en todo tipo de terreno y no deja residuos voluminosos.",
+          images: ["images/vp_racing/vp_powersports_chain_lubricant.webp", "images/vp_racing/vp_powersports_chain_lubricant_2.webp", "images/vp_racing/vp_powersports_chain_lubricant_3.webp"]
         },
         {
           id: "vp7920020",
@@ -2067,8 +2086,9 @@ const CATALOGS = {
             "compatible_chains": ["Sin juntas tóricas", "O-ring", "X-ring", "Z-ring"],
             "compatible_with": "Motos y vehículos todoterreno, calle y campo"
           },
-          presentations: ["PINTA"],
-          "summary": "Desengrasante de cadena en aerosol de secado rápido y sin residuos. Compatible con todo tipo de juntas tóricas. Úsalo antes de aplicar el lubricante de cadena VP."
+          presentations: [PRESEN.PINTA],
+          "summary": "Desengrasante de cadena en aerosol de secado rápido y sin residuos. Compatible con todo tipo de juntas tóricas. Úsalo antes de aplicar el lubricante de cadena VP.",
+          images: ["images/vp_racing/vp_powersports_chain_cleaner.webp", "images/vp_racing/vp_powersports_chain_cleaner_2.webp", "images/vp_racing/vp_powersports_chain_cleaner_3.webp"]
         },
         {
           id: null,
@@ -2093,8 +2113,9 @@ const CATALOGS = {
             "recommended_for": "Motocicletas de carretera con motor Wtim (4T)",
             "high_temp_performance": true
           },
-          presentations: ["CUARTO"],
-          "summary": "Aceite mineral 20W-50 para motos de carretera con embrague húmedo. Alta protección al desgaste, estabilidad en calor y formulación que minimiza la contaminación combustible-aceite."
+          presentations: [PRESEN.CUARTO],
+          "summary": "Aceite mineral 20W-50 para motos de carretera con embrague húmedo. Alta protección al desgaste, estabilidad en calor y formulación que minimiza la contaminación combustible-aceite.",
+          images: ["images/vp_racing/powersports_sae_20w_50.webp", "images/vp_racing/powersports_sae_20w_50_2.webp", "images/vp_racing/powersports_sae_20w_50_3.webp", "images/vp_racing/powersports_sae_20w_50_4.webp"]
         },
         {
           id: "34904-34915",
@@ -2116,8 +2137,9 @@ const CATALOGS = {
             },
             "compatible_with": "Tanques de combustible diésel"
           },
-          presentations: ["PINTA"],
-          "summary": "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua."
+          presentations: [PRESEN.PINTA],
+          "summary": "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua.",
+          images: ["images/vp_racing/reusable_tanksnake.webp", "images/vp_racing/reusable_tanksnake_2.webp", "images/vp_racing/reusable_tanksnake_3.webp"]
         },
         {
           id: "3532-3582",
@@ -2146,8 +2168,9 @@ const CATALOGS = {
               "Herbicidas e insecticidas"
             ]
           },
-          presentations: ["GALON", "PAILA"],
-          "summary": "Bidón de alta resistencia VP para fluidos no combustibles. Polietileno premium, diseño ergonómico y garantía de 3 años. NO apto para gasolina ni queroseno."
+          presentations: [PRESEN.GALON, PRESEN.PAILA],
+          "summary": "Bidón de alta resistencia VP para fluidos no combustibles. Polietileno premium, diseño ergonómico y garantía de 3 años. NO apta para gasolina ni queroseno.",
+          images: ["images/vp_racing/motorsport_containers.webp", "images/vp_racing/motorsport_containers_2.webp", "images/vp_racing/motorsport_containers_3.webp", "images/vp_racing/motorsport_containers_4.webp"]
         }
       ]
   },
@@ -2676,7 +2699,7 @@ const CATALOGS = {
           },
           "compatible_with": "Tanques de combustible diésel"
         },
-        presentations: ["PINTA"],
+        presentations: [PRESEN.PINTA],
         "summary": "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua."
       }
     ]

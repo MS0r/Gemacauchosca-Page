@@ -285,7 +285,8 @@
 
     productsGridEl.innerHTML = filteredProducts.map((product, index) => {
       const specsList = getProductSpecsList(product, brand.type);
-      const productImage = product.image ? `<img src="${product.image}" alt="${escapeHtml(product.name)}" class="product-card-image" onerror="this.style.display='none'">` : '';
+      const productImages = product.images || (product.image ? [product.image] : []);
+      const productImage = productImages.length > 0 ? `<img src="${productImages[0]}" alt="${escapeHtml(product.name)}" class="product-card-image" onerror="this.style.display='none'">` : '';
 
       return `
         <article class="product-card" data-id="${product.id}" style="animation-delay: ${Math.min(index * 0.05, 0.4)}s">
@@ -400,15 +401,21 @@
     filteredProducts = catalog.products.filter(filterer);
   }
 
+  let currentImageIndex = 0;
+  let currentProductImages = [];
+
   function openProductModal(productId) {
     const product = catalog.products.find(p => p.id === productId);
     if (!product) return;
 
+    currentProductImages = product.images || (product.image ? [product.image] : []);
+    currentImageIndex = 0;
+
     const specsHtml = renderModalSpecs(product, brand.type);
-    const productImage = product.image ? `<img src="${product.image}" alt="${escapeHtml(product.name)}" class="modal-product-image" onerror="this.style.display='none'">` : '';
+    const imageCarouselHtml = buildImageCarousel(currentProductImages, product.name);
 
     modalBodyEl.innerHTML = `
-      ${productImage}
+      ${imageCarouselHtml}
       <span class="modal-category">${escapeHtml(product.category || 'General')}</span>
       <h2 class="modal-title">${escapeHtml(product.name)}</h2>
       <p class="modal-type">${escapeHtml(product.type || '')}</p>
@@ -454,8 +461,86 @@
       ` : ''}
     `;
 
+    bindCarouselEvents();
     modalEl.classList.add('active');
     document.body.style.overflow = 'hidden';
+  }
+
+  function buildImageCarousel(images, productName) {
+    if (!images || images.length === 0) return '';
+    
+    if (images.length === 1) {
+      return `<img src="${images[0]}" alt="${escapeHtml(productName)}" class="modal-product-image" onerror="this.style.display='none'">`;
+    }
+
+    const dotsHtml = images.map((_, idx) => 
+      `<span class="carousel-dot ${idx === 0 ? 'active' : ''}" data-index="${idx}"></span>`
+    ).join('');
+
+    return `
+      <div class="modal-image-carousel">
+        <button class="carousel-arrow carousel-arrow-prev" aria-label="Imagen anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <div class="carousel-images">
+          ${images.map((img, idx) => `
+            <img src="${img}" alt="${escapeHtml(productName)}" class="modal-product-image carousel-image ${idx === 0 ? 'active' : ''}" data-index="${idx}" onerror="this.style.display='none'">
+          `).join('')}
+        </div>
+        <button class="carousel-arrow carousel-arrow-next" aria-label="Siguiente imagen">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <div class="carousel-dots">${dotsHtml}</div>
+      </div>
+    `;
+  }
+
+  function bindCarouselEvents() {
+    const prevBtn = document.querySelector('.carousel-arrow-prev');
+    const nextBtn = document.querySelector('.carousel-arrow-next');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => navigateCarousel(-1));
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => navigateCarousel(1));
+    }
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.dataset.index, 10);
+        showImage(index);
+      });
+    });
+  }
+
+  function navigateCarousel(direction) {
+    const newIndex = currentImageIndex + direction;
+    if (newIndex >= 0 && newIndex < currentProductImages.length) {
+      showImage(newIndex);
+    } else if (newIndex < 0) {
+      showImage(currentProductImages.length - 1);
+    } else if (newIndex >= currentProductImages.length) {
+      showImage(0);
+    }
+  }
+
+  function showImage(index) {
+    currentImageIndex = index;
+    
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    images.forEach((img, idx) => {
+      img.classList.toggle('active', idx === index);
+    });
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === index);
+    });
   }
 
   function renderModalSpecs(product, type) {
