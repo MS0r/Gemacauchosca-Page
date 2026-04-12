@@ -41,6 +41,8 @@ const BRANDS = {
     type: 'tires',
     logo: 'A',
     logoImage: 'images/logos/alix_red_logo.webp',
+    logoImageBlack: null,
+    logoImageWhite: null
   },
   bekka: {
     id: 'bekka',
@@ -2187,6 +2189,7 @@ const CATALOGS = {
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Gran agarre en pavimento seco y mojado.", "Conducción suave y silenciosa.", "Alta resistencia al desgaste."],
         specifications: { sizes: ["P195/75R14", "P235/70R15"], cars: ["Toyota GR86", "Subaru BRZ", "Honda Civic Type R", "Hyundai Veloster", "Ford Focus ST"] },
+        images: ["images/firestone/firestone_affinity.webp"],
       },
       {
         id: 'firestone-2',
@@ -2206,7 +2209,8 @@ const CATALOGS = {
             "195/65R15"
           ],
           cars: ["Toyota Corolla", "Honda Civic", "Hyundai Elantra", "Nissan Sentra", "Kia Forte"],
-        }
+        },
+        images: ["images/firestone/firestone_firehawk900.webp"],
       },
       {
         id: 'firestone-3',
@@ -2220,6 +2224,7 @@ const CATALOGS = {
           sizes: ["185/60R14", "185/65R14", "195/60R15", "195/65R15"],
           cars: ["Honda Civic", "Toyota Corolla", "Mazda 3", "Volkswagen Golf", "Hyundai Elantra"],
         },
+        images: ["images/firestone/firestone_firehawk_v950.webp"],
       },
       {
         id: 'firestone-4',
@@ -2233,6 +2238,7 @@ const CATALOGS = {
           sizes: ["205/55R16", "215/60R17"],
           cars: ["Ford Focus", "Volkswagen Jetta", "Honda Accord", "Toyota Camry", "Mazda 6"],
         },
+        images: ["images/firestone/firestone_firehawk_v970.webp"],
       },
       {
         id: 'firestone-5',
@@ -2246,6 +2252,7 @@ const CATALOGS = {
           sizes: ["165/65R13", "165/70R13", "175/70R13", "175/65R14", "185/65R14"],
           cars: ["Chevrolet Spark", "Renault Clio", "Kia Picanto", "Toyota Yaris", "Hyundai i10"],
         },
+        images: ["images/firestone/firestone_multihawk.webp"],
       },
       {
         id: 'firestone-6',
@@ -2259,6 +2266,7 @@ const CATALOGS = {
           sizes: ["175/70R13", "185/65R14", "195/75R14"],
           cars: ["Chevrolet Aveo", "Renault Logan", "Toyota Yaris", "Hyundai Accent", "Kia Rio"],
         },
+        images: ["images/firestone/firestone_seiberling_500.webp"],
       },
       {
         id: 'firestone-7',
@@ -2272,19 +2280,21 @@ const CATALOGS = {
           sizes: ["31X10.50R15LT"],
           cars: ["Ford F-150", "Chevrolet Silverado", "Toyota Hilux", "Nissan Frontier", "RAM 1500"],
         },
+        images: ["images/firestone/firestone_atx_radial_23.webp"],
       },
       {
         id: 'firestone-8',
         name: "Destination A/T",
         type: "Neumático todo terreno",
-        description: "Este neumático otorga una excelente capacidad de tracción dentro y fuera de carretera. Su desempeño todo terreno se complementa con un rodaje confortable y silencioso.",
+        description: "Este neumáticos otorga una excelente capacidad de tracción dentro y fuera de carretera. Su desempeño todo terreno se complementa con un rodar confortable y silencioso.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
-        benefits: ["Excelente tracción y gran resistencia a las agresiones del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
+        benefits: ["Excelente tracción y gran resistencia a las agresione del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
         specifications: {
           sizes: ["P235/75R15", "31X10.50R15LT", "LT245/75R16", "P255/70R16", "P265/75R16"],
           cars: ["Toyota 4Runner", "Ford Explorer", "Jeep Wrangler", "Chevrolet Tahoe", "Nissan Pathfinder"],
         },
+        images: ["images/firestone/firestone_destination_at.webp"],
       },
       {
         id: 'firestone-9',
@@ -2298,6 +2308,7 @@ const CATALOGS = {
           sizes: ["P235/75R15", "P265/75R16", "P235/65R17", "P245/65R17", "P265/65R17", "P265/70R17", "P285/70R17"],
           cars: ["RAM 1500", "Ford F-150", "Chevrolet Silverado", "Toyota Tundra", "GMC Sierra"],
         },
+        images: ["images/firestone/firestone_destination_at2.webp"],
       },
       {
         id: 'firestone-10',
@@ -2306,17 +2317,18 @@ const CATALOGS = {
         description: "El neumático Destination LE ofrece beneficios a vehículos utilitarios deportivos, vans y pick-ups de trabajo livianos. Esta tecnología aumenta el confort, el rendimiento y disminuye el desgaste irregular.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
-        benefits: ["Excelente tracción y gran resistencia a las agresiones del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
+        benefits: ["Excelente tracción y gran resistencia a las agresione del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
         specifications: {
           sizes: ["P235/75R15", "P265/70R16", "P245/65R17"],
           cars: ["Ford Explorer", "Toyota RAV4", "Honda Pilot", "Chevrolet Equinox", "Nissan Murano"],
         },
+        images: ["images/firestone/firestone_destination_le.webp"],
       },
       {
         id: 'firestone-11',
         name: "Destination V A/T",
         type: "Neumático todo terreno versátil",
-        description: "Este diseño combina confort y seguridad con un excelente comportamiento en carretera y un desempeño sobresaliente en terrenos más exigentes.",
+        description: "Este diseño combina confort y seguridad con un excelente comportamiento en carretera y un desempeño sobresaleinte en terrenos más exigentes.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Diseñado para una conducción confortable.", "Desempeño versátil en todo terreno."],
@@ -2324,6 +2336,7 @@ const CATALOGS = {
           sizes: ["P215/75R15", "P265/75R16", "P245/65R17", "P245/70R17", "P265/70R17", "P285/70R17", "P265/60R18"],
           cars: ["Toyota Land Cruiser", "Mitsubishi Montero", "Ford Expedition", "Chevrolet Suburban", "Nissan Armada"],
         },
+        images: ["images/firestone/firestone_destination_v_at.webp"],
       },
       {
         id: 'firestone-12',
@@ -2337,12 +2350,13 @@ const CATALOGS = {
           sizes: ["265/65R17"],
           cars: ["Chevrolet Tahoe", "Ford Expedition", "Toyota Sequoia", "Nissan Armada", "GMC Yukon"],
         },
+        images: ["images/firestone/firestone_destination_v_ht_684II.webp"],
       },
       {
         id: 'firestone-13',
         name: "Destination V H/T 687",
         type: "Neumático highway para SUV",
-        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodaje confortable y silencioso.",
+        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodar confortable y silencioso.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
@@ -2350,12 +2364,13 @@ const CATALOGS = {
           sizes: ["205/70R15", "215/65R16", "235/60R16"],
           cars: ["Honda CR-V", "Toyota RAV4", "Hyundai Tucson", "Kia Sportage", "Nissan X-Trail"],
         },
+        images: ["images/firestone/firestone_destination_v_ht_687.webp"],
       },
       {
         id: 'firestone-14',
         name: "Destination V H/T 689",
         type: "Neumático highway premium para camioneta",
-        description: "Máximo agarre en todo tipo de situaciones y rendimiento perfectamente equilibrado en autopista que garantiza una conducción con bajas emisiones de ruido y confortable.",
+        description: "Máximo agarre en todo tipo de situaciones y rendimiento perfectamente equilibrado en Autopista que garantiza una conducción con bajas emisiones de ruido y confortable.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
@@ -2363,12 +2378,13 @@ const CATALOGS = {
           sizes: ["P255/70R16"],
           cars: ["Dodge Ram", "Ford F-150", "Chevrolet Silverado", "GMC Sierra", "Toyota Tundra"],
         },
+        images: ["images/firestone/firestone_destination_v_vt_689.webp"],
       },
       {
         id: 'firestone-15',
         name: "Destination V H/T 840",
         type: "Neumático highway para uso mixto",
-        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodaje confortable y silencioso.",
+        description: "Neumático para uso en carreteras pavimentadas. Su diseño asegura una excelente maniobrabilidad y tracción en pavimentos secos y mojados. Esto se combina con un rodar confortable y silencioso.",
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
@@ -2376,6 +2392,7 @@ const CATALOGS = {
           sizes: ["205R16C", "265/70R16", "P265/70R17"],
           cars: ["Mitsubishi L300", "Toyota Hiace", "Ford Transit", "Chevrolet Express", "Nissan Urvan"],
         },
+        images: ["images/firestone/firestone_destination_v_ht_840.webp"],
       },
       {
         id: 'firestone-16',
@@ -2389,6 +2406,7 @@ const CATALOGS = {
           sizes: ["LT215/85R16", "7.50R16LT"],
           cars: ["Ford Transit", "Nissan Urvan", "Toyota Hiace", "Mercedes-Benz Sprinter", "Chevrolet Express"],
         },
+        images: ["images/firestone/firestone_destination_v_tp.webp"],
       },
       {
         id: 'firestone-17',
@@ -2402,6 +2420,7 @@ const CATALOGS = {
           sizes: ["31X10.5R15LT", "LT265/75R16", "LT265/65R17", "LT265/70R17", "LT285/70R17", "LT265/65R18", "LT275/65R18"],
           cars: ["Jeep Wrangler", "Ford Bronco", "Toyota 4Runner", "RAM 1500", "Chevrolet Colorado ZR2"],
         },
+        images: ["images/firestone/firestone_destination_xt.webp"],
       },
       {
         id: 'firestone-18',
@@ -2415,6 +2434,7 @@ const CATALOGS = {
           sizes: ["7.50R16LT"],
           cars: ["Ford F-150", "Toyota Hilux", "Nissan Frontier", "Mitsubishi L200", "RAM 1500"],
         },
+        images: ["images/firestone/firestone_firehawk_rmt.webp"],
       },
       {
         id: 'firestone-19',
@@ -2428,6 +2448,7 @@ const CATALOGS = {
           sizes: ["LT215/85D15", "7.50-16LT"],
           cars: ["Ford F-150", "Chevrolet C/K", "Dodge Ram", "Toyota Land Cruiser 70", "Nissan Patrol"],
         },
+        images: ["images/firestone/firestone_super_all_traction.webp"],
       },
       {
         id: 'firestone-20',
@@ -2441,6 +2462,7 @@ const CATALOGS = {
           sizes: ["7.50-16LT"],
           cars: ["Autobuses ligeros", "Camiones de reparto", "Vans de trabajo", "Ford Transit", "Toyota Coaster"],
         },
+        images : ["images/firestone/firestone_shogun.webp"],
       },
       {
         id: 'firestone-21',
@@ -2454,6 +2476,7 @@ const CATALOGS = {
           sizes: ["11.00-16"],
           cars: ["Tractores agrícolas eje delantero", "John Deere", "Massey Ferguson", "New Holland", "Case IH"],
         },
+        images: ["images/firestone/firestone_champion_guide_grip_3r.webp"],
       },
       {
         id: 'firestone-22',
@@ -2467,6 +2490,7 @@ const CATALOGS = {
           sizes: ["7.50-16"],
           cars: ["Tractores de caña de azúcar", "Tractores arroceros", "John Deere", "Kubota", "Massey Ferguson"],
         },
+        images: ["images/firestone/firestone_champion_guide_grip_hd_f2.webp"],
       },
       {
         id: 'firestone-23',
@@ -2480,6 +2504,7 @@ const CATALOGS = {
           sizes: ["14.9-24", "23.1-26", "14.9-28", "18.4-30", "23.1-30", "18.4-34", "23.1-34"],
           cars: ["Tractores arroceros", "Tractores cañeros", "John Deere", "Massey Ferguson", "New Holland"],
         },
+        images: ["images/firestone/firestone_champion_guide_grip_r2.webp"],
       },
     ]
   },
