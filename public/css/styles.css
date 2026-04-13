@@ -474,24 +474,6 @@ button {
   gap: 1.5rem;
 }
 
-@media (max-width: 1100px) {
-  .brands-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .brands-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .brands-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .brand-card {
   display: flex;
   flex-direction: column;
@@ -560,6 +542,32 @@ button {
 
 .brand-card:hover .logo-text {
   color: var(--color-primary);
+}
+
+@media (max-width: 1100px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .brand-card {
+    min-height: 10rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brand-card {
+    min-height: 10rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .brands-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .brand-type {
