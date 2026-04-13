@@ -112,6 +112,12 @@ const ALIX_TIRE_CAT = {
   CT: "CT",
 }
 
+const RYDANZ_TIRE_CAT = {
+  REAC: "Reac",
+  RAPTOR: "Raptor",
+  RALEIGH: "Raleigh",
+}
+
 const ESP_ATTRIBUTES_OIL = {
   viscosity: 'Viscosidad SAE',
   api: 'API',
@@ -2510,85 +2516,51 @@ const CATALOGS = {
   },
   rydanz: {
     brand: BRANDS.rydanz,
-    categories: ["Pasajero", "SUV", "Camioneta", "Deportivo"],
+    categories: Object.values(RYDANZ_TIRE_CAT),
     products: [
       {
-        id: 'rydanz-1',
-        name: "Rydanz Sport RX1",
+        id: "rydanz-1",
+        name: "Rydanz Reac RO5",
         type: "Neumático de alto rendimiento",
-        description: "Neumático deportivo de última generación con compuesto de sílice para máximo agarre en seco y mojado.",
-        category: "Deportivo",
-        line: "Sport RX",
-        applications: ["Vehículos deportivos", "Altas velocidades", "Conducción dinámica"],
-        benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Baja resistencia al rodamiento"],
-        approvals: [],
-        specifications: { size: "225/45 R17", car: ["Toyota Supra", "Nissan Z", "Mazda MX-5", "Subaru WRX", "Honda S2000"], season: "Verano", speedRating: "W", loadIndex: "94" },
-        presentations: []
+        description: "Neumático de alto rendimiento con tecnología avanzada para máximo agarre y respuesta precisos.",
+        category: RYDANZ_TIRE_CAT.REAC,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Alta estabilidad a velocidad"],
+        specifications: { sizes: [], cars: [], season: "Verano", speedRating: "W", loadIndex: "94" },
+        images: ["images/rydanz/rydanz_reac_ro5.webp", "images/rydanz/rydanz_reac_ro5_2.webp", "images/rydanz/rydanz_reac_ro5_3.webp", "images/rydanz/rydanz_reac_ro5_4.webp"]
       },
       {
-        id: 'rydanz-2',
-        name: "Rydanz Comfort A/T",
+        id: "rydanz-2",
+        name: "Rydanz Raptor RO9",
         type: "Neumático todo terreno",
-        description: "Neumático para uso mixto con excelente tracción en superficies variadas y comfort de marcha.",
-        category: "Camioneta",
-        line: "Comfort A/T",
-        applications: ["SUVs", "Pickups", "Uso mixto ciudad/carretera"],
-        benefits: ["Tracción versátil", "Durabilidad", "Confort de marcha"],
-        approvals: [],
-        specifications: { size: "265/70 R16", car: ["Toyota Hilux", "Ford Ranger", "Nissan Frontier", "Mitsubishi L200", "Isuzu D-Max"], season: "All-Season", speedRating: "S", loadIndex: "112" },
-        presentations: []
+        description: "Neumático para uso tout terrain con excelente tracción y durabilidad en condiciones severas.",
+        category: RYDANZ_TIRE_CAT.RAPTOR,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Gran tracción fuera de camino", "Alta resistencia a cortes", "Durabilidad extrema"],
+        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "S", loadIndex: "112" },
+        images: ["images/rydanz/rydanz_raptor_ro9.webp", "images/rydanz/rydanz_raptor_ro9_2.webp", "images/rydanz/rydanz_raptor_ro9_3.webp", "images/rydanz/rydanz_raptor_ro9_4.webp"]
       },
       {
-        id: 'rydanz-3',
-        name: "Rydanz Touring TS5",
+        id: "rydanz-3",
+        name: "Rydanz Raptor R19",
+        type: "Neumático todoterreno",
+        description: "Neumático todoterreno de alta resistencia para las condiciones más demandantes.",
+        category: RYDANZ_TIRE_CAT.RAPTOR,
+        line: TIRE_LINES.CAM_RADIAL,
+        benefits: ["Tracción en terrenos difíciles", "Resistencia a impactos", "Diseño autolimpiante"],
+        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "Q", loadIndex: "118" },
+        images: ["images/rydanz/rydanz_raptor_r19.webp", "images/rydanz/rydanz_raptor_r19_2.webp", "images/rydanz/rydanz_raptor_r19_3.webp"]
+      },
+      {
+        id: "rydanz-4",
+        name: "Rydanz Raleigh RO6",
         type: "Neumático de turismo",
-        description: "Neumático diseñado para proporcionar confort y seguridad en el uso diario.",
-        category: "Pasajero",
-        line: "Touring TS",
-        applications: ["Sedanos", "Compactos", "Uso familiar"],
+        description: "Neumático de turismo diseñado para comfort y seguridad en el uso diario.",
+        category: RYDANZ_TIRE_CAT.RALEIGH,
+        line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
-        approvals: [],
-        specifications: { size: "205/55 R16", car: ["Toyota Corolla", "Honda Civic", "Hyundai Elantra", "Nissan Sentra", "Kia Forte"], season: "All-Season", speedRating: "H", loadIndex: "91" },
-        presentations: []
-      },
-      {
-        id: 'rydanz-4',
-        name: "Rydanz SUV Ultra",
-        type: "Neumático para SUV",
-        description: "Neumático premium para SUV con excelente rendimiento en todas las condiciones.",
-        category: "SUV",
-        line: "SUV Ultra",
-        applications: ["SUVs medianos", "Crossovers", "Vehículos familiares"],
-        benefits: ["Estabilidad a alta velocidad", "Frenado en mojado", "Confort superior"],
-        approvals: [],
-        specifications: { size: "235/60 R18", car: ["Toyota Highlander", "Honda CR-V", "Hyundai Santa Fe", "Kia Sorento", "Ford Explorer"], season: "All-Season", speedRating: "V", loadIndex: "103" },
-        presentations: []
-      },
-      {
-        id: 'rydanz-5',
-        name: "Rydanz Winter WD1",
-        type: "Neumático de invierno",
-        description: "Neumático específico para condiciones de invierno con máximo agarre en nieve y hielo.",
-        category: "Pasajero",
-        line: "Winter WD",
-        applications: ["Zonas con nieve", "Climas fríos", "Vehículos en invierno"],
-        benefits: ["Certificación invernal 3PMSF", "Agarre en nieve", "Frenado en hielo"],
-        approvals: ["3PMSF", "M+S"],
-        specifications: { size: "195/65 R15", car: ["Toyota Corolla", "Honda Civic", "Hyundai Accent", "Nissan Versa", "Chevrolet Aveo"], season: "Invierno", speedRating: "T", loadIndex: "91" },
-        presentations: []
-      },
-      {
-        id: 'rydanz-6',
-        name: "Rydanz Eco Drive",
-        type: "Neumático económico",
-        description: "Neumático de excelente relación calidad-precio con buena eficiencia de combustible.",
-        category: "Pasajero",
-        line: "Eco Drive",
-        applications: ["Vehículos económicos", "Flotas", "Uso urbano"],
-        benefits: ["Ahorro de combustible", "Larga duración", "Precio accesible"],
-        approvals: [],
-        specifications: { size: "185/65 R15", car: ["Toyota Corolla", "Honda Fit", "Hyundai Accent", "Nissan March", "Kia Rio"], season: "Verano", speedRating: "H", loadIndex: "88" },
-        presentations: []
+        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "H", loadIndex: "91" },
+        images: ["images/rydanz/rydanz_raleigh_ro6.webp", "images/rydanz/rydanz_raleigh_ro6_2.webp", "images/rydanz/rydanz_raleigh_ro6_3.webp"]
       }
     ]
   },
