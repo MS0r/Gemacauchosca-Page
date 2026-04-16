@@ -109,13 +109,23 @@ const ALIX_TIRE_CAT = {
   VEL: "Veloce",
   IMP: "Impact",
   ST: "ST",
-  CT: "CT",
+  CT: "CT"
 }
 
 const RYDANZ_TIRE_CAT = {
   REAC: "Reac",
   RAPTOR: "Raptor",
   RALEIGH: "Raleigh",
+}
+
+const BEKKA_TIRE_CAT = {
+  MISSILE: "Missile",
+  RANGER: "Ranger",
+  RUNNER: "Runner",
+  ADVENTURE: "Adventure",
+  WINNER: "Winner",
+  TERRAIN: "Terrain",
+  RACE: "Race",
 }
 
 const ESP_ATTRIBUTES_OIL = {
@@ -1779,7 +1789,7 @@ const CATALOGS = {
           images: ["images/vp_racing/x85v_race_fuel.webp"]
         },
         {
-          id: null,
+          id: "1732",
           name: "X85",
           type: "Combustible de alto rendimiento / Etanol",
           description: "Combustible con mezcla de 85% de etanol y 15% de hidrocarburos de primera calidad. Consistente siempre, a diferencia del E85 americano. Diseñado para carreras de resistencia, circuitos, rallyes en carretera y todoterreno.",
@@ -1971,7 +1981,7 @@ const CATALOGS = {
           images: ["images/vp_racing/diesel_all_in_one.webp", "images/vp_racing/diesel_all_in_one_2.webp"]
         },
         {
-          id: null,
+          id: "2865",
           name: "VP Cetanium®",
           type: "Aditivo elevador de cetano / Diésel",
           description: "Potenciador de cetano para diésel que aumenta el cetano hasta 10 números. Diseñado para motores de carreras diésel todoterreno. Mejora potencia, rendimiento de combustible, reemplaza lubricación perdida, elimina lodos y depósitos, y reduce el humo. Una lata de 32 oz (0.946 L) trata 10 galones (38 L) al máximo, o hasta 20 galones (76 L) para +5 números.",
@@ -2099,7 +2109,7 @@ const CATALOGS = {
           images: ["images/vp_racing/vp_powersports_chain_cleaner.webp", "images/vp_racing/vp_powersports_chain_cleaner_2.webp", "images/vp_racing/vp_powersports_chain_cleaner_3.webp"]
         },
         {
-          id: null,
+          id: "2944",
           name: "SAE 20W-50 Power Sports Engine Oil",
           type: "Aceite mineral para motocicletas",
           description: "Aceite mineral SAE 20W-50 para motocicletas de carretera con motor de 4 tiempos. Alta viscosidad para climas cálidos. Recomendado especialmente para motocicletas con motor Wtim (wet clutch).",
@@ -2575,6 +2585,7 @@ const CATALOGS = {
         description: "Desarrollados para usuarios de vehículos sedanes y cupés, posee un atractivo diseño que combina estabilidad, maniobrabilidad y desempeño.",
         category: ALIX_TIRE_CAT.VEZ,
         line: TIRE_LINES.PAS_RADIAL,
+        images: ["images/alix/alix_vezetta_2.webp", "images/alix/alix_vezetta_3.webp"],
         benefits: [
           "Diseño atractivo y moderno.",
           "Bloques anchos en hombros que mejoran la estabilidad lateral.",
@@ -2592,6 +2603,7 @@ const CATALOGS = {
         description: "El ALIX VEZETTA PLUS es un neumático diseñado para ofrecer un excelente desempeño en cualquier tipo de carretera. Si buscas neumáticos con gran rendimiento y larga duración, este es el producto ideal para ti.",
         category: ALIX_TIRE_CAT.VEZ_PLUS,
         line: TIRE_LINES.PAS_RADIAL,
+        images: ["images/alix/alix_vezetta_plus.webp", "images/alix/alix_vezetta_plus_2.webp"],
         benefits: [
           "Banda diseñada para proporcionar un manejo tranquilo, cómodo y seguro.",
           "Excelente adherencia en carreteras mojadas y secas.",
@@ -2609,6 +2621,7 @@ const CATALOGS = {
         description: "Los neumáticos ALIX VELOCE son ideales para superficies pavimentadas húmedas y secas. Ofrecen un excelente rendimiento y mayor confort en el camino, además de una alta resistencia al desgaste irregular.",
         category: ALIX_TIRE_CAT.VEL,
         line: TIRE_LINES.PAS_RADIAL,
+        images: ["images/alix/alix_veloce.webp", "images/alix/alix_veloce_2.webp"],
         benefits: [
           "Nueva banda de rodamiento diseñada para aumentar la durabilidad.",
           "Grooves externos ampliados para mejor desalojo de agua.",
@@ -2626,6 +2639,7 @@ const CATALOGS = {
         description: "El neumático ALIX IMPACT HT PLUS está especialmente diseñado para su uso en pick-ups de trabajo liviano y vehículos utilitarios deportivos (SUV), en caminos mayoritariamente pavimentados.",
         category: ALIX_TIRE_CAT.IMP,
         line: TIRE_LINES.CAM_RADIAL,
+        images: ["images/alix/alix_impact_ht_plus.webp", "images/alix/alix_impact_ht_plus_2.webp"],
         benefits: [
           "Nueva banda de rodamiento mejorada para aumentar vida útil.",
           "Surcos optimizados para un manejo cómodo y silencioso.",
@@ -2637,29 +2651,13 @@ const CATALOGS = {
         },
       },
       {
-        id: 'alix-5',
-        name: "ST-17",
-        type: "Neumático para motocicleta urbana",
-        description: "El neumático ALIX ST-17 fue desarrollado para enfrentar las peores condiciones de uso en áreas urbanas y en carretera, brindando agilidad, manejo seguro y respuesta rápida.",
-        category: ALIX_TIRE_CAT.ST,
-        line: TIRE_LINES.MOTO,
-        benefits: [
-          "Diseño elegante y deportivo.",
-          "Óptima adherencia sobre pavimento seco y húmedo.",
-          "Estructura reforzada para proporcionar alta resistencia al impacto y comodidad al motociclista.",
-        ],
-        specifications: {
-          sizes: ["110/90-16 M/C", "2.75-18 M/C", "90/90-18 M/C"],
-          cars: ["Honda CB 125", "Yamaha YBR 125", "Suzuki GN 125", "AKT 125", "Bera BR 150"],
-        },
-      },
-      {
         id: 'alix-6',
         name: "CT-21",
         type: "Neumático para moto de trabajo",
         description: "Neumático especial para motos de trabajo. Alto desempeño en áreas urbanas y sub-urbanas. Otorga resistencia, estabilidad y excelente tracción.",
         category: ALIX_TIRE_CAT.CT,
         line: TIRE_LINES.MOTO,
+        images: ["images/alix/alix_ct_21.webp", "images/alix/alix_ct_21_2.webp"],
         benefits: [
           "Alto desempeño en las rutas más exigentes.",
           "Gran estabilidad y agarre en suelo seco y húmedo.",
@@ -2669,36 +2667,172 @@ const CATALOGS = {
           sizes: ["90/90-18M/C", "3.00-18M/C"],
           cars: ["Honda CG 150", "Yamaha YBR 125", "Bajaj Boxer 150", "Hero Hunk", "TVS Apache"],
         },
+      },
+      {
+        id: 'alix-7',
+        name: "ST-17",
+        type: "Neumático para motocicletas urbana",
+        description: "El neumático ALIX ST-17 fue desarrollado para enfrentar las peores condiciones de uso en áreas urbanas y en carretera, brindando agilidad, manejo seguro y respuesta rápida.",
+        category: ALIX_TIRE_CAT.ST,
+        line: TIRE_LINES.MOTO,
+        images: ["images/alix/alix_st_17.webp", "images/alix/alix_st_17_2.webp"],
+        benefits: [
+          "Diseño elegante y deportivo.",
+          "Óptima adherencia sobre pavimento seco y húmedo.",
+          "Estructura reforzada para proporcionar alta resistencia al impacto y comodidad al motociclista.",
+        ],
+        specifications: {
+          sizes: ["110/90-16 M/C", "2.75-18 M/C", "90/90-18 M/C"],
+          cars: ["Honda CB 125", "Yamaha YBR 125", "Suzuki GN 125", "AKT 125", "Bera BR 150"],
+        },
       }
     ]
   },
   bekka: {
     brand: BRANDS.bekka,
-    categories: [],
+    categories: Object.values(BEKKA_TIRE_CAT),
     products: [
       {
-        id: "3490-3491",
-        name: "Absorbedor de Agua Bekka® para Tanques de Combustible Diésel",
-        type: "Accesorio / Absorbedor de agua",
-        description: "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua.",
+        id: 'bekka-1',
+        name: "Missile",
+        type: "Neumático para motocross",
+        description: "Neumático de alto rendimiento diseñado para motocross y competencia. ofrece excelente tracción y estabilidad en terrenos mixtos.",
+        category: BEKKA_TIRE_CAT.MISSILE,
+        line: TIRE_LINES.MOTO,
         benefits: [
-          "Protege el combustible almacenado de contaminación y agua",
-          "Versión instantánea para remoción rápida de agua",
-          "Versión reutilizable para uso continuo en tanques enterrados o a nivel de suelo",
-          "Versión móvil para cisternas y tanques estacionarios de patios y fincas"
+          "Excelente tracción en terrenos mixtos.",
+          "Alta resistencia al impacto.",
+          "Diseño de tacos optimizado paracompetition."
         ],
         specifications: {
-          "has_lead": false,
-          "variants": {
-            "mobile": { id: "34904", "use": "Cisternas y tanques estacionarios de patios y fincas" },
-            "instant": { id: "34906", "action_time": "30 minutos", "use": "Remoción rápida de agua" },
-            "reusable": { id: "34908 / 34915", "use": "Uso continuo en tanques enterrados o a nivel de suelo" }
-          },
-          "compatible_with": "Tanques de combustible diésel"
+          sizes: [
+            "110/90-16TL",
+            "90/90-18TL",
+            "2.75-18TL",
+            "130/70-17T."
+          ]
         },
-        presentations: [PRESEN.PINTA],
-        "summary": "Sistema absorbedor de agua para tanques de diésel en tres versiones: instantáneo, reutilizable y móvil. Protege el combustible almacenado de contaminación y agua."
-      }
+        images: ["images/bekka/bekka_missile.webp"]
+      },
+      {
+        id: 'bekka-2',
+        name: "Ranger",
+        type: "Neumático para moto trail",
+        description: "Neumático diseñado para uso trail y adventure, ofrece gran versatilidad entre calle y off-road.",
+        category: BEKKA_TIRE_CAT.RANGER,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Excelente versatilidad.",
+          "Buen agarre en superficies mixtas.",
+          "Alta durabilidad."
+        ],
+        specifications: {
+          sizes: [
+            "90/90-18TL",
+            "120/80-17TL"
+          ]
+        },
+        images: ["images/bekka/bekka_ranger.webp"]
+      },
+      {
+        id: 'bekka-3',
+        name: "Runner",
+        type: "Neumático para moto urbana",
+        description: "Neumático diseñado para uso urbano y transporte. Ofrece excelente durabilidad y rendimiento en ciudad.",
+        category: BEKKA_TIRE_CAT.RUNNER,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Alta durabilidad urbana.",
+          "Excelente rendimiento en ciudad.",
+          "Cómoda pisada."
+        ],
+        specifications: {
+          sizes: [
+            "90/90-17 TL"
+          ]
+        },
+        images: ["images/bekka/bekka_runner.webp"]
+      },
+      {
+        id: 'bekka-4',
+        name: "Adventure",
+        type: "Neumático para adventure",
+        description: "Neumático diseñado para motos adventure y touring. Perfecto para viajes larga distancia con carga.",
+        category: BEKKA_TIRE_CAT.ADVENTURE,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Ideal para viajes largos.",
+          "Excelente estabilidad con carga.",
+          "Gran durabilidad en autopista."
+        ],
+        specifications: {
+          sizes: [
+            "110/90-18T1",
+            "19N/7N_47T1",
+            "90/90-18TL"
+          ]
+        },
+        images: ["images/bekka/bekka_adventure.webp"]
+      },
+      {
+        id: 'bekka-5',
+        name: "Winner",
+        type: "Neumático racing",
+        description: "Neumático de alto rendimiento para competencia en pista. Diseño optimizado para máximo agarre.",
+        category: BEKKA_TIRE_CAT.WINNER,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Máximo agarre en pista.",
+          "Excelente estabilidad a alta velocidad.",
+          "Alta resistencia al calentamiento."
+        ],
+        specifications: {
+          sizes: [
+            "100/90-18TL"
+          ]
+        },
+        images: ["images/bekka/bekka_winner.webp"]
+      },
+      {
+        id: 'bekka-6',
+        name: "Terrain",
+        type: "Neumático todo terreno",
+        description: "Neumático diseñado para todo tipo de terreno. Excelente tracción en superficies variadas.",
+        category: BEKKA_TIRE_CAT.TERRAIN,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Excelente tracción en todo terreno.",
+          "Alta resistencia al desgaste.",
+          "Gran versatilidad."
+        ],
+        specifications: {
+          sizes: [
+            "4.10-18TL",
+            "120/80-18TL",
+            "80/100-21TL"
+          ]
+        },
+        images: ["images/bekka/bekka_terrain.webp"]
+      },
+      {
+        id: 'bekka-7',
+        name: "Race",
+        type: "Neumático de carrera",
+        description: "Neumático de competencia para carreras profesionales. Máximo rendimiento y precisión.",
+        category: BEKKA_TIRE_CAT.RACE,
+        line: TIRE_LINES.MOTO,
+        benefits: [
+          "Máximo rendimiento.",
+          "Precisión en curvas.",
+          "Excelente respuesta."
+        ],
+        specifications: {
+          sizes: [
+            "2.75-18TL"
+          ]
+        },
+        images: ["images/bekka/bekka_race.webp"]
+      },
     ]
   }
 };
