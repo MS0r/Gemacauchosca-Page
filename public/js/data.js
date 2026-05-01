@@ -2204,7 +2204,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.AFF,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Gran agarre en pavimento seco y mojado.", "Conducción suave y silenciosa.", "Alta resistencia al desgaste."],
-        specifications: { sizes: ["P195/75R14", "P235/70R15"], cars: ["Toyota GR86", "Subaru BRZ", "Honda Civic Type R", "Hyundai Veloster", "Ford Focus ST"] },
+        specifications: { sizes: ["ts-008", "ts-017"] },
         images: ["images/firestone/firestone_affinity.webp"],
       },
       {
@@ -2215,17 +2215,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.FIRE,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Respuesta y frenado confiable.", "Conducción suave y silenciosa.", "Gran agarre en pavimento seco y mojado."],
-        specifications: {
-          sizes: [
-            "195/60R13",
-            "185/60R14",
-            "195/60R14",
-            "235/60R14",
-            "195/60R15",
-            "195/65R15"
-          ],
-          cars: ["Toyota Corolla", "Honda Civic", "Hyundai Elantra", "Nissan Sentra", "Kia Forte"],
-        },
+        specifications: { sizes: ["ts-005", "ts-007", "ts-010", "ts-011", "ts-014"] },
         images: ["images/firestone/firestone_firehawk900.webp"],
       },
       {
@@ -2236,24 +2226,18 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.FIRE,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Gran agarre en pavimento seco y mojado.", "Conducción precisa y gran maniobrabilidad.", "Gran agarre en curvas."],
-        specifications: {
-          sizes: ["185/60R14", "185/65R14", "195/60R15", "195/65R15"],
-          cars: ["Honda Civic", "Toyota Corolla", "Mazda 3", "Volkswagen Golf", "Hyundai Elantra"],
-        },
+        specifications: { sizes: ["ts-005", "ts-006", "ts-010", "ts-011"] },
         images: ["images/firestone/firestone_firehawk_v950.webp"],
       },
       {
         id: 'firestone-4',
         name: "Firehawk V970",
         type: "Neumático de alto rendimiento",
-        description: "Este diseño combina buena apariencia, maniobrabilidad, confort y bajos niveles de ruido, además de proveer excelente tracción sobre superficies secas o mojadas.",
+        description: "Este diseño combina buena apariencia, maniobrabilidad, confort y bajos niveles de ruido, además de prover excelente tracción sobre superficies secas o mojadas.",
         category: FIRE_TIRE_CAT.FIRE,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Conducción silenciosa y cómoda.", "Desempeño confiable en pavimento seco y mojado.", "Alta resistencia al desgaste."],
-        specifications: {
-          sizes: ["205/55R16", "215/60R17"],
-          cars: ["Ford Focus", "Volkswagen Jetta", "Honda Accord", "Toyota Camry", "Mazda 6"],
-        },
+        specifications: { sizes: ["ts-012", "ts-013"] },
         images: ["images/firestone/firestone_firehawk_v970.webp"],
       },
       {
@@ -2264,10 +2248,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.MUL,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Mayor drenaje de agua y mejor manejo en superficies mojadas.", "Mejor control y frenado.", "Gran rendimiento en ciudad y autopista."],
-        specifications: {
-          sizes: ["165/65R13", "165/70R13", "175/70R13", "175/65R14", "185/65R14"],
-          cars: ["Chevrolet Spark", "Renault Clio", "Kia Picanto", "Toyota Yaris", "Hyundai i10"],
-        },
+        specifications: { sizes: ["ts-001", "ts-002", "ts-003", "ts-004", "ts-006"] },
         images: ["images/firestone/firestone_multihawk.webp"],
       },
       {
@@ -2278,10 +2259,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.SEI,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Conducción suave y silenciosa.", "Excelente tracción en superficies secas y húmedas.", "Resistente al desgaste."],
-        specifications: {
-          sizes: ["175/70R13", "185/65R14", "195/75R14"],
-          cars: ["Chevrolet Aveo", "Renault Logan", "Toyota Yaris", "Hyundai Accent", "Kia Rio"],
-        },
+        specifications: { sizes: ["ts-003", "ts-006", "ts-008"] },
         images: ["images/firestone/firestone_seiberling_500.webp"],
       },
       {
@@ -2292,10 +2270,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.ATX,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tacos en ángulo de 23° que proporciona elevada fuerza de tracción y excelente autolimpieza.", "Alta resistencia al desgaste.", "Gran desempeño en los trabajos más exigentes."],
-        specifications: {
-          sizes: ["31X10.50R15LT"],
-          cars: ["Ford F-150", "Chevrolet Silverado", "Toyota Hilux", "Nissan Frontier", "RAM 1500"],
-        },
+        specifications: { sizes: ["ts-029"] },
         images: ["images/firestone/firestone_atx_radial_23.webp"],
       },
       {
@@ -2306,10 +2281,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Excelente tracción y gran resistencia a las agresione del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
-        specifications: {
-          sizes: ["P235/75R15", "31X10.50R15LT", "LT245/75R16", "P255/70R16", "P265/75R16"],
-          cars: ["Toyota 4Runner", "Ford Explorer", "Jeep Wrangler", "Chevrolet Tahoe", "Nissan Pathfinder"],
-        },
+        specifications: { sizes: ["ts-026", "ts-029", "ts-018", "ts-019", "ts-022"] },
         images: ["images/firestone/firestone_destination_at.webp"],
       },
       {
@@ -2320,10 +2292,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Hombros agresivos para mejorar el agarre fuera de carretera.", "Ranuras más amplias que evacuan el agua y aumentan la tracción en superficies mojadas.", "Eyector de piedras que ayuda a reducir perforaciones y daños en la banda de rodamiento."],
-        specifications: {
-          sizes: ["P235/75R15", "P265/75R16", "P235/65R17", "P245/65R17", "P265/65R17", "P265/70R17", "P285/70R17"],
-          cars: ["RAM 1500", "Ford F-150", "Chevrolet Silverado", "Toyota Tundra", "GMC Sierra"],
-        },
+        specifications: { sizes: ["ts-026", "ts-022", "ts-027", "ts-028", "ts-021", "ts-020", "ts-023"] },
         images: ["images/firestone/firestone_destination_at2.webp"],
       },
       {
@@ -2334,10 +2303,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Excelente tracción y gran resistencia a las agresione del camino.", "Baja generación de ruido.", "Maniobrabilidad dentro y fuera carretera."],
-        specifications: {
-          sizes: ["P235/75R15", "P265/70R16", "P245/65R17"],
-          cars: ["Ford Explorer", "Toyota RAV4", "Honda Pilot", "Chevrolet Equinox", "Nissan Murano"],
-        },
+        specifications: { sizes: ["ts-026", "ts-019", "ts-028"] },
         images: ["images/firestone/firestone_destination_le.webp"],
       },
       {
@@ -2348,10 +2314,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Diseñado para una conducción confortable.", "Desempeño versátil en todo terreno."],
-        specifications: {
-          sizes: ["P215/75R15", "P265/75R16", "P245/65R17", "P245/70R17", "P265/70R17", "P285/70R17", "P265/60R18"],
-          cars: ["Toyota Land Cruiser", "Mitsubishi Montero", "Ford Expedition", "Chevrolet Suburban", "Nissan Armada"],
-        },
+        specifications: { sizes: ["ts-015", "ts-018", "ts-028", "ts-017", "ts-019", "ts-023", "ts-025"] },
         images: ["images/firestone/firestone_destination_v_at.webp"],
       },
       {
@@ -2362,10 +2325,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
-        specifications: {
-          sizes: ["265/65R17"],
-          cars: ["Chevrolet Tahoe", "Ford Expedition", "Toyota Sequoia", "Nissan Armada", "GMC Yukon"],
-        },
+        specifications: { sizes: ["ts-021"] },
         images: ["images/firestone/firestone_destination_v_ht_684II.webp"],
       },
       {
@@ -2376,10 +2336,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
-        specifications: {
-          sizes: ["205/70R15", "215/65R16", "235/60R16"],
-          cars: ["Honda CR-V", "Toyota RAV4", "Hyundai Tucson", "Kia Sportage", "Nissan X-Trail"],
-        },
+        specifications: { sizes: ["ts-019", "ts-020"] },
         images: ["images/firestone/firestone_destination_v_ht_687.webp"],
       },
       {
@@ -2390,10 +2347,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
-        specifications: {
-          sizes: ["P255/70R16"],
-          cars: ["Dodge Ram", "Ford F-150", "Chevrolet Silverado", "GMC Sierra", "Toyota Tundra"],
-        },
+        specifications: { sizes: ["ts-019"] },
         images: ["images/firestone/firestone_destination_v_vt_689.webp"],
       },
       {
@@ -2404,10 +2358,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
-        specifications: {
-          sizes: ["205R16C", "265/70R16", "P265/70R17"],
-          cars: ["Mitsubishi L300", "Toyota Hiace", "Ford Transit", "Chevrolet Express", "Nissan Urvan"],
-        },
+        specifications: { sizes: ["ts-033", "ts-020", "ts-023"] },
         images: ["images/firestone/firestone_destination_v_ht_840.webp"],
       },
       {
@@ -2418,10 +2369,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Excelente tracción en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste irregular.", "Rendimiento superior."],
-        specifications: {
-          sizes: ["LT215/85R16", "7.50R16LT"],
-          cars: ["Ford Transit", "Nissan Urvan", "Toyota Hiace", "Mercedes-Benz Sprinter", "Chevrolet Express"],
-        },
+        specifications: { sizes: ["ts-031", "ts-032"] },
         images: ["images/firestone/firestone_destination_v_tp.webp"],
       },
       {
@@ -2432,10 +2380,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.DES,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción confiable en superficies mojadas y secas.", "Alta durabilidad y resistencia al desgaste.", "Diseñado para una conducción confortable."],
-        specifications: {
-          sizes: ["31X10.5R15LT", "LT265/75R16", "LT265/65R17", "LT265/70R17", "LT285/70R17", "LT265/65R18", "LT275/65R18"],
-          cars: ["Jeep Wrangler", "Ford Bronco", "Toyota 4Runner", "RAM 1500", "Chevrolet Colorado ZR2"],
-        },
+        specifications: { sizes: ["ts-029", "ts-022", "ts-021", "ts-020", "ts-023", "ts-024", "ts-025"] },  // Partial match - some sizes not in database
         images: ["images/firestone/firestone_destination_xt.webp"],
       },
       {
@@ -2446,10 +2391,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.FIRE,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Máxima tracción fuera de carretera y gran desempeño en vías urbanas.", "Gran resistencia a las agresiones del camino.", "Baja generación de ruido."],
-        specifications: {
-          sizes: ["7.50R16LT"],
-          cars: ["Ford F-150", "Toyota Hilux", "Nissan Frontier", "Mitsubishi L200", "RAM 1500"],
-        },
+        specifications: { sizes: ["ts-032"] },
         images: ["images/firestone/firestone_firehawk_rmt.webp"],
       },
       {
@@ -2460,10 +2402,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.SAT,
         line: TIRE_LINES.CAM_CONV,
         benefits: ["Excelente tracción y autolimpieza.", "Alta resistencia al desgaste para una mayor vida útil.", "Alta capacidad de resistencia a cortes."],
-        specifications: {
-          sizes: ["LT215/85D15", "7.50-16LT"],
-          cars: ["Ford F-150", "Chevrolet C/K", "Dodge Ram", "Toyota Land Cruiser 70", "Nissan Patrol"],
-        },
+        specifications: { sizes: [] },  // Size not in database
         images: ["images/firestone/firestone_super_all_traction.webp"],
       },
       {
@@ -2474,10 +2413,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.SHO,
         line: TIRE_LINES.CAM_CONV,
         benefits: ["Alta resistencia al desgaste irregular.", "Alta durabilidad y resistencia.", "Tracción confiable en superficies mojadas y secas."],
-        specifications: {
-          sizes: ["7.50-16LT"],
-          cars: ["Autobuses ligeros", "Camiones de reparto", "Vans de trabajo", "Ford Transit", "Toyota Coaster"],
-        },
+        specifications: { sizes: [] },  // Size not in database
         images : ["images/firestone/firestone_shogun.webp"],
       },
       {
@@ -2488,10 +2424,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.CHA,
         line: TIRE_LINES.AGRI,
         benefits: ["Tecnología autolimpiante para una mejor dirección.", "Su banda de rodamiento se adapta a la necesidad del terreno.", "Alta resistencia a cortes e impactos."],
-        specifications: {
-          sizes: ["11.00-16"],
-          cars: ["Tractores agrícolas eje delantero", "John Deere", "Massey Ferguson", "New Holland", "Case IH"],
-        },
+        specifications: { sizes: [] },  // Size not in database
         images: ["images/firestone/firestone_champion_guide_grip_3r.webp"],
       },
       {
@@ -2502,10 +2435,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.CHA,
         line: TIRE_LINES.AGRI,
         benefits: ["Banda de rodamiento de una costilla gruesa.", "Específicamente diseñado para condiciones de lodo profundo en campos de caña y arroz.", "Alta resistencia a cortes e impactos."],
-        specifications: {
-          sizes: ["7.50-16"],
-          cars: ["Tractores de caña de azúcar", "Tractores arroceros", "John Deere", "Kubota", "Massey Ferguson"],
-        },
+        specifications: { sizes: [] },  // Size not in database
         images: ["images/firestone/firestone_champion_guide_grip_hd_f2.webp"],
       },
       {
@@ -2516,10 +2446,7 @@ const CATALOGS = {
         category: FIRE_TIRE_CAT.CHA,
         line: TIRE_LINES.AGRI,
         benefits: ["Barras curvas en la banda de rodamiento para una mayor tracción.", "Reforzados para evitar el desgaste y mejorar el rendimiento.", "Alta resistencia a cortes e impactos."],
-        specifications: {
-          sizes: ["14.9-24", "23.1-26", "14.9-28", "18.4-30", "23.1-30", "18.4-34", "23.1-34"],
-          cars: ["Tractores arroceros", "Tractores cañeros", "John Deere", "Massey Ferguson", "New Holland"],
-        },
+        specifications: { sizes: [] },  // Size not in database
         images: ["images/firestone/firestone_champion_guide_grip_r2.webp"],
       },
     ]
@@ -2536,7 +2463,7 @@ const CATALOGS = {
         category: RYDANZ_TIRE_CAT.REAC,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Alta estabilidad a velocidad"],
-        specifications: { sizes: [], cars: [], season: "Verano", speedRating: "W", loadIndex: "94" },
+        specifications: { sizes: ["ts-012", "ts-013"], season: "Verano", speedRating: "W", loadIndex: "94" },
         images: ["images/rydanz/rydanz_reac_ro5.webp", "images/rydanz/rydanz_reac_ro5_2.webp", "images/rydanz/rydanz_reac_ro5_3.webp", "images/rydanz/rydanz_reac_ro5_4.webp"]
       },
       {
@@ -2547,7 +2474,7 @@ const CATALOGS = {
         category: RYDANZ_TIRE_CAT.RAPTOR,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Gran tracción fuera de camino", "Alta resistencia a cortes", "Durabilidad extrema"],
-        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "S", loadIndex: "112" },
+        specifications: { sizes: ["ts-029", "ts-018", "ts-020", "ts-022"], season: "All-Season", speedRating: "S", loadIndex: "112" },
         images: ["images/rydanz/rydanz_raptor_ro9.webp", "images/rydanz/rydanz_raptor_ro9_2.webp", "images/rydanz/rydanz_raptor_ro9_3.webp", "images/rydanz/rydanz_raptor_ro9_4.webp"]
       },
       {
@@ -2558,7 +2485,7 @@ const CATALOGS = {
         category: RYDANZ_TIRE_CAT.RAPTOR,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción en terrenos difíciles", "Resistencia a impactos", "Diseño autolimpiante"],
-        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "Q", loadIndex: "118" },
+        specifications: { sizes: ["ts-029", "ts-022", "ts-023", "ts-025"], season: "All-Season", speedRating: "Q", loadIndex: "118" },
         images: ["images/rydanz/rydanz_raptor_r19.webp", "images/rydanz/rydanz_raptor_r19_2.webp", "images/rydanz/rydanz_raptor_r19_3.webp"]
       },
       {
@@ -2569,7 +2496,7 @@ const CATALOGS = {
         category: RYDANZ_TIRE_CAT.RALEIGH,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
-        specifications: { sizes: [], cars: [], season: "All-Season", speedRating: "H", loadIndex: "91" },
+        specifications: { sizes: ["ts-010", "ts-011", "ts-006"], season: "All-Season", speedRating: "H", loadIndex: "91" },
         images: ["images/rydanz/rydanz_raleigh_ro6.webp", "images/rydanz/rydanz_raleigh_ro6_2.webp", "images/rydanz/rydanz_raleigh_ro6_3.webp"]
       }
     ]
@@ -2591,10 +2518,7 @@ const CATALOGS = {
           "Bloques anchos en hombros que mejoran la estabilidad lateral.",
           "Andar suave y silencioso en todo tipo de superficie.",
         ],
-        specifications: {
-          sizes: ["165/70R13", "175/70R13", "175/65R14", "185/65R14"],
-          cars: ["Toyota Corolla", "Chevrolet Aveo", "Hyundai Elantra", "Kia Cerato", "Renault Logan"],
-        },
+        specifications: { sizes: ["ts-002", "ts-003", "ts-004", "ts-006"] },
       },
       {
         id: 'alix-2',
@@ -2609,10 +2533,7 @@ const CATALOGS = {
           "Excelente adherencia en carreteras mojadas y secas.",
           "Hombros rígidos para garantizar máxima estabilidad en las curvas.",
         ],
-        specifications: {
-          sizes: ["195/60R15"],
-          cars: ["Honda Civic", "Toyota Corolla", "Hyundai Elantra", "Mazda 3", "Volkswagen Jetta"],
-        },
+        specifications: { sizes: ["ts-010"] },
       },
       {
         id: 'alix-3',
@@ -2627,10 +2548,7 @@ const CATALOGS = {
           "Grooves externos ampliados para mejor desalojo de agua.",
           "Especialmente diseñado para mayor confort.",
         ],
-        specifications: {
-          sizes: ["205/55R16"],
-          cars: ["Honda Civic", "Volkswagen Golf", "Ford Focus", "Toyota Corolla", "Mazda 3"],
-        },
+        specifications: { sizes: ["ts-012"] },
       },
       {
         id: 'alix-4',
@@ -2645,10 +2563,7 @@ const CATALOGS = {
           "Surcos optimizados para un manejo cómodo y silencioso.",
           "Gran balance de desempeño entre carreteras y terrenos no pavimentados.",
         ],
-        specifications: {
-          sizes: ["P235/60R16", "P255/70R16"],
-          cars: ["Toyota Hilux", "Ford Ranger", "Chevrolet S10", "Nissan Frontier", "Mitsubishi L200"],
-        },
+        specifications: { sizes: ["ts-019"] },
       },
       {
         id: 'alix-6',
@@ -2663,10 +2578,7 @@ const CATALOGS = {
           "Gran estabilidad y agarre en suelo seco y húmedo.",
           "Alta durabilidad y resistencia al desgaste.",
         ],
-        specifications: {
-          sizes: ["90/90-18M/C", "3.00-18M/C"],
-          cars: ["Honda CG 150", "Yamaha YBR 125", "Bajaj Boxer 150", "Hero Hunk", "TVS Apache"],
-        },
+        specifications: { sizes: ["ts-034"] },
       },
       {
         id: 'alix-7',
@@ -2704,14 +2616,7 @@ const CATALOGS = {
           "Alta resistencia al impacto.",
           "Diseño de tacos optimizado paracompetition."
         ],
-        specifications: {
-          sizes: [
-            "110/90-16TL",
-            "90/90-18TL",
-            "2.75-18TL",
-            "130/70-17T."
-          ]
-        },
+        specifications: { sizes: ["ts-035", "ts-037", "ts-036", "ts-041"] },
         images: ["images/bekka/bekka_missile.webp"]
       },
       {
@@ -2726,12 +2631,7 @@ const CATALOGS = {
           "Buen agarre en superficies mixtas.",
           "Alta durabilidad."
         ],
-        specifications: {
-          sizes: [
-            "90/90-18TL",
-            "120/80-17TL"
-          ]
-        },
+        specifications: { sizes: ["ts-037", "ts-038"] },
         images: ["images/bekka/bekka_ranger.webp"]
       },
       {
@@ -2746,11 +2646,7 @@ const CATALOGS = {
           "Excelente rendimiento en ciudad.",
           "Cómoda pisada."
         ],
-        specifications: {
-          sizes: [
-            "90/90-17 TL"
-          ]
-        },
+        specifications: { sizes: ["ts-039"] },
         images: ["images/bekka/bekka_runner.webp"]
       },
       {
@@ -2765,13 +2661,7 @@ const CATALOGS = {
           "Excelente estabilidad con carga.",
           "Gran durabilidad en autopista."
         ],
-        specifications: {
-          sizes: [
-            "110/90-18T1",
-            "19N/7N_47T1",
-            "90/90-18TL"
-          ]
-        },
+        specifications: { sizes: ["ts-040", "ts-037"] },  // Partial - some sizes not in database
         images: ["images/bekka/bekka_adventure.webp"]
       },
       {
@@ -2786,11 +2676,7 @@ const CATALOGS = {
           "Excelente estabilidad a alta velocidad.",
           "Alta resistencia al calentamiento."
         ],
-        specifications: {
-          sizes: [
-            "100/90-18TL"
-          ]
-        },
+        specifications: { sizes: ["ts-040"] },  // Partial - some sizes not in database
         images: ["images/bekka/bekka_winner.webp"]
       },
       {
@@ -2805,13 +2691,7 @@ const CATALOGS = {
           "Alta resistencia al desgaste.",
           "Gran versatilidad."
         ],
-        specifications: {
-          sizes: [
-            "4.10-18TL",
-            "120/80-18TL",
-            "80/100-21TL"
-          ]
-        },
+        specifications: { sizes: [] },  // Sizes not in database
         images: ["images/bekka/bekka_terrain.webp"]
       },
       {
@@ -2826,11 +2706,7 @@ const CATALOGS = {
           "Precisión en curvas.",
           "Excelente respuesta."
         ],
-        specifications: {
-          sizes: [
-            "2.75-18TL"
-          ]
-        },
+        specifications: { sizes: ["ts-036"] },  // 2.75-18 matches
         images: ["images/bekka/bekka_race.webp"]
       },
     ]

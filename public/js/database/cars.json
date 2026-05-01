@@ -1,0 +1,218 @@
+{
+  "brands": [
+    {
+      "id": "toyota",
+      "name": "Toyota",
+      "models": [
+        { "id": "corolla", "name": "Corolla", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["LE", "SE", "XSE", "S", "E"] },
+        { "id": "yaris", "name": "Yaris", "years": [2019, 2020, 2021, 2022], "trims": ["S", "E", "LE", "XLE"] },
+        { "id": "hilux", "name": "Hilux", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["SR", "SR5", "VR", "VX"] },
+        { "id": "rav4", "name": "RAV4", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["XLE", "Limited", "Adventure", "TRD Off-Road"] },
+        { "id": "camry", "name": "Camry", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["LE", "XLE", "SE", "XSE"] },
+        { "id": "4runner", "name": "4Runner", "years": [2019, 2020, 2021, 2022], "trims": ["SR5", "Trail", "Limited", "TRD Pro"] },
+        { "id": "land-cruiser", "name": "Land Cruiser", "years": [2018, 2019, 2020, 2021], "trims": ["VX", "VX-R", "GR Sport"] },
+        { "id": "prius", "name": "Prius", "years": [2019, 2020, 2021], "trims": ["XLE", "Limited"] }
+      ]
+    },
+    {
+      "id": "chevrolet",
+      "name": "Chevrolet",
+      "models": [
+        { "id": "spark", "name": "Spark", "years": [2018, 2019, 2020, 2021], "trims": ["LS", "LT", "Premier"] },
+        { "id": "aveo", "name": "Aveo", "years": [2017, 2018, 2019, 2020], "trims": ["LS", "LT", "Premier"] },
+        { "id": "onix", "name": "Onix", "years": [2020, 2021, 2022], "trims": ["LS", "LT", "Premier"] },
+        { "id": "beat", "name": "Beat", "years": [2018, 2019, 2020], "trims": ["LS", "LT"] },
+        { "id": "silverado", "name": "Silverado", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["WT", "LT", "LTZ", "High Country"] },
+        { "id": "s10", "name": "S10", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["WT", "LT", "LTZ", "High Country"] },
+        { "id": "tahoe", "name": "Tahoe", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["LS", "LT", "Premier", "High Country"] },
+        { "id": "traverse", "name": "Traverse", "years": [2018, 2019, 2020, 2021], "trims": ["LS", "LT", "Premier"] },
+        { "id": "equinox", "name": "Equinox", "years": [2018, 2019, 2020, 2021], "trims": ["LS", "LT", "Premier"] },
+        { "id": "tracker", "name": "Tracker", "years": [2020, 2021, 2022], "trims": ["LS", "LT", "Premier"] }
+      ]
+    },
+    {
+      "id": "ford",
+      "name": "Ford",
+      "models": [
+        { "id": "fiesta", "name": "Fiesta", "years": [2017, 2018, 2019, 2020], "trims": ["S", "SE", "Titanium", "ST"] },
+        { "id": "focus", "name": "Focus", "years": [2018, 2019, 2020, 2021], "trims": ["S", "SE", "Titanium", "ST", "RS"] },
+        { "id": "ecosport", "name": "EcoSport", "years": [2017, 2018, 2019, 2020, 2021], "trims": ["S", "SE", "Titanium"] },
+        { "id": "escape", "name": "Escape", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SE", "Titanium", "ST-Line"] },
+        { "id": "explorer", "name": "Explorer", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["XLT", "Limited", "Platinum", "ST"] },
+        { "id": "f150", "name": "F-150", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["XL", "XLT", "Lariat", "King Ranch", "Platinum", "Raptor"] },
+        { "id": "ranger", "name": "Ranger", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["XL", "XLT", "Lariat", "Wildtrak"] },
+        { "id": "bronco", "name": "Bronco", "years": [2021, 2022, 2023], "trims": ["Base", "Big Bend", "Outer Banks", "Badlands", "Wildtrak"] },
+        { "id": "transit", "name": "Transit", "years": [2019, 2020, 2021, 2022], "trims": ["XLT", "Limited", "Passenger", "Cargo"] }
+      ]
+    },
+    {
+      "id": "honda",
+      "name": "Honda",
+      "models": [
+        { "id": "civic", "name": "Civic", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["LX", "EX", "EX-L", "Sport", "Si", "Type R"] },
+        { "id": "accord", "name": "Accord", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["LX", "EX", "EX-L", "Sport", "Touring"] },
+        { "id": "hr-v", "name": "HR-V", "years": [2019, 2020, 2021, 2022], "trims": ["LX", "EX", "EX-L"] },
+        { "id": "cr-v", "name": "CR-V", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["LX", "EX", "EX-L", "Touring"] },
+        { "id": "pilot", "name": "Pilot", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["LX", "EX", "EX-L", "Touring", "Black Edition"] }
+      ]
+    },
+    {
+      "id": "hyundai",
+      "name": "Hyundai",
+      "models": [
+        { "id": "accent", "name": "Accent", "years": [2017, 2018, 2019, 2020, 2021], "trims": ["SE", "SEL", "Limited"] },
+        { "id": "elantra", "name": "Elantra", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["SE", "SEL", "Limited", "Sport", "N Line"] },
+        { "id": "sonata", "name": "Sonata", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["SE", "SEL", "Limited", "Sport"] },
+        { "id": "tucson", "name": "Tucson", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["SE", "SEL", "Limited", "N Line"] },
+        { "id": "santa-fe", "name": "Santa Fe", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["SE", "SEL", "Limited", "Calligraphy"] },
+        { "id": "creta", "name": "Creta", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["GL", "GLS", "Limited"] },
+        { "id": "i10", "name": "i10", "years": [2019, 2020, 2021], "trims": ["Motion", "Style", "Prime"] }
+      ]
+    },
+    {
+      "id": "kia",
+      "name": "Kia",
+      "models": [
+        { "id": "rio", "name": "Rio", "years": [2018, 2019, 2020, 2021], "trims": ["LX", "S", "EX"] },
+        { "id": "forte", "name": "Forte", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["LXS", "GT-Line", "EX", "SX"] },
+        { "id": "k3", "name": "K3", "years": [2020, 2021], "trims": ["LX", "EX"] },
+        { "id": "sportage", "name": "Sportage", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["LX", "EX", "SX", "SX Prestige"] },
+        { "id": "sorento", "name": "Sorento", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["LX", "EX", "SX", "Calligraphy"] },
+        { "id": "telluride", "name": "Telluride", "years": [2020, 2021, 2022, 2023], "trims": ["LX", "EX", "SX", "SXL"] },
+        { "id": "picanto", "name": "Picanto", "years": [2019, 2020, 2021, 2022], "trims": ["EX", "GT-Line"] },
+        { "id": "sonet", "name": "Sonet", "years": [2021, 2022, 2023], "trims": ["LX", "EX", "GT-Line"] }
+      ]
+    },
+    {
+      "id": "nissan",
+      "name": "Nissan",
+      "models": [
+        { "id": "sentra", "name": "Sentra", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["S", "SV", "SR", "Midnight Edition"] },
+        { "id": "altima", "name": "Altima", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SV", "SL", "SR"] },
+        { "id": "note", "name": "Note", "years": [2018, 2019, 2020], "trims": ["S", "SV", "SR"] },
+        { "id": "kicks", "name": "Kicks", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["S", "SV", "SR"] },
+        { "id": "qashqai", "name": "Qashqai", "years": [2018, 2019, 2020, 2021], "trims": ["S", "SV", "SL"] },
+        { "id": "x-trail", "name": "X-Trail", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SV", "SL", "Platinum"] },
+        { "id": "frontier", "name": "Frontier", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["S", "SV", "Pro-4X", "Platinum Reserve"] },
+        { "id": "pathfinder", "name": "Pathfinder", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SV", "SL", "Platinum"] },
+        { "id": "armada", "name": "Armada", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SV", "SL", "Platinum"] }
+      ]
+    },
+    {
+      "id": "renault",
+      "name": "Renault",
+      "models": [
+        { "id": "logan", "name": "Logan", "years": [2017, 2018, 2019, 2020, 2021, 2022], "trims": ["Authentique", "Expression", "Dynamique", "Privilege"] },
+        { "id": "sandero", "name": "Sandero", "years": [2017, 2018, 2019, 2020, 2021, 2022], "trims": ["Authentique", "Expression", "Dynamique", "RS"] },
+        { "id": "stepway", "name": "Stepway", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Expression", "Dynamique", "Intense"] },
+        { "id": "duster", "name": "Duster", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Expression", "Dynamique", "Privilege", "Outdoor"] },
+        { "id": "captur", "name": "Captur", "years": [2019, 2020, 2021, 2022], "trims": ["Expression", "Dynamique", "Privilege"] },
+        { "id": "oroch", "name": "Oroch", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Evolution", "Intens", "Prestige"] },
+        { "id": "kwid", "name": "Kwid", "years": [2020, 2021, 2022, 2023], "trims": ["Life", "Zen", "Intense", "Iconic"] },
+        { "id": "clio", "name": "Clio", "years": [2018, 2019, 2020, 2021], "trims": ["Life", "Zen", "Intense"] }
+      ]
+    },
+    {
+      "id": "mazda",
+      "name": "Mazda",
+      "models": [
+        { "id": "mazda2", "name": "Mazda2", "years": [2018, 2019, 2020, 2021], "trims": ["Touring", "Grand Touring", "Carbon Edition"] },
+        { "id": "mazda3", "name": "Mazda3", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Touring", "Grand Touring", "Carbon Edition", "Premium", "Signature"] },
+        { "id": "mazda6", "name": "Mazda6", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Touring", "Grand Touring", "Signature", "Carbon Edition"] },
+        { "id": "cx-3", "name": "CX-3", "years": [2018, 2019, 2020, 2021], "trims": ["Touring", "Grand Touring"] },
+        { "id": "cx-30", "name": "CX-30", "years": [2020, 2021, 2022, 2023], "trims": ["Select", "Preferred", "Premium"] },
+        { "id": "cx-5", "name": "CX-5", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Touring", "Grand Touring", "Signature", "Carbon Edition"] },
+        { "id": "cx-50", "name": "CX-50", "years": [2022, 2023], "trims": ["Select", "Preferred", "Premium", "Turbo"] },
+        { "id": "cx-9", "name": "CX-9", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Touring", "Grand Touring", "Signature"] }
+      ]
+    },
+    {
+      "id": "volkswagen",
+      "name": "Volkswagen",
+      "models": [
+        { "id": "gol", "name": "Gol", "years": [2017, 2018, 2019, 2020], "trims": ["Trendline", "Comfortline", "Highline"] },
+        { "id": "polo", "name": "Polo", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Trendline", "Comfortline", "Highline", "R-Line"] },
+        { "id": "virtus", "name": "Virtus", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["Trendline", "Comfortline", "Highline"] },
+        { "id": "jetta", "name": "Jetta", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["S", "SE", "SEL", "R-Line", "GLI"] },
+        { "id": "golf", "name": "Golf", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["S", "SE", "R-Line", "GTI", "R"] },
+        { "id": "passat", "name": "Passat", "years": [2018, 2019, 2020, 2021], "trims": ["S", "SE", "R-Line", "GT"] },
+        { "id": "amarok", "name": "Amarok", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Trendline", "Highline", "Extreme", "V6"] },
+        { "id": "t-cross", "name": "T-Cross", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["Trendline", "Comfortline", "Highline"] },
+        { "id": "taos", "name": "Taos", "years": [2022, 2023], "trims": ["S", "SE", "SEL"] },
+        { "id": "transporter", "name": "Transporter", "years": [2019, 2020, 2021, 2022], "trims": ["MWB", "LWB", "Pavement", "Campister"] }
+      ]
+    },
+    {
+      "id": "mitsubishi",
+      "name": "Mitsubishi",
+      "models": [
+        { "id": "mirage", "name": "Mirage", "years": [2018, 2019, 2020, 2021], "trims": ["ES", "LE", "GTS"] },
+        { "id": "lancer", "name": "Lancer", "years": [2017, 2018, 2019, 2020], "trims": ["ES", "LE", "SE", "GT"] },
+        { "id": "eclipse-cross", "name": "Eclipse Cross", "years": [2019, 2020, 2021, 2022], "trims": ["ES", "LE", "SE", "GT"] },
+        { "id": "outlander", "name": "Outlander", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["ES", "LE", "SE", "GT", "PHEV"] },
+        { "id": "outlander-sport", "name": "Outlander Sport", "years": [2018, 2019, 2020, 2021], "trims": ["ES", "LE", "SE", "GT"] },
+        { "id": "l200", "name": "L200", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["GL", "GLS", "DI-D", "Barbarian"] },
+        { "id": "montero", "name": "Montero", "years": [2017, 2018, 2019, 2020, 2021], "trims": ["GLS", "Pajero"] }
+      ]
+    },
+    {
+      "id": "jeep",
+      "name": "Jeep",
+      "models": [
+        { "id": "renegade", "name": "Renegade", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["Sport", "Latitude", "Limited", "Trailhawk"] },
+        { "id": "compass", "name": "Compass", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Sport", "Latitude", "Limited", "Trailhawk", "Summit"] },
+        { "id": "cherokee", "name": "Cherokee", "years": [2018, 2019, 2020, 2021], "trims": ["Sport", "Latitude", "Limited", "Trailhawk", "Overland"] },
+        { "id": "grand-cherokee", "name": "Grand Cherokee", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Laredo", "Limited", "Trailhawk", "Overland", "Summit", "Summit Reserve"] },
+        { "id": "wrangler", "name": "Wrangler", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Sport", "Sahara", "Rubicon", "392", "4xe"] },
+        { "id": "gladiator", "name": "Gladiator", "years": [2020, 2021, 2022, 2023], "trims": ["Sport", "Overland", "Rubicon"] }
+      ]
+    },
+    {
+      "id": "mercedes",
+      "name": "Mercedes-Benz",
+      "models": [
+        { "id": "clase-a", "name": "Clase A", "years": [2018, 2019, 2020, 2021], "trims": ["A 180", "A 200", "A 250"] },
+        { "id": "clase-c", "name": "Clase C", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["C 180", "C 200", "C 300", "AMG"] },
+        { "id": "clase-e", "name": "Clase E", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["E 200", "E 300", "E 350", "E 400", "AMG"] },
+        { "id": "gla", "name": "GLA", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["GLA 200", "GLA 250", "AMG"] },
+        { "id": "glc", "name": "GLC", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["GLC 200", "GLC 300", "AMG", "63 AMG"] },
+        { "id": "gle", "name": "GLE", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["GLE 300", "GLE 350", "GLE 400", "AMG"] },
+        { "id": "sprinter", "name": "Sprinter", "years": [2019, 2020, 2021, 2022], "trims": ["Passenger", "Cargo", "Crew"] }
+      ]
+    },
+    {
+      "id": "bmw",
+      "name": "BMW",
+      "models": [
+        { "id": "serie1", "name": "Serie 1", "years": [2018, 2019, 2020, 2021], "trims": ["118i", "120i", "M135i"] },
+        { "id": "serie3", "name": "Serie 3", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["318i", "320i", "330i", "M340i", "M3"] },
+        { "id": "serie5", "name": "Serie 5", "years": [2018, 2019, 2020, 2021, 2022], "trims": ["520i", "530i", "540i", "M550i"] },
+        { "id": "x1", "name": "X1", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["sDrive18i", "sDrive20i", "xDrive25i"] },
+        { "id": "x3", "name": "X3", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["xDrive20i", "xDrive30i", "M40i"] },
+        { "id": "x5", "name": "X5", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["xDrive40i", "xDrive50i", "M50i", "xDrive45e"] }
+      ]
+    },
+    {
+      "id": "suzuki",
+      "name": "Suzuki",
+      "models": [
+        { "id": "swift", "name": "Swift", "years": [2018, 2019, 2020, 2021], "trims": ["GL", "GLX", "Sport"] },
+        { "id": "baleno", "name": "Baleno", "years": [2018, 2019, 2020], "trims": ["GL", "GLX"] },
+        { "id": "vitara", "name": "Vitara", "years": [2018, 2019, 2020, 2021], "trims": ["GL", "GLX", "Sport"] },
+        { "id": "s-cross", "name": "S-Cross", "years": [2018, 2019, 2020, 2021], "trims": ["GL", "GLX"] },
+        { "id": "jimny", "name": "Jimny", "years": [2019, 2020, 2021, 2022, 2023], "trims": ["JLX", "JLX Pro"] }
+      ]
+    },
+    {
+      "id": "subaru",
+      "name": "Subaru",
+      "models": [
+        { "id": "impreza", "name": "Impreza", "years": [2018, 2019, 2020, 2021], "trims": ["Premium", "Sport", "Limited"] },
+        { "id": "legacy", "name": "Legacy", "years": [2018, 2019, 2020, 2021], "trims": ["Premium", "Sport", "Limited", "Touring"] },
+        { "id": "outback", "name": "Outback", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Premium", "Limited", "Touring", "Onyx Edition"] },
+        { "id": "forester", "name": "Forester", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Premium", "Limited", "Sport", "Touring", "Wilderness"] },
+        { "id": "crosstrek", "name": "Crosstrek", "years": [2018, 2019, 2020, 2021, 2022, 2023], "trims": ["Premium", "Sport", "Limited", "Hybrid"] }
+      ]
+    }
+  ]
+}

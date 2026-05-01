@@ -143,19 +143,22 @@
     });
   }
 
-  function init() {
+  async function init() {
     if (catalog.brand.logoImage) {
       let logo = catalog.brand.logoImageWhite || catalog.brand.logoImageBlack || catalog.brand.logoImage;
       brandTitleEl.innerHTML = `<img src="${logo}" alt="${catalog.brand.name}" class="brand-title-logo">`;
     } else {
       brandTitleEl.textContent = catalog.brand.name;
     }
+    
+    if (brand.type === 'tires') {
+      await TireDB.init();
+      initTireSearch();
+    }
+    
     loadFiltersFromUrl();
     renderFilters();
     updateFilterUI();
-    if (brand.type === 'tires') {
-      initTireSearch();
-    }
     renderProducts();
     bindEvents();
   }
@@ -309,14 +312,22 @@
   function getProductSpecsList(product, type) {
     if (!product.specifications) return [];
     const specs = [];
-    const specKeys = type === 'oil' ? ['viscosity', 'api', 'acea'] : ['cars', 'sizes'];
+    const specKeys = type === 'oil' ? ['viscosity', 'api', 'acea'] : ['sizes'];
     for (const key of specKeys) {
       const value = product.specifications[key];
-      if (value) {
-        if (Array.isArray(value)) {
-          specs.push(value.toSpliced(0, 2).join(', '));
+      if (value && Array.isArray(value) && value.length > 0) {
+        if (key === 'sizes') {
+          const displayValues = [];
+          value.slice(0, 2).forEach(sizeId => {
+            const sizeObj = TireDB.getSizeById(sizeId);
+            if (sizeObj) displayValues.push(sizeObj.display);
+          });
+          if (displayValues.length > 0) {
+            specs.push(displayValues.join(', '));
+          }
         } else {
-          specs.push(value);
+          const displayValues = value.slice(0, 2).join(', ');
+          specs.push(displayValues);
         }
       }
     }
@@ -388,11 +399,38 @@
     console.log('Searching for:', searchQuery, 'in product:', product.name);
 
     if (searchMode === 'car') {
-      let cars = product.specifications?.cars || [];
-      return cars.some(car => car.toLowerCase().includes(searchLower));
+      const parsed = TireDB.parseCarQuery(searchQuery);
+      const compatibleSizeIds = [];
+      
+      if (TireDB.isReady() && parsed.searchWords.length > 0) {
+        const matches = TireDB.findMatchingCars(searchQuery);
+        matches.forEach(car => {
+          const sizeIds = TireDB.getCompatibleSizeIds(car.brandId, car.modelId, car.year, car.trim);
+          compatibleSizeIds.push(...sizeIds);
+        });
+      }
+      
+      const uniqueSizeIds = [...new Set(compatibleSizeIds)];
+      
+      if (uniqueSizeIds.length > 0) {
+        const productSizes = product.specifications?.sizes || [];
+        return productSizes.some(s => uniqueSizeIds.includes(s));
+      }
+      
+      return false;
     } else {
-      let sizes = product.specifications?.sizes || [];
-      return sizes.some(size => size.toLowerCase().includes(searchLower));
+      // Size search - now using IDs, search by size display
+      const productSizes = product.specifications?.sizes || [];
+      if (productSizes.length === 0) return false;
+      
+      // Need to lookup display for each sizeId
+      for (const sizeId of productSizes) {
+        const sizeObj = TireDB.getSizeById(sizeId);
+        if (sizeObj && sizeObj.display.toLowerCase().includes(searchLower)) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 
@@ -574,16 +612,31 @@
     } else {
       const specsData = [];
       if (product.specifications) {
+        const sizeIds = product.specifications.sizes;
+        
+        if (Array.isArray(sizeIds) && sizeIds.length > 0) {
+          const sizeDisplays = [];
+          sizeIds.forEach(sizeId => {
+            const sizeObj = TireDB.getSizeById(sizeId);
+            if (sizeObj) sizeDisplays.push(sizeObj.display);
+          });
+          if (sizeDisplays.length > 0) {
+            specsData.push({ label: 'Medidas', value: sizeDisplays.join(', ') });
+          }
+        }
+        
         for (const [key, value] of Object.entries(product.specifications)) {
-          if (value && typeof value === 'string') {
+          if (key !== 'sizes' && value && typeof value === 'string') {
             specsData.push({ label: ESP_ATTRIBUTES_TIRE[key], value });
-          } else if (Array.isArray(value) && value.length > 0) {
+          } else if (key !== 'sizes' && Array.isArray(value) && value.length > 0) {
             specsData.push({ label: ESP_ATTRIBUTES_TIRE[key], value: value.join(', ') });
           }
         }
       }
 
       if (!specsData.length) return '';
+
+      const compatibleCars = TireDB.getCarsForSizeIds(product.specifications?.sizes || []);
 
       return `
         <div class="modal-section">
@@ -597,6 +650,14 @@
             `).join('')}
           </div>
         </div>
+        ${compatibleCars.length > 0 ? `
+          <div class="modal-section">
+            <h4 class="modal-section-title">Modelos Compatibles</h4>
+            <div class="compatible-cars-list">
+              ${compatibleCars.map(car => `<span class="compatible-car-tag">${escapeHtml(car)}</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
       `;
     }
   }
@@ -778,8 +839,15 @@
     catalog.products.forEach(product => {
       const sizes = product.specifications?.sizes;
       if (!sizes) return;
-      const sizeArray = Array.isArray(sizes) ? sizes : [sizes];
-      sizeArray.forEach(size => sizesSet.add(size));
+      
+      // New format: sizes is array of objects with size property
+      if (typeof sizes[0] === 'object' && sizes[0].size) {
+        sizes.forEach(sizeObj => sizesSet.add(sizeObj.size));
+      } else {
+        // Legacy format: sizes is array of strings
+        const sizeArray = Array.isArray(sizes) ? sizes : [sizes];
+        sizeArray.forEach(size => sizesSet.add(size));
+      }
     });
 
     const matchingSizes = [...sizesSet].filter(size =>
@@ -812,17 +880,58 @@
       return;
     }
 
-    const carsSet = new Set();
-    catalog.products.forEach(product => {
-      const cars = product.specifications?.cars;
-      if (!cars) return;
-      const carArray = Array.isArray(cars) ? cars : [cars];
-      carArray.forEach(car => carsSet.add(car));
-    });
+    let matchingCars = [];
 
-    const matchingCars = [...carsSet].filter(car =>
-      car.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 8);
+    if (TireDB.isReady()) {
+      const dbMatches = TireDB.findMatchingCars(query);
+      matchingCars = dbMatches.map(m => m.display);
+    } else {
+      const carsSet = new Set();
+      catalog.products.forEach(product => {
+        const sizes = product.specifications?.sizes;
+        if (!sizes) return;
+        
+        if (typeof sizes[0] === 'object' && sizes[0].size) {
+          sizes.forEach(sizeObj => {
+            const cars = sizeObj.cars || [];
+            cars.forEach(car => {
+              let carString = car.model;
+              if (car.year) carString += ' ' + car.year;
+              if (car.trim) carString += ' ' + car.trim;
+              carsSet.add(carString);
+              carsSet.add(car.model);
+            });
+          });
+        } else {
+          const cars = product.specifications?.cars || [];
+          const carsLegacy = product.specifications?.carsLegacy || [];
+          
+          if (cars && Array.isArray(cars)) {
+            cars.forEach(car => {
+              if (typeof car === 'object' && car.model) {
+                let carString = car.model;
+                if (car.year) carString += ' ' + car.year;
+                if (car.trim) carString += ' ' + car.trim;
+                carsSet.add(carString);
+                carsSet.add(car.model);
+              } else if (typeof car === 'string') {
+                carsSet.add(car);
+              }
+            });
+          }
+          
+          if (Array.isArray(carsLegacy)) {
+            carsLegacy.forEach(car => carsSet.add(car));
+          }
+        }
+      });
+
+      matchingCars = [...carsSet].filter(car =>
+        car.toLowerCase().includes(query.toLowerCase())
+      );
+    }
+
+    matchingCars = matchingCars.slice(0, 8);
 
     if (matchingCars.length === 0) {
       if (suggestionsEl) {
