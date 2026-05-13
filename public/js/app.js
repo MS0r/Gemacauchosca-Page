@@ -654,7 +654,7 @@
           <div class="modal-section">
             <h4 class="modal-section-title">Modelos Compatibles</h4>
             <div class="compatible-cars-list">
-              ${compatibleCars.map(car => `<span class="compatible-car-tag">${escapeHtml(car)}</span>`).join('')}
+              ${compatibleCars.map(car => `<span class="compatible-car-tag">${escapeHtml(car)}</span>`).join(' ')}
             </div>
           </div>
         ` : ''}

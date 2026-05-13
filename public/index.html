@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gemacauchos CA - Distribuidor de lubricantes y cauchos en San Cristóbal, Venezuela. Ofrecemos productos de alta calidad de marcas reconocidas como Mobil, VP Racing, Rydanz, Firestone, Alix y Bekka.">
-  <meta name="keywords" content="Gemacauchos, lubricantes, cauchos, San Cristóbal, Venezuela, Mobil, VP Racing, Rydanz, Firestone, Alix, Bekka">
+  <meta name="description"
+    content="Gemacauchos CA - Distribuidor de lubricantes y cauchos en San Cristóbal, Venezuela. Ofrecemos productos de alta calidad de marcas reconocidas como Mobil, VP Racing, Rydanz, Firestone, Alix y Bekka.">
+  <meta name="keywords"
+    content="Gemacauchos, lubricantes, cauchos, San Cristóbal, Venezuela, Mobil, VP Racing, Rydanz, Firestone, Alix, Bekka">
   <title>Gemacauchos CA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +34,7 @@
             <div class="nav-dropdown-menu">
               <a href="catalog.html?brand=mobil" class="nav-dropdown-item">Mobil</a>
               <a href="catalog.html?brand=vp_racing" class="nav-dropdown-item">VP Racing</a>
+              <a href="catalog.html?brand=mad4" class="nav-dropdown-item">MAD4</a>
               <a href="tires.html?brand=rydanz" class="nav-dropdown-item">Rydanz</a>
               <a href="tires.html?brand=firestone" class="nav-dropdown-item">Firestone</a>
               <a href="tires.html?brand=alix" class="nav-dropdown-item">Alix</a>
@@ -57,42 +60,50 @@
       <h1 class="page-title">Selecciona una marca</h1>
       <p class="page-subtitle">Explora nuestro catálogo por marca</p>
 
-      <div class="brands-grid">
-        <a href="catalog.html?brand=mobil" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/mobil_logo.webp" alt="Mobil" class="brand-logo-img">
-          </div>
-        </a>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <a href="catalog.html?brand=mobil" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/mobil_logo.webp" alt="Mobil" class="brand-logo-img--medium">
+            </div>
+          </a>
+          <a href="catalog.html?brand=vp_racing" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/vp_racing_logo.webp" alt="VP Racing" class="brand-logo-img--medium">
+            </div>
+          </a>
+          <a href="tires.html?brand=rydanz" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/rydanz_black_normal.webp" alt="Rydanz" class="brand-logo-img--medium">
+            </div>
+          </a>
+          <a href="tires.html?brand=firestone" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/firestone_red_logo_name.webp" alt="Firestone" class="brand-logo-img--tall">
+            </div>
+          </a>
+          <a href="tires.html?brand=alix" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/alix_logo.webp" alt="Alix" class="brand-logo-img">
+            </div>
+          </a>
+          <a href="tires.html?brand=bekka" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/bekka_logo_black.webp" alt="Bekka" class="brand-logo-img--tall">
+            </div>
+          </a>
+          <a href="catalog.html?brand=mad4" class="brand-card">
+            <div class="brand-logo">
+              <img src="images/logos/mad4_logo.webp" alt="Bekka" class="brand-logo-img--tall">
+            </div>
+          </a>
+        </div>
+      </div>
 
-        <a href="catalog.html?brand=vp_racing" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/vp_racing_logo.webp" alt="VP Racing" class="brand-logo-img">
-          </div>
-        </a>
-
-        <a href="tires.html?brand=rydanz" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/rydanz_black_normal.webp" alt="Rydanz" class="brand-logo-img">
-          </div>
-        </a>
-
-        <a href="tires.html?brand=firestone" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/firestone_red_logo_name.webp" alt="Firestone" class="brand-logo-img brand-logo-img--tall">
-          </div>
-        </a>
-
-        <a href="tires.html?brand=alix" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/alix_logo.webp" alt="Alix" class="brand-logo-img brand-logo-img--tall">
-          </div>
-        </a>
-
-        <a href="tires.html?brand=bekka" class="brand-card">
-          <div class="brand-logo">
-            <img src="images/logos/bekka_logo_black.webp" alt="Bekka" class="brand-logo-img brand-logo-img--tall">
-          </div>
-        </a>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">&#8594;</button>
       </div>
     </main>
 
@@ -139,6 +150,16 @@
             Carrera 9, N° 3-60 (Frente a los galpones de La Gran Parada), La Concordia.<br>
             San Cristóbal
           </p>
+          <div class="footer-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.3870061210378!2d-72.23217559999999!3d7.748711800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e661354f3609e7b%3A0xc9c7556f527f086f!2sGEMACAUCHOS%20C.A.!5e0!3m2!1ses!2ses!4v1778682789234!5m2!1ses!2ses"
+              width="350" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
           <p class="footer-address">
             <strong>Sucursal Norte</strong><br>
             Carrera 4, entre calles 1 y 2, Barrio San José Obrero.<br>
@@ -150,11 +171,13 @@
           <h4 class="footer-title">Horario de Atención</h4>
           <p class="footer-schedule">
             <strong>Sucursal Central (San Cristóbal)</strong><br>
-            8:00 AM - 12:00 PM y 1:00 PM - 5:00 PM
+            Lun - Vie: 8:00 AM - 5:30 PM<br>
+            Sáb: 8:00 AM - 1:00 PM
           </p>
           <p class="footer-schedule">
             <strong>Sucursal Norte (Coloncito)</strong><br>
-            8:00 AM - 12:00 PM y 1:00 PM - 5:00 PM
+            Lun - Vie: 8:00 AM - 5:30 PM<br>
+            Sáb: 8:00 AM - 1:00 PM
           </p>
         </div>
       </div>
@@ -193,6 +216,72 @@
         }
       });
     });
+  </script>
+  <script>
+    (function () {
+      const track = document.getElementById('carouselTrack');
+      if (!track) return;
+      const cards = Array.from(track.querySelectorAll('.brand-card'));
+      const dotsEl = document.getElementById('carouselDots');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      let currentPage = 0;
+
+      const visibleCount = () => window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+      const totalPages = () => Math.ceil(cards.length / visibleCount());
+
+      function buildDots() {
+        dotsEl.innerHTML = '';
+        for (let i = 0; i < totalPages(); i++) {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i === currentPage ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsEl.appendChild(d);
+        }
+      }
+
+      function updateState() {
+        Array.from(dotsEl.children).forEach((d, i) =>
+          d.className = 'dot' + (i === currentPage ? ' active' : ''));
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage >= totalPages() - 1;
+      }
+
+      function goTo(page) {
+        currentPage = Math.max(0, Math.min(page, totalPages() - 1));
+        const idx = currentPage * visibleCount();
+        if (cards[idx]) track.scrollLeft = cards[idx].offsetLeft;
+        updateState();
+      }
+
+      prevBtn.addEventListener('click', () => goTo(currentPage - 1));
+      nextBtn.addEventListener('click', () => goTo(currentPage + 1));
+
+      track.addEventListener('scroll', () => {
+        const vc = visibleCount();
+
+        // If scrolled to the very end, force last page
+        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+        if (atEnd) {
+          const lastPage = totalPages() - 1;
+          if (lastPage !== currentPage) { currentPage = lastPage; updateState(); }
+          return;
+        }
+
+        let closest = 0;
+        let minDist = Infinity;
+        cards.forEach((card, i) => {
+          const dist = Math.abs(card.offsetLeft - track.scrollLeft);
+          if (dist < minDist) { minDist = dist; closest = i; }
+        });
+        const page = Math.floor(closest / vc);
+        if (page !== currentPage) { currentPage = page; updateState(); }
+      }, { passive: true });
+
+      window.addEventListener('resize', () => { buildDots(); goTo(0); });
+      buildDots();
+      updateState();
+    })();
   </script>
 </body>
 

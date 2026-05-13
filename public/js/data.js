@@ -52,6 +52,15 @@ const BRANDS = {
     logoImage: 'images/logos/bekka_logo.webp',
     logoImageBlack: 'images/logos/bekka_logo_black.webp',
     logoImageWhite: 'images/logos/bekka_logo_white.webp'
+  },
+  mad4: {
+    id: 'mad4',
+    name: 'MAD4',
+    type: 'oil',
+    logo: 'M',
+    logoImage: "/images/logos/mad4_logo.webp",
+    logoImageBlack: null,
+    logoImageWhite: null
   }
 };
 
@@ -116,6 +125,8 @@ const RYDANZ_TIRE_CAT = {
   REAC: "Reac",
   RAPTOR: "Raptor",
   RALEIGH: "Raleigh",
+  RAMMER: "Rammer",
+  ROADSTER: "Roadster",
 }
 
 const BEKKA_TIRE_CAT = {
@@ -747,7 +758,7 @@ const CATALOGS = {
       {
         id: "mobil-18",
         name: "Mobil 1™ 0W-20",
-        images: ["images/mobil/mobil_1_ow_20.webp"],
+        images: ["images/mobil/mobil_1_0w_20.webp", "images/mobil/mobil_1_0w_20_2.webp"],
         type: "Lubricante totalmente sintético de avanzada economía de combustible para motores",
         description: "Avanzado aceite totalmente sintético diseñado para brindar una excepcional protección al motor y una mejorada economía de combustible.",
         category: OIL_CAT.SINT,
@@ -1163,29 +1174,6 @@ const CATALOGS = {
         },
       },
       {
-        id: "mobil-33",
-        name: "Mobil Outboard™ Plus 4T 10W-40",
-        images: ["images/mobil/mobil_outboard_plus_4t_10w_40.webp"],
-        type: "Aceite de desempeño superior para motores fuera de borda de cuatro tiempos",
-        description: "Aceite de alto desempeño para motores de cuatro tiempos que está diseñado para muchos motores de cuatro tiempos de alto rendimiento, refrigerados por agua, y utilizados en aplicaciones marinas fuera de borda.Mobil Outboard Plus ofrece motores limpios y un comportamiento compatible con el medioambiente.",
-        category: OIL_CAT.MIN,
-        line: OIL_LINES.MOTO,
-        applications: [
-          "Utilizado en motores modernos de alto rendimiento, refrigerados por agua y de cuatro tiempos.",
-          "Uso en motores de cuatro tiempos donde se recomiendan los aceites NMMA FC-W."
-        ],
-        benefits: [
-          "Protección contra los depósitos, la corrosión y el desgaste.",
-          "Minimiza las fllas de las bujías y pre-ingnición, fomentando una operación segura."
-        ],
-        presentations: [PRESEN.CUARTO],
-        specifications: {
-          viscosity: "10W-40",
-          api: ["SL"],
-          nmma: ["FC-W"]
-        }
-      },
-      {
         id: "mobil-34",
         name: "Mobil Delvac Legend™ 25W-50 High Mileage",
         images: ["images/mobil/mobil_delvac_legend_25w_50.webp"],
@@ -1408,35 +1396,6 @@ const CATALOGS = {
         ]
       },
       {
-        id: "mobil-40",
-        name: "Mobil 1™ 0W-16",
-        images: ["images/mobil/mobil_1_0w_16.webp"],
-        type: "Aceite avanzado totalmente sintético para motores.",
-        description: "Mantenga a su motor funcionando con la máxima eficiencia a la vez que mejora la economía de combustible. Diseñado para los motores avanzados e híbridos de hoy en día, el aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 ayuda a mejorar la economía de combustible* y a prolongar la vida útil del motor en vehículos de cualquier antigüedad. Mobil 1 0W-20 Advanced Fuel Economy utiliza Fórmula de Triple Acción, distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios a su vehículo. Los componentes especiales en el aceite sintético reducen la fricción y ayudan a prevenir la formación de depósitos y la acumulación de lodo para mantener las piezas críticas del motor limpias y protegidas hasta 16,000 km (10,000 millas) entre cambios de aceite.",
-        category: OIL_CAT.SINT,
-        line: OIL_LINES.GAS,
-        applications: [
-          "Mobil 1 0W-16 está recomendado por ExxonMobil para aplicaciones SAE 0W-16 en motores a gasolina e híbridos diseñados para funcionar con aceite para motores de viscosidad SAE 0W-16.",
-          "Mobil 1 0W-16 no se recomienda para los motores de 2 tiempos o de aviación, a menos que esté específicamente aprobado por el fabricante. Revise siempre el manual del propietario para determinar el grado de viscosidad del aceite recomendado por el fabricante, la clasificación de servicio API y cualquier aprobación del fabricante.",
-          "Se obtiene una mejora potencial en la economía de combustible al cambiar aceites de mayor viscosidad a un grado de viscosidad más bajo. Los ahorros reales dependen del tipo de vehículo/motor, la temperatura exterior, el tipo de conducción, las condiciones de la carretera y la viscosidad de su actual aceite de motor.",
-          "Protege hasta 16,000 km (10,000 millas) o 1 año, lo que ocurra primero. Para mayor información acerca de la Garantía Limitada de Mobil 1, visítenos en Mobil.US."
-        ],
-        benefits: [
-          "El aceite de motor totalmente sintético Mobil 1 Advanced Fuel Economy 0W-16 tiene una baja viscosidad para ayudar a mejorar la economía de combustible*.",
-          "Utiliza la Fórmula de Triple Acción», distintiva de Mobil 1, para ofrecer un rendimiento, una protección y una limpieza extraordinarios del motor.",
-          "Ayuda a proteger las partes críticas del motor durante hasta 16 000 km (10 000 millas) entre cambios de aceite,** controlando la oxidación para prevenir la degradación del aceite y manteniendo una viscosidad óptima.",
-          "Cumple con las normas ILSAC GF-6 para ayudar a proporcionar una protección contra la preignición a bajas velocidades (LSPI) y el desgaste de la cadena de distribución, a la vez que mantiene a su motor limpio.",
-          "Ayuda a prolongar la vida del motor, al prevenir la formación de depósitos dañinos y la acumulación de lodos.",
-          "Proporciona una excelente protección contra el calor interno del motor hasta 260°C (500°F) y contra las bajas temperaturas hasta -40°C (-40°F)."
-        ],
-        presentations: [PRESEN.CUARTO, `5x ${PRESEN.CUARTO}`],
-        specifications: {
-          viscosity: "0W-16",
-          api: ["SP"],
-          ilsac: ["GF-6B"]
-        }
-      },
-      {
         id: "mobil-41",
         name: "Mobil 1™ 5W-20",
         images: ["images/mobil/mobil_1_5w_20.webp"],
@@ -1467,7 +1426,7 @@ const CATALOGS = {
       {
         id: "mobil-42",
         name: "Mobil 1™ 5W-30",
-        images: ["images/mobil/mobil_1_5w_30.webp"],
+        images: ["images/mobil/mobil_1_5w_30.webp", "images/mobil/mobil_1_5w_30_2.webp"],
         type: "Aceite avanzado totalmente sintético para motores",
         description: "El avanzado aceite sintético para motores Mobil 1 utiliza la emblemática Fórmula de Triple Acción de Mobil 1 para ofrecer un excelente rendimiento, protección y limpieza del motor a vehículos de todas las edades. Los componentes especiales en el aceite sintético prolongan la vida del motor al reducir la fricción que causa la acumulación de depósitos y lodos, lo cual mantiene a las piezas críticas del motor limpias y protegidas hasta 10.000 millas entre cambios de aceite.",
         category: OIL_CAT.SINT,
@@ -1517,7 +1476,7 @@ const CATALOGS = {
       {
         id: "mobil-44",
         name: "Mobil 1™ FS 0W-40",
-        images: ["images/mobil/mobil_1_fs_0w_40.webp"],
+        images: ["images/mobil/mobil_1_0w_40.webp", "images/mobil/mobil_1_0w_40_2.webp"],
         type: "Aceite avanzado para motores totalmente sintético",
         description: "El avanzado aceite para motores totalmente sintético Mobil™ 1 FS 0W-40 está diseñado para las más modernas tecnologías de motores de gasolina y diésel (sin filtros de partículas) y ofrece un excelente desempeño integral. Proporciona un poder de limpieza y una protección contra el desgaste excepcionales. Mobil™ 1 FS 0W-40 mantiene el motor funcionando como nuevo bajo todas las condiciones de conducción.",
         category: OIL_CAT.SINT,
@@ -2192,6 +2151,100 @@ const CATALOGS = {
         }
       ]
   },
+  mad4: {
+    brand: BRANDS.mad4,
+    categories: [],
+    products: [
+      {
+        id: "mad4-1",
+        name: "MAD4 M4P Diesel",
+        images: ["images/mad4/mad4_m4p_diesel.webp", "images/mad4/mad4_m4p_diesel_2.webp", "images/mad4/mad4_m4p_diesel_3.webp"],
+        type: "Lubricante para motores diésel",
+        description: "Aceite lubricante de alto desempeño, formulado con aceites básicos de calidad y aditivos especiales que le permiten lubricar eficazmente los motores diésel de alta y baja velocidad que operan bajo condiciones de servicio moderadas a severas.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.DIE,
+        applications: [
+          `Motores diésel de cuatro tiempos de alta y baja velocidad, aspiración natural, sobrealimentados o turbo
+            cargados, de inyección indirecta, que operan bajo condiciones de servicio severas y con una variada gama
+            de combustibles diésel, como las encontradas en el transporte pesado, maquinaria agrícola, pesada y
+            maquinaria de construcción; equipos estacionarios, plantas generadoras diésel y aplicaciones donde se
+            requiera un aceite de la Categoría de Servicio API CF/CF-2 y API CD/CD-II.`,
+          `Los grados SAE 10W y 30 encuentran su aplicación en sistemas hidráulicos del transporte y maquinaria
+            pesada; el grado SAE 40 también puede ser usado en los mandos y transmisiones de maquinarias que
+            así lo requieran.`
+        ],
+        benefits: [
+          `Ofrece el mejor comportamiento térmico-antioxidante y la mejor acción detergente-dispersante que un
+            aceite lubricante de la especialidad puede ofrecer para el control eficaz contra, la formación y acumulación
+            de lacas y carbón en las partes lubricadas: anillos y pistones; materiales estos que además mantiene
+            dispersos e inofensivamente en el aceite, hasta su remoción final durante el servicio de recambio de
+            lubricante, mejorando la limpieza y durabilidad del motor.`,
+          `Excelente protección antidesgaste de las piezas lubricadas, que alarga la vida útil del motor.`,
+          `Su alta reserva alcalina protege el motor cuando usa combustibles con alto contenido de azufre,
+            previniendo la corrosión de los cojinetes con aleaciones de cobre.`,
+          `Protección de las partes férricas contra la herrumbre.`
+        ],
+        presentations: [],
+        specifications: {
+          viscosity: "",
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      },
+      {
+        id: "mad4-2",
+        name: "M4P Diesel CI-4",
+        images: ["images/mad4/mad4_m4p_diesel.webp"],
+        type: "Lubricante para motores diésel",
+        description: "Aceite lubricante multigrado de calidad Premium, formulado para brindar un alto rendimiento, mejor protección contra el desgaste, mayor vida útil.",
+        category: OIL_CAT.SEMI,
+        line: OIL_LINES.DIE,
+        applications: [
+          `Recomendado especialmente en motores diésel de cuatro tiempos, de última generación, de alta y baja
+            velocidad, aspirados naturalmente, sobrealimentados o turbo cargados y post enfriados, operando bajo
+            condiciones de servicio severo a medianas.`,
+          ` Motores diésel del transporte y maquinaria en general, utilizados en aplicaciones tales como: transporte
+            de carga comercial, transporte de pasajeros, marinas, maquinarias agrícolas, plantas estacionarias,
+            equipos de construcción y vehículos de uso particular con motores diésel que requieran un aceite de
+            calidad en la Categoría de Servicio API CI-4 o SAE anteriores.`,
+          `Puede ser utilizado en flotas de vehículos mixtas con motores diésel y a gasolina, o que usen GNV, GLP
+            como combustible; debido a que excede adicionalmente el Servicio SL y anteriores de la API.`
+        ],
+        benefits: [
+          `Posee un excelente comportamiento térmico-antioxidante y poder detergente-dispersante que controlan
+            eficazmente la formación y acumulación de lacas y carbón en anillos, pistones y demás partes lubricadas;
+            estos materiales se mantienen dispersos e inofensivos en el aceite hasta su remoción final durante el
+            recambio de lubricante usado, mejorando la limpieza y durabilidad del motor.`,
+          `Su excelente contenido de aditivos contra el desgaste y comportamiento visco-simétrico, le permite la
+            lubricación rápida del motor en su arranque inicial; mantiene además una película de aceite resistente a la
+            temperatura normal de trabajo, reduciendo el desgaste y extendiendo la vida útil del motor.`,
+          `Su alta reserva alcalina, neutraliza los ácidos que se producen durante la combustión, que de otra forma
+            corroen y desgastan los cojinetes; más aún si se utilizan combustibles diésel con alto contenido de azufre.`,
+          `Excede las categorías de servicio API anteriores: CH-4, CG-4, CF-4.`
+        ],
+        presentations: [],
+        specifications: {
+          viscosity: "",
+          api: [],
+          acea: [],
+          ilsac: [],
+          jaso: [],
+          iso: [],
+          nmma: [],
+          oem: [],
+          compatibility: [],
+          other: []
+        }
+      }
+    ]
+  },
   firestone: {
     brand: BRANDS.firestone,
     categories: ["Pasajero", "SUV", "Camioneta", "Deportivo"],
@@ -2414,7 +2467,7 @@ const CATALOGS = {
         line: TIRE_LINES.CAM_CONV,
         benefits: ["Alta resistencia al desgaste irregular.", "Alta durabilidad y resistencia.", "Tracción confiable en superficies mojadas y secas."],
         specifications: { sizes: [] },  // Size not in database
-        images : ["images/firestone/firestone_shogun.webp"],
+        images: ["images/firestone/firestone_shogun.webp"],
       },
       {
         id: 'firestone-21',
@@ -2463,7 +2516,7 @@ const CATALOGS = {
         category: RYDANZ_TIRE_CAT.REAC,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Alta estabilidad a velocidad"],
-        specifications: { sizes: ["ts-012", "ts-013"], season: "Verano", speedRating: "W", loadIndex: "94" },
+        specifications: { sizes: ["ts-012", "ts-013"], season: "Verano", speedRating: "H", loadIndex: "94" },
         images: ["images/rydanz/rydanz_reac_ro5.webp", "images/rydanz/rydanz_reac_ro5_2.webp", "images/rydanz/rydanz_reac_ro5_3.webp", "images/rydanz/rydanz_reac_ro5_4.webp"]
       },
       {
@@ -2498,6 +2551,28 @@ const CATALOGS = {
         benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
         specifications: { sizes: ["ts-010", "ts-011", "ts-006"], season: "All-Season", speedRating: "H", loadIndex: "91" },
         images: ["images/rydanz/rydanz_raleigh_ro6.webp", "images/rydanz/rydanz_raleigh_ro6_2.webp", "images/rydanz/rydanz_raleigh_ro6_3.webp"]
+      },
+      {
+        id: "rydanz-5",
+        name: "Rydanz Roadster R02",
+        type: "Neumático de turismo",
+        description: "Diseñados exclusivamente para vehículos de alta gama, proporcionan un rendimiento de seguridad óptimo a altas velocidades y distancias de frenado más cortas tanto en superficies secas como mojadas.",
+        category: RYDANZ_TIRE_CAT.ROADSTER,
+        line: TIRE_LINES.PAS_RADIAL,
+        benefits: ["Optimización de la estabilidad y el silencio", "Hombro exterior robusto para majoe preciso y seguridad"],
+        specifications: { sizes: ["ts-012", "ts-013"], season: "All-season", speedRating: "V", loadIndex: "94" },
+        images: ["images/rydanz/rydanz_roadster_ro2.webp", "images/rydanz/rydanz_roadster_ro2_2.webp"]
+      },
+      {
+        id: "rydanz-6",
+        name: "Rydanz Rammer R08",
+        type: "Neumático de carreras todoterreno",
+        description: "Este neumático todoterreno ha sido diseñado específicamente para conquistar terrenos extremos, ofreciendo avances tanto en el rendimiento del flanco como en la capacidad de paso. El flanco incorpora una estructura reforzada con materiales de alta resistencia que aumentan significativamente su rigidez.",
+        category: RYDANZ_TIRE_CAT.RAMMER,
+        line: TIRE_LINES.CAM_CONV,
+        benefits: ["Bloques de banda de rodadura grandes y de alto relieve", "Alta rigidez", "Surcos profundos, anchos e interconectados", "Disposición densa"],
+        specifications: { sizes: ["ts-029", "ts-022", "ts-023", "ts-025"], season: "All-season", speedRating: "Q", loadIndex: "118" },
+        images: ["images/rydanz/rydanz_rammer_ro8.webp", "images/rydanz/rydanz_rammer_ro8_2.webp"]
       }
     ]
   },
