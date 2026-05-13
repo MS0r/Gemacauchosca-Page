@@ -2510,25 +2510,25 @@ const CATALOGS = {
     products: [
       {
         id: "rydanz-1",
-        name: "Rydanz Reac RO5",
+        name: "Rydanz Reac R05",
         type: "Neumático de alto rendimiento",
         description: "Neumático de alto rendimiento con tecnología avanzada para máximo agarre y respuesta precisos.",
         category: RYDANZ_TIRE_CAT.REAC,
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Excelente agarre en curvas", "Respuesta precisa de dirección", "Alta estabilidad a velocidad"],
         specifications: { sizes: ["ts-012", "ts-013"], season: "Verano", speedRating: "H", loadIndex: "94" },
-        images: ["images/rydanz/rydanz_reac_ro5.webp", "images/rydanz/rydanz_reac_ro5_2.webp", "images/rydanz/rydanz_reac_ro5_3.webp", "images/rydanz/rydanz_reac_ro5_4.webp"]
+        images: ["images/rydanz/rydanz_reac_r05.webp", "images/rydanz/rydanz_reac_r05_2.webp", "images/rydanz/rydanz_reac_r05_3.webp", "images/rydanz/rydanz_reac_r05_4.webp"]
       },
       {
         id: "rydanz-2",
-        name: "Rydanz Raptor RO9",
+        name: "Rydanz Raptor R9",
         type: "Neumático todo terreno",
         description: "Neumático para uso tout terrain con excelente tracción y durabilidad en condiciones severas.",
         category: RYDANZ_TIRE_CAT.RAPTOR,
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Gran tracción fuera de camino", "Alta resistencia a cortes", "Durabilidad extrema"],
         specifications: { sizes: ["ts-029", "ts-018", "ts-020", "ts-022"], season: "All-Season", speedRating: "S", loadIndex: "112" },
-        images: ["images/rydanz/rydanz_raptor_ro9.webp", "images/rydanz/rydanz_raptor_ro9_2.webp", "images/rydanz/rydanz_raptor_ro9_3.webp", "images/rydanz/rydanz_raptor_ro9_4.webp"]
+        images: ["images/rydanz/rydanz_raptor_r09.webp", "images/rydanz/rydanz_raptor_r09_2.webp", "images/rydanz/rydanz_raptor_r09_3.webp"]
       },
       {
         id: "rydanz-3",
@@ -2539,7 +2539,7 @@ const CATALOGS = {
         line: TIRE_LINES.CAM_RADIAL,
         benefits: ["Tracción en terrenos difíciles", "Resistencia a impactos", "Diseño autolimpiante"],
         specifications: { sizes: ["ts-029", "ts-022", "ts-023", "ts-025"], season: "All-Season", speedRating: "Q", loadIndex: "118" },
-        images: ["images/rydanz/rydanz_raptor_r19.webp", "images/rydanz/rydanz_raptor_r19_2.webp", "images/rydanz/rydanz_raptor_r19_3.webp"]
+        images: ["images/rydanz/rydanz_raptor_r19.webp", "images/rydanz/rydanz_raptor_r19_2.webp", "images/rydanz/rydanz_raptor_r19_3.webp", "images/rydanz/rydanz_raptor_r19_4.webp"]
       },
       {
         id: "rydanz-4",
@@ -2550,7 +2550,7 @@ const CATALOGS = {
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Confort de marcha", "Bajo nivel de ruido", "Larga vida útil"],
         specifications: { sizes: ["ts-010", "ts-011", "ts-006"], season: "All-Season", speedRating: "H", loadIndex: "91" },
-        images: ["images/rydanz/rydanz_raleigh_ro6.webp", "images/rydanz/rydanz_raleigh_ro6_2.webp", "images/rydanz/rydanz_raleigh_ro6_3.webp"]
+        images: ["images/rydanz/rydanz_raleigh_r06.webp", "images/rydanz/rydanz_raleigh_r06_2.webp", "images/rydanz/rydanz_raleigh_r06_3.webp"]
       },
       {
         id: "rydanz-5",
@@ -2561,7 +2561,7 @@ const CATALOGS = {
         line: TIRE_LINES.PAS_RADIAL,
         benefits: ["Optimización de la estabilidad y el silencio", "Hombro exterior robusto para majoe preciso y seguridad"],
         specifications: { sizes: ["ts-012", "ts-013"], season: "All-season", speedRating: "V", loadIndex: "94" },
-        images: ["images/rydanz/rydanz_roadster_ro2.webp", "images/rydanz/rydanz_roadster_ro2_2.webp"]
+        images: ["images/rydanz/rydanz_roadster_r02.webp", "images/rydanz/rydanz_roadster_r02_2.webp"]
       },
       {
         id: "rydanz-6",
@@ -2572,7 +2572,7 @@ const CATALOGS = {
         line: TIRE_LINES.CAM_CONV,
         benefits: ["Bloques de banda de rodadura grandes y de alto relieve", "Alta rigidez", "Surcos profundos, anchos e interconectados", "Disposición densa"],
         specifications: { sizes: ["ts-029", "ts-022", "ts-023", "ts-025"], season: "All-season", speedRating: "Q", loadIndex: "118" },
-        images: ["images/rydanz/rydanz_rammer_ro8.webp", "images/rydanz/rydanz_rammer_ro8_2.webp"]
+        images: ["images/rydanz/rydanz_rammer_r08.webp", "images/rydanz/rydanz_rammer_r08_2.webp"]
       }
     ]
   },
